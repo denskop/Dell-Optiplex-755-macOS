@@ -1,0 +1,85 @@
+15:809  11:242  Found BIOS RSDP at FEC00
+15:809  0:000  Saving ACPI tables from RSDP FEC00 to EFI\CLOVER\ACPI\origin ...
+15:809  0:000   FEC00: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+23:213  7:403    (Xsdt: FC5B3, Rsdt: FC543)
+23:213  0:000    FC5B3: 'XSDT', 'B9K', Rev: 1, Len: 140 -> XSDT.aml
+31:192  7:979    FC543: 'RSDT', 'B9K', Rev: 1, Len: 88 -> RSDT.aml
+39:192  7:999    Tables in Xsdt: 13
+39:192  0:000    0. FC6E3: 'FACP', 'B9K', Rev: 3, Len: 244 -> FACP.aml
+47:205  8:013        (Dsdt: FFF77270, Facs: 7D0FF800, XDsdt: FFF77270, XFacs: 7D0FF800)
+47:205  0:000        FFF77270: 'DSDT', 'dt_ex', Rev: 1, Len: 17814 -> DSDT.aml
+52:974  5:768        7D0FF800: 'FACS', Ver: 0, Len: 64 -> FACS.aml
+58:002  5:027    1. FFF7B925: 'SSDT', 'st_ex', Rev: 1, Len: 170 -> SSDT-0-st_ex.aml
+63:029  5:027    2. FC7D7: 'APIC', 'B9K', Rev: 1, Len: 146 -> APIC.aml
+68:074  5:045    3. FC869: 'BOOT', 'B9K', Rev: 1, Len: 40 -> BOOT.aml
+73:092  5:017    4. FC891: 'ASF!', 'B9K', Rev: 32, Len: 150 -> ASF!.aml
+78:500  5:408    5. FC927: 'MCFG', 'B9K', Rev: 1, Len: 62 -> MCFG.aml
+83:528  5:028    6. FC965: 'HPET', 'B9K', Rev: 1, Len: 56 -> HPET.aml
+88:544  5:015    7. FCBC1: 'TCPA', 'B9K', Rev: 1, Len: 50 -> TCPA.aml
+93:573  5:028    8. FCBF3: 'DMAR', 'B9K', Rev: 1, Len: 280 -> DMAR.aml
+98:584  5:011    9. FC99D: 'SLIC', 'B9K', Rev: 1, Len: 374 -> SLIC.aml
+103:619  5:034    10. 7D0FF840: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 505 -> SSDT-1-Cpu0Ist.aml
+109:473  5:854    11. 7D0FFC49: 'SSDT', 'Cpu1Ist', Rev: 1, Len: 505 -> SSDT-2-Cpu1Ist.aml
+115:070  5:596    12. 7D100052: 'SSDT', 'CpuPm', Rev: 1, Len: 320 -> SSDT-3-CpuPm.aml (Found hidden SSDT 4 pcs)
+120:666  5:596        * 7D0FF840: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 505  53 53 44 54 F9 01 00 00 01 07 44 70 67 50 6D 6D 
+120:666  0:000        * 7D0FFC49: 'SSDT', 'Cpu1Ist', Rev: 1, Len: 505  53 53 44 54 F9 01 00 00 01 03 44 70 67 50 6D 6D 
+120:666  0:000        * 80000000: 'ÿÿÿÿ', 'ÿÿÿÿÿÿÿÿ', Rev: 255, Len: -1  FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 
+120:666  0:000        * 80000000: 'ÿÿÿÿ', 'ÿÿÿÿÿÿÿÿ', Rev: 255, Len: -1  FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 
+120:666  0:000  
+120:666  0:000    Tables in Rsdt: 13
+120:666  0:000    0. FC66F: 'FACP', 'B9K', Rev: 1, Len: 116 -> RSDT-FACP.aml
+126:252  5:585        (Dsdt: FFF77270, Facs: 7D0FF800)
+126:252  0:000        FFF77270: 'DSDT', 'dt_ex', Rev: 1, Len: 17814
+127:000  0:747        7D0FF800: 'FACS', Ver: 0, Len: 64
+127:000  0:000    1. FFF7B925: 'SSDT', 'st_ex', Rev: 1, Len: 170
+127:000  0:000    2. FC869: 'BOOT', 'B9K', Rev: 1, Len: 40
+127:000  0:000    3. FC891: 'ASF!', 'B9K', Rev: 32, Len: 150
+127:000  0:000    4. FC927: 'MCFG', 'B9K', Rev: 1, Len: 62
+127:000  0:000    5. FC965: 'HPET', 'B9K', Rev: 1, Len: 56
+127:000  0:000    6. FCBF3: 'DMAR', 'B9K', Rev: 1, Len: 280
+127:000  0:000    7. FCBC1: 'TCPA', 'B9K', Rev: 1, Len: 50
+127:000  0:000    8. FC7D7: 'APIC', 'B9K', Rev: 1, Len: 146
+127:000  0:000    9. FC99D: 'SLIC', 'B9K', Rev: 1, Len: 374
+127:000  0:000    10. 7D0FF840: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 505
+127:000  0:000    11. 7D0FFC49: 'SSDT', 'Cpu1Ist', Rev: 1, Len: 505
+127:000  0:000    12. 7D100052: 'SSDT', 'CpuPm', Rev: 1, Len: 320
+127:000  0:000  Found UEFI Acpi 2.0 RSDP at 7CD2F000
+127:000  0:000  Printing ACPI tables from RSDP 7CD2F000 ...
+127:000  0:000   7CD2F000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+127:000  0:000    (Xsdt: FC5B3, Rsdt: FC543)
+127:000  0:000    FC5B3: 'XSDT', 'B9K', Rev: 1, Len: 140
+127:000  0:000    FC543: 'RSDT', 'B9K', Rev: 1, Len: 88
+127:000  0:000    Tables in Xsdt: 13
+127:000  0:000    0. FC6E3: 'FACP', 'B9K', Rev: 3, Len: 244
+127:000  0:000        (Dsdt: FFF77270, Facs: 7D0FF800, XDsdt: FFF77270, XFacs: 7D0FF800)
+127:000  0:000        FFF77270: 'DSDT', 'dt_ex', Rev: 1, Len: 17814
+127:747  0:747        7D0FF800: 'FACS', Ver: 0, Len: 64
+127:747  0:000    1. FFF7B925: 'SSDT', 'st_ex', Rev: 1, Len: 170
+127:747  0:000    2. FC7D7: 'APIC', 'B9K', Rev: 1, Len: 146
+127:747  0:000    3. FC869: 'BOOT', 'B9K', Rev: 1, Len: 40
+127:747  0:000    4. FC891: 'ASF!', 'B9K', Rev: 32, Len: 150
+127:747  0:000    5. FC927: 'MCFG', 'B9K', Rev: 1, Len: 62
+127:747  0:000    6. FC965: 'HPET', 'B9K', Rev: 1, Len: 56
+127:747  0:000    7. FCBC1: 'TCPA', 'B9K', Rev: 1, Len: 50
+127:747  0:000    8. FCBF3: 'DMAR', 'B9K', Rev: 1, Len: 280
+127:748  0:000    9. FC99D: 'SLIC', 'B9K', Rev: 1, Len: 374
+127:748  0:000    10. 7D0FF840: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 505
+127:748  0:000    11. 7D0FFC49: 'SSDT', 'Cpu1Ist', Rev: 1, Len: 505
+127:748  0:000    12. 7D100052: 'SSDT', 'CpuPm', Rev: 1, Len: 320
+127:748  0:000    Tables in Rsdt: 13
+127:748  0:000    0. FC66F: 'FACP', 'B9K', Rev: 1, Len: 116
+127:748  0:000        (Dsdt: FFF77270, Facs: 7D0FF800)
+127:748  0:000        FFF77270: 'DSDT', 'dt_ex', Rev: 1, Len: 17814
+128:495  0:747        7D0FF800: 'FACS', Ver: 0, Len: 64
+128:495  0:000    1. FFF7B925: 'SSDT', 'st_ex', Rev: 1, Len: 170
+128:495  0:000    2. FC869: 'BOOT', 'B9K', Rev: 1, Len: 40
+128:495  0:000    3. FC891: 'ASF!', 'B9K', Rev: 32, Len: 150
+128:495  0:000    4. FC927: 'MCFG', 'B9K', Rev: 1, Len: 62
+128:495  0:000    5. FC965: 'HPET', 'B9K', Rev: 1, Len: 56
+128:495  0:000    6. FCBF3: 'DMAR', 'B9K', Rev: 1, Len: 280
+128:495  0:000    7. FCBC1: 'TCPA', 'B9K', Rev: 1, Len: 50
+128:495  0:000    8. FC7D7: 'APIC', 'B9K', Rev: 1, Len: 146
+128:495  0:000    9. FC99D: 'SLIC', 'B9K', Rev: 1, Len: 374
+128:495  0:000    10. 7D0FF840: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 505
+128:495  0:000    11. 7D0FFC49: 'SSDT', 'Cpu1Ist', Rev: 1, Len: 505
+128:495  0:000    12. 7D100052: 'SSDT', 'CpuPm', Rev: 1, Len: 320
