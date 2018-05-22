@@ -1,0 +1,9 @@
+Operation region addresses
+
+------------------------------
+| DSDT           | Dynamic   |
+| SSDT-0-st_ex   | None      |
+| SSDT-1-Cpu0Ist | None      |
+| SSDT-2-Cpu1Ist | None      |
+| SSDT-3-CpuPm   | None      |
+------------------------------
