@@ -1,0 +1,140 @@
+0:100  0:100  MemLog inited, TSC freq: 2992478810
+0:100  0:000  CPU was calibrated with ACPI PM Timer
+0:100  0:000  LegacyRegion2: Chipset/proc: 0x29B08086
+0:100  0:000   Intel Series 4 and similar (PAM 0x90-0x96)
+0:100  0:000   Test PAM1=(0x41=50, 0x5a=00, 0x81=00, 0x91=11) at chipset 29B08086
+0:100  0:000  , Install = Success
+0:110  0:010  BiosVideoDriverBindingStart!
+0:110  0:000  BiosVideoCheckForVbe
+0:110  0:000  EdidOverride not found
+0:123  0:012   Edid1+
+0:123  0:000   found Detail Timing 1680x1050
+0:135  0:012   Edid0+
+0:135  0:000   found Detail Timing 1680x1050
+0:135  0:000  ... already present
+0:135  0:000     0 848x480 attr=9B - ok, edid-
+0:136  0:000     1 1600x1200 attr=9B - ok, edid-
+0:136  0:000     2 1280x1024 attr=9B - ok, edid+, working, highest, pref=2
+0:136  0:000     3 1024x768 attr=9B - ok, edid+, 1024x768, working
+0:136  0:000     4 640x480 attr=9B - ok, edid+, 640x480, working
+0:136  0:000     5 800x600 attr=9B - ok, edid+, 800x600, working
+0:136  0:000  BV new mode: 2 1280x1024
+0:204  0:067   SetMode pref 2 (2) = Success
+2:459  2:255  
+2:459  0:000  Now is 27.3.2018,  19:29:4 (GMT)
+2:459  0:000  Starting Clover revision: 4458 on CLOVER EFI
+2:459  0:000  Build with: [Args: -D NO_GRUB_DRIVERS_EMBEDDED -t XCODE8 | -D NO_GRUB_DRIVERS_EMBEDDED -D USE_LOW_EBDA -a X64 -b RELEASE -t XCODE8 -n 5 | OS: 10.13.5 | XCODE: 9.3]
+2:459  0:000  === [ Get Smbios ] ========================================
+2:459  0:000  Type 16 Index = 0
+2:459  0:000  Total Memory Slots Count = 4
+2:459  0:000  Type 17 Index = 0
+2:459  0:000  SmbiosTable.Type17->Speed = 800MHz
+2:459  0:000  SmbiosTable.Type17->Size = 1024MB
+2:459  0:000  SmbiosTable.Type17->Bank/Device =  DIMM_1
+2:459  0:000  SmbiosTable.Type17->Vendor = CE00000000000000
+2:459  0:000  SmbiosTable.Type17->SerialNumber = 794218DE
+2:459  0:000  SmbiosTable.Type17->PartNumber = M3 78T2953EZ3-CF7 
+2:459  0:000  Type 17 Index = 1
+2:459  0:000  SmbiosTable.Type17->Speed = 800MHz
+2:459  0:000  SmbiosTable.Type17->Size = 0MB
+2:459  0:000  SmbiosTable.Type17->Bank/Device =  DIMM_3
+2:459  0:000  SmbiosTable.Type17->Vendor = FFFFFFFFFFFFFFFF
+2:459  0:000  SmbiosTable.Type17->SerialNumber = FFFFFFFF
+2:459  0:000  SmbiosTable.Type17->PartNumber =                   
+2:459  0:000  Type 17 Index = 2
+2:459  0:000  SmbiosTable.Type17->Speed = 800MHz
+2:459  0:000  SmbiosTable.Type17->Size = 1024MB
+2:459  0:000  SmbiosTable.Type17->Bank/Device =  DIMM_2
+2:459  0:000  SmbiosTable.Type17->Vendor = CE00000000000000
+2:459  0:000  SmbiosTable.Type17->SerialNumber = 7942197B
+2:459  0:000  SmbiosTable.Type17->PartNumber = M3 78T2953EZ3-CF7 
+2:459  0:000  Type 17 Index = 3
+2:459  0:000  SmbiosTable.Type17->Speed = 800MHz
+2:459  0:000  SmbiosTable.Type17->Size = 0MB
+2:459  0:000  SmbiosTable.Type17->Bank/Device =  DIMM_4
+2:459  0:000  SmbiosTable.Type17->Vendor = FFFFFFFFFFFFFFFF
+2:459  0:000  SmbiosTable.Type17->SerialNumber = FFFFFFFF
+2:459  0:000  SmbiosTable.Type17->PartNumber =                   
+2:459  0:000  Boot status=3
+2:459  0:000  Running on: 'OptiPlex 755 ' with board '0DR845'
+2:459  0:000  === [ GetCPUProperties ] ==================================
+2:459  0:000  CPU Vendor = 756E6547 Model=1067A
+2:459  0:000   The CPU supported SSE4.1
+2:459  0:000  BrandString = Intel(R) Core(TM)2 Duo CPU     E8400  @ 3.00GHz
+2:459  0:000  got cores from CPUID_1 = 2
+2:459  0:000   The CPU not supported turbo
+2:459  0:000  MSR dumps:
+2:459  0:000  	@0x00CD=80000804
+2:459  0:000  	@0x0198=616092206000922
+2:459  0:000  FSBFrequency = 578 MHz, DMI FSBFrequency = 1333 MHz, Corrected FSBFrequency = 1333 MHz
+2:459  0:000  MaxDiv/MinDiv: 9.0/6
+2:459  0:000  Turbo: 10/0/0/0
+2:459  0:000  Features: 0xBFEBFBFF
+2:459  0:000  Threads: 2
+2:459  0:000  Cores: 2
+2:459  0:000  FSB: 1333 MHz
+2:459  0:000  CPU: 5200 MHz
+2:459  0:000  TSC: 5200 MHz
+2:459  0:000  PIS: 5333 MHz
+2:459  0:000  ExternalClock: 1333 MHz
+2:459  0:000  === [ GetDevices ] ========================================
+2:459  0:000  PCI (00|00:00.00) : 8086 29B0 class=060000
+2:459  0:000  PCI (00|00:01.00) : 8086 29B1 class=060400
+2:459  0:000  PCI (00|00:02.00) : 8086 29B2 class=030000
+2:459  0:000   - GFX: Model=Intel GMA 3100 (Intel)
+2:459  0:000  PCI (00|00:02.01) : 8086 29B3 class=038000
+2:459  0:000   - GFX: Model=Intel GMA 3100 (Intel)
+2:459  0:000  PCI (00|00:03.00) : 8086 29B4 class=078000
+2:459  0:000  PCI (00|00:03.02) : 8086 29B6 class=010185
+2:459  0:000  PCI (00|00:03.03) : 8086 29B7 class=070002
+2:459  0:000  PCI (00|00:19.00) : 8086 10BD class=020000
+2:459  0:000   - LAN: 0 Vendor=Intel
+2:459  0:000  PCI (00|00:1A.00) : 8086 2937 class=0C0300
+2:459  0:000  PCI (00|00:1A.01) : 8086 2938 class=0C0300
+2:459  0:000  PCI (00|00:1A.07) : 8086 293C class=0C0320
+2:459  0:000  PCI (00|00:1B.00) : 8086 293E class=040300
+2:459  0:000  PCI (00|00:1C.00) : 8086 2940 class=060400
+2:459  0:000  PCI (00|00:1D.00) : 8086 2934 class=0C0300
+2:459  0:000  PCI (00|00:1D.01) : 8086 2935 class=0C0300
+2:459  0:000  PCI (00|00:1D.02) : 8086 2936 class=0C0300
+2:459  0:000  PCI (00|00:1D.07) : 8086 293A class=0C0320
+2:459  0:000  PCI (00|00:1E.00) : 8086 244E class=060401
+2:459  0:000  PCI (00|00:1F.00) : 8086 2914 class=060100
+2:459  0:000  PCI (00|00:1F.02) : 8086 2922 class=010601
+2:459  0:000  PCI (00|00:1F.03) : 8086 2930 class=0C0500
+2:476  0:000  === [ InitScreen ] ========================================
+2:476  0:000  Console modes reported: 4, available modes:
+2:476  0:000   - [01]: 80x25
+2:476  0:000   - [02]: 80x50
+2:476  0:000   - [03]: 100x31
+2:476  0:000   - [04]: 160x53 (current mode)
+2:476  0:000  SetScreenResolution: 1280x1024 - already set
+2:476  0:000  reinit: self device path=PcieRoot(0x0)\Pci(0x1A,0x7)\USB(0x2,0x0)\HD(1,MBR,0x00000000,0x2,0xF17FFE)
+2:476  0:000  === [ GetMacAddress ] =====================================
+2:476  0:000  === [ ScanSPD ] ===========================================
+2:477  0:000  SMBus device : 8086 2930 class=0C0500 status=Success
+2:477  0:000  SMBus CmdReg: 0x3
+2:477  0:000  Scanning SMBus [8086:2930], mmio: 0xFE9D9B04, ioport: 0xECE0, hostc: 0x1
+2:477  0:000  Slots to scan [8]...
+2:477  0:000  SPD[0]: Type 8 @0x50
+2:491  0:013  DDR speed 800MHz
+2:491  0:000  Slot: 0 Type 19 1024MB 800MHz Vendor=Samsung PartNo=M378T2953EZ3-CF73E SerialNo=0709040201080D0E
+2:491  0:000  SPD[2]: Type 8 @0x52
+2:505  0:013  DDR speed 800MHz
+2:505  0:000  Slot: 2 Type 19 1024MB 800MHz Vendor=Samsung PartNo=M378T2953EZ3-CF73E SerialNo=070904020109070B
+2:506  0:000  === [ GetAcpiTablesList ] =================================
+2:510  0:004  Get Acpi Tables List from RSDT:
+2:510  0:000   - [00]: FACP  B9K     len=116
+2:510  0:000   - [01]: SSDT  st_ex len=170
+2:510  0:000   - [02]: BOOT  B9K     len=40
+2:510  0:000   - [03]: ASF!  B9K     len=150
+2:510  0:000   - [04]: MCFG  B9K     len=62
+2:510  0:000   - [05]: HPET  B9K     len=56
+2:510  0:000   - [06]: DMAR  B9K     len=280
+2:510  0:000   - [07]: TCPA  B9K     len=50
+2:510  0:000   - [08]: APIC  B9K     len=146
+2:510  0:000   - [09]: SLIC  B9K     len=374
+2:510  0:000   - [10]: SSDT  Cpu0Ist len=505
+2:510  0:000   - [11]: SSDT  Cpu1Ist len=505
+2:510  0:000   - [12]: SSDT  CpuPm len=320
+2:510  0:000  Calibrated TSC Frequency = 2992478810 = 2992MHz
