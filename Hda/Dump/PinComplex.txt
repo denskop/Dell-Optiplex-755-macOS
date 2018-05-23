@@ -1,0 +1,15 @@
+Address: 0
+Codec: Analog Devices AD1984
+Vendor Id: 0x11d41984
+Dec Vendor Id: 299112836
+Node 0x11 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+Node 0x12 [Pin Complex] wcaps 0x40058d: Stereo Amp-Out
+Node 0x13 [Pin Complex] wcaps 0x40050c: Mono Amp-Out
+Node 0x14 [Pin Complex] wcaps 0x40008b: Stereo Amp-In
+Node 0x15 [Pin Complex] wcaps 0x40008b: Stereo Amp-In
+Node 0x16 [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
+Node 0x17 [Pin Complex] wcaps 0x400001: Stereo
+Node 0x18 [Pin Complex] wcaps 0x400001: Stereo
+Node 0x1a [Pin Complex] wcaps 0x400000: Mono
+Node 0x1b [Pin Complex] wcaps 0x40030d: Stereo Digital Amp-Out
+Node 0x1c [Pin Complex] wcaps 0x40018d: Stereo Amp-Out
