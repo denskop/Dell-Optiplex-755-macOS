@@ -1,0 +1,15 @@
+# OEM Table Revision
+Find: Oem Revision : 00000015
+Replace: Oem Revision : 00000001
+
+# Hardware Block Id
+Find: Hardware Block ID : 8086A301
+Replace: Hardware Block ID : 8086A201
+
+# Bit Width
+Find: Bit Width : 00
+Replace: Bit Width : 40
+
+# Minimum Clock Ticks
+Find: Minimum Clock Ticks : 03E8
+Replace: Minimum Clock Ticks : 0080

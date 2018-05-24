@@ -1,0 +1,59 @@
+# Power Button
+into device label _SB.VBTN set_label begin _SB.PWRB end;
+into_all all code_regex VBTN replaceall_matched begin PWRB end;
+
+# USB
+into device label USB0 set_label begin UHC1 end;
+into_all all code_regex USB0 replaceall_matched begin UHC1 end;
+
+into device label USB1 set_label begin UHC2 end;
+into_all all code_regex USB1 replaceall_matched begin UHC2 end;
+
+into device label USB2 set_label begin UHC3 end;
+into_all all code_regex USB2 replaceall_matched begin UHC3 end;
+
+into device label USB3 set_label begin UHC4 end;
+into_all all code_regex USB3 replaceall_matched begin UHC4 end;
+
+into device label USB4 set_label begin UHC5 end;
+into_all all code_regex USB4 replaceall_matched begin UHC5 end;
+
+into device label USB5 set_label begin UHC6 end;
+into_all all code_regex USB5 replaceall_matched begin UHC6 end; # ICH9 Specific
+
+# PCI
+into device label PCI2 set_label begin RP01 end;
+into_all all label _SB.PCI0.PCI2 set_label begin _SB.PCI0.RP01 end;
+into_all all code_regex PCI2 replaceall_matched begin RP01 end;
+
+into device label PCI3 set_label begin RP02 end;
+into_all all label _SB.PCI0.PCI3 set_label begin _SB.PCI0.RP02 end;
+into_all all code_regex PCI3 replaceall_matched begin RP02 end;
+
+into device label PCI4 set_label begin PCIB end;
+into_all all label _SB.PCI0.PCI4 set_label begin _SB.PCI0.PCIB end;
+into_all all code_regex PCI4 replaceall_matched begin PCIB end;
+
+into device label PCI5 set_label begin RP05 end;
+into_all all label _SB.PCI0.PCI5 set_label begin _SB.PCI0.RP05 end;
+into_all all code_regex PCI5 replaceall_matched begin RP05 end;
+
+into device label PCI6 set_label begin RP06 end;
+into_all all label _SB.PCI0.PCI6 set_label begin _SB.PCI0.RP06 end;
+into_all all code_regex PCI6 replaceall_matched begin RP06 end;
+
+# LPC
+into_all all code_regex .ISA replaceall_matched begin .LPCB end;
+into_all all code_regex ISA. replaceall_matched begin LPCB. end;
+into_all all label _SB.PCI0.ISA set_label begin _SB.PCI0.LPCB end;
+into device label ISA set_label begin LPCB end;
+
+# SATA
+into device label IDE1 set_label begin SATA end;
+into_all all code_regex IDE1 replaceall_matched begin SATA end;
+
+# Other
+into device label DMA set_label begin DMAC end;
+into device label FPU set_label begin MATH end;
+into device label PIC set_label begin IPIC end;
+into device label TMR set_label begin TIMR end;

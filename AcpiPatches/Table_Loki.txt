@@ -1,0 +1,7 @@
+# Asl Compiler ID
+Find: Asl Compiler ID : "ASL "
+Replace: Asl Compiler ID : "Loki"
+
+# Asl Compiler Revision
+Find: Asl Compiler Revision : 00000061
+Replace: Asl Compiler Revision : 0000005F

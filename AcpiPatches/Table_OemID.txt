@@ -1,0 +1,3 @@
+# OEM ID
+Find: Oem ID : "DELL  "
+Replace: Oem ID : "APPLE "

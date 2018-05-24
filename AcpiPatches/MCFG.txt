@@ -1,0 +1,23 @@
+# Fix Table Length
+Find: Table Length : 0000003E
+Replace: Table Length : 0000003C
+
+# Fix Raw Data Length
+Find: (0x3E)
+Replace: (0x3C)
+
+# Fix Raw Data
+Find: 0030: 00 00 00 00 00 00 00 FF 00 00 00 00 00 00
+Replace: 0030: 00 00 00 00 00 00 00 FF 00 00 00 00
+
+# Remove iAsl Warning
+Find: Warning: there are 18 invalid trailing bytes
+Replace:  
+
+# OEM Table Revision
+Find: Oem Revision : 00000015
+Replace: Oem Revision : 00000001
+
+# End Bus Number
+Find: End Bus Number : FF
+Replace: End Bus Number : FF

@@ -1,0 +1,37 @@
+# Fix Or operation
+into_all all code_regex Or\s\(Zero,\sLocal0\) replaceall_matched
+begin
+Or (Local0, Zero, Local0)
+end;
+
+# Fix return type
+into method label _CRS parent_label TPM code_regex Return\s\(Zero\) replaceall_matched
+begin
+Return (Buffer(){Zero})
+end;
+
+# Fix resource addresses
+into all code_regex 0x0EC00000, replaceall_matched
+begin
+0x0EC00001,
+end;
+
+into all code_regex 0xF0000000, replace_matched
+begin
+__SAVED__
+end;
+
+into all code_regex 0xF0000000, replace_matched
+begin
+0xEFFFFFFE,
+end;
+
+into all code_regex __SAVED__ replace_matched
+begin
+0xF0000000,
+end;
+
+into all code_regex 0x00004000, replace_matched
+begin
+0x00000000,
+end;

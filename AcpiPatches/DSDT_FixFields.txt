@@ -1,0 +1,59 @@
+into_all all code_regex CreateByteField\s\(FDB0,\s((?:.)*)IOL0\) replaceall_matched
+begin
+CreateWordField (FDB0, %1IOL0)
+end;
+
+into_all all code_regex CreateByteField\s\(FDB0,\s((?:.)*)IOL1\) replaceall_matched
+begin
+CreateWordField (FDB0, %1IOL1)
+end;
+
+into_all all code_regex CreateByteField\s\(FDB0,\s((?:.)*)I2L0\) replaceall_matched
+begin
+CreateWordField (FDB0, %1I2L0)
+end;
+
+into_all all code_regex CreateByteField\s\(FDB0,\s((?:.)*)I2L1\) replaceall_matched
+begin
+CreateWordField (FDB0, %1I2L1)
+end;
+
+into_all all code_regex CreateByteField\s\(PTB0,\s((?:.)*)IOL0\) replaceall_matched
+begin
+CreateWordField (PTB0, %1IOL0)
+end;
+
+into_all all code_regex CreateByteField\s\(PTB0,\s((?:.)*)IOL1\) replaceall_matched
+begin
+CreateWordField (PTB0, %1IOL1)
+end;
+
+into_all all code_regex CreateByteField\s\(PTB0,\s((?:.)*)I2L0\) replaceall_matched
+begin
+CreateWordField (PTB0, %1I2L0)
+end;
+
+into_all all code_regex CreateByteField\s\(PTB0,\s((?:.)*)I2L1\) replaceall_matched
+begin
+CreateWordField (PTB0, %1I2L1)
+end;
+
+into_all all code_regex CreateByteField\s\(CMA0,\s((?:.)*)IOL0\) replaceall_matched
+begin
+CreateWordField (CMA0, %1IOL0)
+end;
+
+into_all all code_regex CreateByteField\s\(CMA0,\s((?:.)*)IOL1\) replaceall_matched
+begin
+CreateWordField (CMA0, %1IOL1)
+end;
+
+into_all all code_regex CreateByteField\s\(CMB0,\s((?:.)*)IOL0\) replaceall_matched
+begin
+CreateWordField (CMB0, %1IOL0)
+end;
+
+into_all all code_regex CreateByteField\s\(CMB0,\s((?:.)*)IOL1\) replaceall_matched
+begin
+CreateWordField (CMB0, %1IOL1)
+end;

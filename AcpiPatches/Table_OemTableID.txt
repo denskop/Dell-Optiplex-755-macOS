@@ -1,0 +1,3 @@
+# OEM Table ID
+Find: Oem Table ID : "B9K    "
+Replace: Oem Table ID : "Apple00"
