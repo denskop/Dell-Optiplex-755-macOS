@@ -3,3 +3,7 @@
 .AppleDouble
 .LSOverride
 ._*
+
+# repo
+Build/
+ToDo.txt
