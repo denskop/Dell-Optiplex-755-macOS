@@ -1,0 +1,2 @@
+Find: DefinitionBlock ("", "SSDT", 1, "DELL", "st_ex", 0x00001000)
+Replace: DefinitionBlock ("", "SSDT", 1, "APPLE", "SsdtExtn", 0x00001000)

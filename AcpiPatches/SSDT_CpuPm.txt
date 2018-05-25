@@ -1,0 +1,2 @@
+Find: DefinitionBlock ("", "SSDT", 1, "DpgPmm", "CpuPm", 0x00000010)
+Replace: DefinitionBlock ("", "SSDT", 1, "APPLE", "CpuPm", 0x00003000)
