@@ -42,12 +42,6 @@ into device label PCI6 set_label begin RP06 end;
 into_all all label _SB.PCI0.PCI6 set_label begin _SB.PCI0.RP06 end;
 into_all all code_regex PCI6 replaceall_matched begin RP06 end;
 
-# LPC
-into_all all code_regex .ISA replaceall_matched begin .LPCB end;
-into_all all code_regex ISA. replaceall_matched begin LPCB. end;
-into_all all label _SB.PCI0.ISA set_label begin _SB.PCI0.LPCB end;
-into device label ISA set_label begin LPCB end;
-
 # SATA
 into device label IDE1 set_label begin SATA end;
 into_all all code_regex IDE1 replaceall_matched begin SATA end;

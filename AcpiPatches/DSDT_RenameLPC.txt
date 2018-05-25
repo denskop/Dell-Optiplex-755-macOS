@@ -1,0 +1,7 @@
+# LPC
+into_all all code_regex ISA_ replaceall_matched begin LPCB end;
+into_all all code_regex .ISA replaceall_matched begin .LPCB end;
+into_all all code_regex ISA. replaceall_matched begin LPCB. end;
+into_all all label _SB.PCI0.ISA set_label begin _SB.PCI0.LPCB end;
+into device label ISA set_label begin LPCB end;
+into scope label \_SB.PCI0.ISA.MOU set_label begin \_SB.PCI0.LPCB.MOU end;
