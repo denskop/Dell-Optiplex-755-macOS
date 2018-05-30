@@ -1,0 +1,5 @@
+into method label _STA parent_adr 0x001F0002 remove_entry;
+into device label PRI0 parent_adr 0x001F0002 remove_entry;
+into device label PRI1 parent_adr 0x001F0002 remove_entry;
+
+into_all method code_regex Notify((?:.)*)PRI1((?:.)*)\) removeall_matched;

@@ -1,0 +1,14 @@
+into device label RP02 insert
+begin
+Name (_STA, Zero)
+end;
+
+into device label RP05 insert
+begin
+Name (_STA, Zero)
+end;
+
+into device label RP06 insert
+begin
+Name (_STA, Zero)
+end;

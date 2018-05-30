@@ -1,0 +1,30 @@
+into scope label _SB.PCI0 insert
+begin
+Device (SBUS)\n
+{\n
+Name (_ADR, 0x001F0003)\n
+OperationRegion (SMBP, PCI_Config, 0x40, 0xC0)\n
+Field (SMBP, DWordAcc, NoLock, Preserve)\n
+{\n
+,   2,\n
+I2CE,   1\n
+}\n
+
+OperationRegion (SMBE, PCI_Config, 0x04, 0x02)\n
+Field (SMBE, AnyAcc, NoLock, Preserve)\n
+{\n
+IOSE,   1\n
+}\n
+
+Method (ENAB, 0, NotSerialized)\n
+{\n
+    Store (0x01, IOSE)\n
+}\n
+
+Device (BUS0)\n
+{\n
+    Name (_CID, "smbus")\n
+    Name (_ADR, Zero)\n
+}\n
+}\n
+end;

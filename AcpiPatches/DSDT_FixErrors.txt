@@ -35,3 +35,6 @@ into all code_regex 0x00004000, replace_matched
 begin
 0x00000000,
 end;
+
+# Fix PCI Root _UID
+into device label PCI0 code_regex Name\s\(_UID,\s0x04\) replace_matched begin Name (_UID, Zero) end;

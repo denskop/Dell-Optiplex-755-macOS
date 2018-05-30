@@ -1,0 +1,7 @@
+into device name_adr 0x001F0000 insert
+begin
+Device (EC)\n
+{\n
+Name (_HID, EisaId ("ECD0000"))\n
+}\n
+end;

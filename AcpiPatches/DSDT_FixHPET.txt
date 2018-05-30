@@ -4,7 +4,7 @@ into method label _CRS parent_hid PNP0103 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+
 into method label _CRS parent_hid PNP0103 code_regex Name\s\(([^,]+),\sResourceTemplate\s\(\)\n\s+\{((?:.|\n)*)\}\) replace_matched
 begin
 Name (%1, ResourceTemplate () {\n
-\t\t\t\t\t\tIRQNoFlags() { 0, 8 }
+\t\t\t\t\t\tIRQNoFlags() { 0, 8, 11, 15 }
 %2
 })
 end;
