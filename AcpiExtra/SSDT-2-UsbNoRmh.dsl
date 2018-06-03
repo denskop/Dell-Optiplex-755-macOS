@@ -349,8 +349,8 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                         Name (_ADR, 0x01)
                         Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                     {
-                        0xFF, 
                         Zero, 
+                        0xFF, 
                         Zero, 
                         Zero
                     })
@@ -364,7 +364,7 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                             PLD_Blue               = 0x0,
                             PLD_Width              = 0x0,
                             PLD_Height             = 0x0,
-                            PLD_UserVisible        = 0x1,
+                            PLD_UserVisible        = 0x0,
                             PLD_Dock               = 0x0,
                             PLD_Lid                = 0x0,
                             PLD_Panel              = "UNKNOWN",
@@ -393,8 +393,8 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                         Name (_ADR, 0x02)
                         Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                     {
-                        0xFF, 
                         Zero, 
+                        0xFF, 
                         Zero, 
                         Zero
                     })
@@ -408,7 +408,7 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                             PLD_Blue               = 0x0,
                             PLD_Width              = 0x0,
                             PLD_Height             = 0x0,
-                            PLD_UserVisible        = 0x1,
+                            PLD_UserVisible        = 0x0,
                             PLD_Dock               = 0x0,
                             PLD_Lid                = 0x0,
                             PLD_Panel              = "UNKNOWN",
@@ -885,8 +885,8 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                         Name (_ADR, 0x05)
                         Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                     {
-                        0xFF, 
                         Zero, 
+                        0xFF, 
                         Zero, 
                         Zero
                     })
@@ -900,7 +900,7 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                             PLD_Blue               = 0x0,
                             PLD_Width              = 0x0,
                             PLD_Height             = 0x0,
-                            PLD_UserVisible        = 0x1,
+                            PLD_UserVisible        = 0x0,
                             PLD_Dock               = 0x0,
                             PLD_Lid                = 0x0,
                             PLD_Panel              = "UNKNOWN",
@@ -929,8 +929,8 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                         Name (_ADR, 0x06)
                         Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                     {
-                        0xFF, 
                         Zero, 
+                        0xFF, 
                         Zero, 
                         Zero
                     })
@@ -944,7 +944,7 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                             PLD_Blue               = 0x0,
                             PLD_Width              = 0x0,
                             PLD_Height             = 0x0,
-                            PLD_UserVisible        = 0x1,
+                            PLD_UserVisible        = 0x0,
                             PLD_Dock               = 0x0,
                             PLD_Lid                = 0x0,
                             PLD_Panel              = "UNKNOWN",

@@ -3,5 +3,6 @@ begin
 Device (EC)\n
 {\n
 Name (_HID, EisaId ("ECD0000"))\n
+Name (_UID, 0x00)\n
 }\n
 end;

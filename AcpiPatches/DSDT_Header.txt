@@ -1,2 +1,2 @@
 Find: DefinitionBlock ("", "DSDT", 1, "DELL", "dt_ex", 0x00001000)
-Replace: DefinitionBlock ("", "DSDT", 1, "APPLE ", "Macmini", 0x00040001)
+Replace: DefinitionBlock ("", "DSDT", 1, "APPLE ", "iMac", 0x00100001)

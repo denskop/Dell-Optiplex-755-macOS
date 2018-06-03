@@ -21,6 +21,29 @@ Method (OSDW, 0, NotSerialized)
 \n}
 end;
 
+# Add usefull registers to LPC
+into scope code_regex NSCA insert
+begin
+OperationRegion(LPCD, PCI_Config, 0x80, 0x2)\n
+Field(LPCD, AnyAcc, NoLock, Preserve) {\n
+    COMA,   3,\n
+        ,   1,\n
+    COMB,   3,\n
+
+    Offset(0x01),\n
+    LPTD,   2,\n
+        ,   2,\n
+    FDCD,   2\n
+}\n
+OperationRegion(LPCE, PCI_Config, 0x82, 0x2)\n
+Field(LPCE, AnyAcc, NoLock, Preserve) {\n
+    CAEN,   1,\n
+    CBEN,   1,\n
+    LPEN,   1,\n
+    FDEN,   1\n
+}\n
+end;
+
 # Disable Floppy Drive
 into method label _STA parent_label FDC code_regex If\s\(GCFD\s\(\)\) replaceall_matched
 begin

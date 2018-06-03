@@ -5,9 +5,4 @@ Device (HECI)\n
 {\n
 Name (_ADR, 0x00030000)\n
 }\n
-
-Device (IDER)\n
-{\n
-Name (_ADR, 0x00030002)\n
-}\n
 end;
