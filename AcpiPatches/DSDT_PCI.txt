@@ -1,14 +1,17 @@
-into device label RP02 insert
+# Disable RP02
+into device name_adr 0x001C0001 insert
 begin
 Name (_STA, Zero)
 end;
 
-into device label RP05 insert
+# Disable RP05
+into device name_adr 0x001C0004 insert
 begin
 Name (_STA, Zero)
 end;
 
-into device label RP06 insert
+# Disable RP06
+into device name_adr 0x001C0005 insert
 begin
 Name (_STA, Zero)
 end;

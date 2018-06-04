@@ -5,9 +5,7 @@ into definitionblock code_regex . insert
 begin
 Scope (\_PR)\n
 {\n
-\n\tProcessor (CPU0, 0x01, 0x00000410, 0x06){}
-\n\tProcessor (CPU1, 0x02, 0x00000410, 0x06){}
-\n\t//Processor (CPU2, 0x03, 0x00000410, 0x06){}
-\n\t//Processor (CPU3, 0x04, 0x00000410, 0x06){}
-\n}
+	Processor (CPU0, 0x01, 0x00000410, 0x06){}\n
+	Processor (CPU1, 0x02, 0x00000410, 0x06){}\n
+}\n
 end;

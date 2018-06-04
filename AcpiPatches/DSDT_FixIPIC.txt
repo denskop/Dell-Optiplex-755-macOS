@@ -1,1 +1,2 @@
+# Remove IPIC IRQ
 into method label _CRS parent_hid PNP0000 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;

@@ -1,7 +1,8 @@
-# COM Ports
+# COMA Port
 into device label COMA set_label begin URT0 end;
 into_all all code_regex COMA replaceall_matched begin URT0 end;
 
+# COMB Port
 into device label COMB set_label begin URT1 end;
 into_all all code_regex COMB replaceall_matched begin URT1 end;
 
@@ -10,6 +11,6 @@ into device label PCI0 insert
 begin
 Device (URT3)\n
 {\n
-Name (_ADR, 0x00030003)\n
+	Name (_ADR, 0x00030003)\n
 }\n
 end;

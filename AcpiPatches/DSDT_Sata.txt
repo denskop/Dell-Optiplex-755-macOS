@@ -1,13 +1,16 @@
+# Remove methods from SATA device
 into method label _STA parent_adr 0x001F0002 remove_entry;
 into device label PRI0 parent_adr 0x001F0002 remove_entry;
 into device label PRI1 parent_adr 0x001F0002 remove_entry;
 
+# Remove SATA notifications
 into_all method code_regex Notify((?:.)*)PRI1((?:.)*)\) removeall_matched;
 
+# Add PATA device
 into device label PCI0 insert
 begin
 Device (PATA)\n
 {\n
-Name (_ADR, 0x00030002)\n
+	Name (_ADR, 0x00030002)\n
 }\n
 end;

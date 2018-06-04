@@ -1,66 +1,71 @@
+# Add _BBN method to PCI0 device
 into device label PCI0 insert
 begin
 Method (^BN00, 0, NotSerialized)\n
 {\n
-Return (0x00)\n
+	Return (0x00)\n
 }\n
-\n
+
 Method (_BBN, 0, NotSerialized)\n
 {\n
-Return (BN00 ())\n
+	Return (BN00 ())\n
 }\n
 end;
 
-into device label RP01 insert
+# Add _BBN method to RP01 device
+into device name_adr 0x001C0000 insert
 begin
 OperationRegion (A1E0, PCI_Config, 0x19, 0x01)\n
 Field (A1E0, ByteAcc, NoLock, Preserve)\n
 {\n
     SECB,   8\n
 }\n
-\n
-Method (_BBN, 0, NotSerialized)\n
-{\n
-    Return (SECB)\n
-}\n
-end;
 
-into device label RP02 insert
-begin
-OperationRegion (A1E0, PCI_Config, 0x19, 0x01)\n
-Field (A1E0, ByteAcc, NoLock, Preserve)\n
-{\n
-    SECB,   8\n
-}\n
-\n
 Method (_BBN, 0, NotSerialized)\n
 {\n
     Return (SECB)\n
 }\n
 end;
 
-into device label RP05 insert
+# Add _BBN method to RP02 device
+into device name_adr 0x001C0001 insert
 begin
 OperationRegion (A1E0, PCI_Config, 0x19, 0x01)\n
 Field (A1E0, ByteAcc, NoLock, Preserve)\n
 {\n
     SECB,   8\n
 }\n
-\n
+
 Method (_BBN, 0, NotSerialized)\n
 {\n
     Return (SECB)\n
 }\n
 end;
 
-into device label RP06 insert
+# Add _BBN method to RP05 device
+into device name_adr 0x001C0004 insert
 begin
 OperationRegion (A1E0, PCI_Config, 0x19, 0x01)\n
 Field (A1E0, ByteAcc, NoLock, Preserve)\n
 {\n
     SECB,   8\n
 }\n
-\n
+
+Method (_BBN, 0, NotSerialized)\n
+{\n
+    Return (SECB)\n
+}\n
+end;
+
+# Add _BBN method to RP06 device
+into device name_adr 0x001C0005 insert
+begin
+OperationRegion (A1E0, PCI_Config, 0x19, 0x01)\n
+Field (A1E0, ByteAcc, NoLock, Preserve)\n
+{\n
+    SECB,   8\n
+}\n
+
 Method (_BBN, 0, NotSerialized)\n
 {\n
     Return (SECB)\n

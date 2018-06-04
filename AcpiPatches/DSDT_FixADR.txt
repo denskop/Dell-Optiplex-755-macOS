@@ -1,0 +1,38 @@
+# Remove all _ADR methods
+into_all method label _ADR remove_entry;
+
+# Insert _ADR name for PCI1 device
+into device label PCI1 insert
+begin
+Name (_ADR, 0x00010000)\n
+end;
+
+# Insert _ADR name for PCI2 device
+into device label PCI2 insert
+begin
+Name (_ADR, 0x001C0000)\n
+end;
+
+# Insert _ADR name for PCI3 device
+into device label PCI3 insert
+begin
+Name (_ADR, 0x001C0001)\n
+end;
+
+# Insert _ADR name for PCI5 device
+into device label PCI5 insert
+begin
+Name (_ADR, 0x001C0004)\n
+end;
+
+# Insert _ADR name for PCI6 device
+into device label PCI6 insert
+begin
+Name (_ADR, 0x001C0005)\n
+end;
+
+# Insert _ADR name for PCI4 device
+into device label PCI4 insert
+begin
+Name (_ADR, 0x001E0000)\n
+end;

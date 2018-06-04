@@ -1,24 +1,24 @@
 # Add OSDW method
 into scope label \ code_regex Name\s\(MSOS,\sZero\) insert
 begin
-Method (OSDW, 0, NotSerialized)
-\n{\n
-\nIf (CondRefOf (_OSI, Local0))
-\n{
-\n\tIf (_OSI ("Darwin"))
-\n\t{
-\n\t\tReturn (One)
-\n\t}
-\n\tElse
-\n\t{
-\n\t\tReturn (Zero)
-\n\t}
-\n}
-\nElse
-\n{
-\n\tReturn (Zero)
-\n}
-\n}
+Method (OSDW, 0, NotSerialized)\n
+{\n
+    If (CondRefOf (_OSI, Local0))\n
+    {\n
+        If (_OSI ("Darwin"))\n
+        {\n
+            Return (One)\n
+        }\n
+        Else\n
+        {\n
+            Return (Zero)\n
+        }\n
+    }\n
+    Else\n
+    {\n
+        Return (Zero)\n
+    }\n
+}\n
 end;
 
 # Add usefull registers to LPC
@@ -53,17 +53,17 @@ end;
 # Disable Speaker
 into device label SPK insert
 begin
-Method (_STA, 0, NotSerialized)
-\n{
-\nIf (OSDW())
-\n{
-\n\tReturn(Zero)
-\n}
-\nElse
-\n{
-\n\tReturn(0x0F)
-\n}
-\n}
+Method (_STA, 0, NotSerialized)\n
+{\n
+    If (OSDW())\n
+    {\n
+        Return(Zero)\n
+    }\n
+    Else\n
+    {\n
+        Return(0x0F)\n
+    }\n
+}\n
 end;
 
 # Disable PS/2 Mouse

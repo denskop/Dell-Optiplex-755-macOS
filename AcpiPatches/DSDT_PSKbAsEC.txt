@@ -6,10 +6,10 @@ into device label KBD set_label begin EC end;
 into_all all code_regex PNP0303 replaceall_matched begin PNP0C09 end;
 
 # Insert _UID
-into device label EC insert begin Name (_UID, 0x00) end;
+into device name_hid PNP0C09 insert begin Name (_UID, 0x00) end;
 
 # Insert _GPE
-into device label EC insert begin Name (_GPE, 0x17) end;
+into device name_hid PNP0C09 insert begin Name (_GPE, 0x17) end;
 
 # Remove IRQ
-into method label _CRS parent_label EC code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;
+into method label _CRS parent_hid PNP0C09 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;
