@@ -217,7 +217,7 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                 {
                     U6EN,   2
                 }
-
+                
                 Device (HUB6)
                 {
                     Name (_ADR, 0x00)  // _ADR: Address
@@ -236,18 +236,18 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                 {
                     If (Arg0)
                     {
-                        Store (0x03, U6EN) /* \_SB_.PCI0.UHC5.U5EN */
+                        Store (0x03, U6EN)
                     }
                     Else
                     {
-                        Store (0x00, U6EN) /* \_SB_.PCI0.UHC5.U5EN */
+                        Store (0x00, U6EN)
                     }
                 }
 
                 Method (_S4D, 0, NotSerialized)  // _S4D: S4 Device State
                 {
                     Return (0x03)
-                } 
+                }
         }
 
         Device (\_SB.PCI0.EHC1)

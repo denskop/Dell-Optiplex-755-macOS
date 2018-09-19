@@ -1,0 +1,5 @@
+# Hide UHCI #6
+into method label _STA parent_adr 0x001A0002 code_regex If\s\(GCUC\s\(\)\) replace_matched
+begin
+If (And(GCUC (), LNot(OSDW ())))
+end;
