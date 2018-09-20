@@ -5,8 +5,10 @@ Method (PNOT, 0, Serialized)\n
 {\n
 	External (\PDC0, IntObj)\n
 	External (\PDC1, IntObj)\n
+	External (\PDC2, IntObj)\n
+	External (\PDC3, IntObj)\n
 
-	Name (MPEN, Zero)\n
+	Name (MPEN, One)\n
 	If (MPEN)\n
 	{\n
 		If (And (PDC0, 0x08))\n
@@ -26,6 +28,26 @@ Method (PNOT, 0, Serialized)\n
 			{\n
 				Sleep (0x64)\n
 				Notify (\_PR.CPU1, 0x81)\n
+			}\n
+		}\n
+		
+		If (And (PDC2, 0x08))\n
+		{\n
+			Notify (\_PR.CPU2, 0x80)\n
+			If (And (PDC2, 0x10))\n
+			{\n
+				Sleep (0x64)\n
+				Notify (\_PR.CPU2, 0x81)\n
+			}\n
+		}\n
+		
+		If (And (PDC3, 0x08))\n
+		{\n
+			Notify (\_PR.CPU3, 0x80)\n
+			If (And (PDC3, 0x10))\n
+			{\n
+				Sleep (0x64)\n
+				Notify (\_PR.CPU3, 0x81)\n
 			}\n
 		}\n
 	}\n

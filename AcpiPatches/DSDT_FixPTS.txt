@@ -1,0 +1,35 @@
+# Operation region
+into definitionblock code_regex . insert
+begin
+OperationRegion (PMRS, SystemIO, 0x0430, One)\n
+Field (PMRS, ByteAcc, NoLock, Preserve)\n
+{\n
+,   4, \n
+SLPE,   1\n
+}
+end;
+
+# Operation region
+into device name_adr 0x001F0000 insert
+begin
+OperationRegion (LPC0, PCI_Config, 0xA4, 0x02)\n
+Field (LPC0, ByteAcc, NoLock, Preserve)\n
+{\n
+AG3E,   1\n
+}
+end;
+
+# Fix
+into method label PSKM insert
+begin
+If (LEqual (Arg0, 0x05))\n
+{\n
+Store (One, \_SB.PCI0.LPCB.AG3E)\n
+Store (Zero, SLPE)\n
+Sleep (0x10)\n
+}\n
+Else\n
+{\n
+Store (Zero, \_SB.PCI0.LPCB.AG3E)\n
+}\n
+end;

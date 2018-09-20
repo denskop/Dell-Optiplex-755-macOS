@@ -2,6 +2,9 @@
 into method label _CRS parent_hid PNP0100 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;
 into method label _CRS parent_hid PNP0B00 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;
 
+# Fix RTC resources
+into method label _CRS parent_hid PNP0B00 code_regex (IO\s\((?:\s*[^,]+,\s*(?:\/\/\s.*)?\s*\n)+\s*)(\dx\d+)(,\s*(?:\/\/\s.*)?\s*\n\s*\)) replace_matched begin %10x02%3 end;
+
 # Remove HPET device
 into device label HPET remove_entry;
 
