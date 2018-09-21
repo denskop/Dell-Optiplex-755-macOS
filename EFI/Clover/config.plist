@@ -216,108 +216,6 @@
 				<string>00:19:00</string>
 			</dict>
 			<dict>
-				<key>#PciAddr</key>
-				<string>01:00.00</string>
-				<key>Comment</key>
-				<string>Inject GeForce 8500GT properties</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Comment</key>
-						<string>Country Nec 20WGX2</string>
-						<key>Disabled</key>
-						<true/>
-						<key>Key</key>
-						<string>@0,EDID</string>
-						<key>Value</key>
-						<data>
-						AP///////wA4o5hmAQEBAQkQAQMO
-						Kxt46sUFo1dKnCUSUFS/74BxT4HP
-						gU+BgJUAkECzAAEBITmQMGIaJ0AY
-						sDZAsQ4RAAAcAAAA/QA4Sx9TEQAK
-						ICAgICAgAAAA/AAyMFdHWDIKICAg
-						ICAgAAAA/wA2MzEwNDAyOEdCCiAg
-						APo=
-						</data>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>@0,AAPL,boot-display</string>
-						<key>Value</key>
-						<data>
-						</data>
-					</dict>
-					<dict>
-						<key>Comment</key>
-						<string>Home Nec 20WGX2</string>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>@0,EDID</string>
-						<key>Value</key>
-						<data>
-						AP///////wA4o5lmAQEBASAQAQOA
-						Kxt46sUFo1dKnCUSUFS/74BxT4HP
-						gU+BgJUAkECzAAEBITmQMGIaJ0AY
-						sDZAsQ4RAAAcAAAA/QA4Sx9TEQAK
-						ICAgICAgAAAA/AAyMFdHWDIKICAg
-						ICAgAAAA/wA2ODExMTM5NkdCCiAg
-						AGU=
-						</data>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<true/>
-						<key>Key</key>
-						<string>@0,display-cfg</string>
-						<key>Value</key>
-						<data>
-						AwgDAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>VRAM,totalsize</string>
-						<key>Value</key>
-						<data>
-						AAAAEA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>graphic-options</string>
-						<key>Value</key>
-						<data>
-						DAAAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>built-in</string>
-						<key>Value</key>
-						<data>
-						AA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>model</string>
-						<key>Value</key>
-						<string>NVIDIA GeForce 8500 GT</string>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,slot-name</string>
-						<key>Value</key>
-						<string>Slot-1</string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
 				<key>Comment</key>
 				<string>AHCI Controller</string>
 				<key>CustomProperties</key>
@@ -814,124 +712,6 @@
 				<key>PciAddr</key>
 				<string>00:1A.01</string>
 			</dict>
-			<dict>
-				<key>#PciAddr</key>
-				<string>00:1A.02</string>
-				<key>Comment</key>
-				<string>UHCI #6</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-vendor-id</string>
-						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-id</string>
-						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>vendor-id</string>
-						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>device-id</string>
-						<key>Value</key>
-						<data>
-						OToAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>name</string>
-						<key>Value</key>
-						<string>pci8086,3a39</string>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>IOName</string>
-						<key>Value</key>
-						<string>pci8086,3a39</string>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>compatible</string>
-						<key>Value</key>
-						<string>pci8086,3a39</string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>UHC #7</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-vendor-id</string>
-						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-id</string>
-						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>vendor-id</string>
-						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>device-id</string>
-						<key>Value</key>
-						<data>
-						NzoAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>name</string>
-						<key>Value</key>
-						<string>pci8086,3a37</string>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>IOName</string>
-						<key>Value</key>
-						<string>pci8086,3a37</string>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>compatible</string>
-						<key>Value</key>
-						<string>pci8086,3a37</string>
-					</dict>
-				</array>
-				<key>PciAddr</key>
-				<string>00:1D.03</string>
-			</dict>
 		</array>
 		<key>Audio</key>
 		<dict>
@@ -977,9 +757,9 @@
 			<false/>
 		</dict>
 		<key>ScreenResolution</key>
-		<string>1680x1050</string>
+		<string>1920x1080</string>
 		<key>Theme</key>
-		<string>startup-manager</string>
+		<string>embedded</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -993,7 +773,9 @@
 			<false/>
 		</dict>
 		<key>LoadVBios</key>
-		<true/>
+		<false/>
+		<key>PatchVBios</key>
+		<false/>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
