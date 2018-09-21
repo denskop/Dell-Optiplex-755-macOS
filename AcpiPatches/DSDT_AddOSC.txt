@@ -2,64 +2,64 @@ into device label PCI0 insert
 begin
 Method (_OSC, 4, NotSerialized)\n
 {\n
-	CreateDWordField (Arg3, 0x00, CDW1)\n
-	If (LEqual (Arg0, Buffer (0x10)\n
-	{\n
-	/* 0000 */0x5B, 0x4D, 0xDB, 0x33, 0xF7, 0x1F, 0x1C, 0x40,\n
-	/* 0008 */0x96, 0x57, 0x74, 0x41, 0xC0, 0x3D, 0xD7, 0x66\n
-	}))\n
-	{\n
-		If (LGreaterEqual (Arg2, 0x03))\n
-		{\n
-			Name (SUPP, 0x00)\n
-			Name (CTRL, 0x00)\n
-			Store (0x03, Local0)\n
-			CreateDWordField (Arg3, 0x04, CDW2)\n
-			CreateDWordField (Arg3, 0x08, CDW3)\n
-			Store (CDW2, SUPP)\n
-			Store (CDW3, CTRL)\n
-			And (CTRL, 0x1D, CTRL)\n
-			If (LNotEqual (And (SUPP, 0x16), 0x16))\n
-			{\n
-				And (CTRL, 0x1E, CTRL)\n
-			}\n
-	
-			If (LNot (And (CDW1, 0x01)))\n
-			{\n
-				If (And (CTRL, 0x01))\n
-				{\n
-					And (Local0, 0x0E, Local0)\n
-				}\n
-			
-				If (And (CTRL, 0x04))\n
-				{\n
-					And (Local0, 0x0D, Local0)\n
-				}\n
-				
-				If (And (CTRL, 0x10)) {}\n
-			}\n
-			
-			If (LNotEqual (Arg1, One))\n
-			{\n
-				Or (CDW1, 0x08, CDW1)\n
-			}\n
-			
-			If (LNotEqual (CDW3, CTRL))\n
-			{\n
-				Or (CDW1, 0x10, CDW1)\n
-			}\n
-			
-			Store (CTRL, CDW3)\n
-		}\n
-		Else\n
-		{\n
-			Or (CDW1, 0x02, CDW1)\n
-		}\n
-	}\n
-	Else\n
-	{\n
-		Or (CDW1, 0x04, CDW1)\n
-	}\n
-	Return (Arg3)\n
+    CreateDWordField (Arg3, 0x00, CDW1)\n
+    If (LEqual (Arg0, Buffer (0x10)\n
+    {\n
+    /* 0000 */0x5B, 0x4D, 0xDB, 0x33, 0xF7, 0x1F, 0x1C, 0x40,\n
+    /* 0008 */0x96, 0x57, 0x74, 0x41, 0xC0, 0x3D, 0xD7, 0x66\n
+    }))\n
+    {\n
+        If (LGreaterEqual (Arg2, 0x03))\n
+        {\n
+            Name (SUPP, 0x00)\n
+            Name (CTRL, 0x00)\n
+            Store (0x03, Local0)\n
+            CreateDWordField (Arg3, 0x04, CDW2)\n
+            CreateDWordField (Arg3, 0x08, CDW3)\n
+            Store (CDW2, SUPP)\n
+            Store (CDW3, CTRL)\n
+            And (CTRL, 0x1D, CTRL)\n
+            If (LNotEqual (And (SUPP, 0x16), 0x16))\n
+            {\n
+                And (CTRL, 0x1E, CTRL)\n
+            }\n
+    
+            If (LNot (And (CDW1, 0x01)))\n
+            {\n
+                If (And (CTRL, 0x01))\n
+                {\n
+                    And (Local0, 0x0E, Local0)\n
+                }\n
+            
+                If (And (CTRL, 0x04))\n
+                {\n
+                    And (Local0, 0x0D, Local0)\n
+                }\n
+                
+                If (And (CTRL, 0x10)) {}\n
+            }\n
+            
+            If (LNotEqual (Arg1, One))\n
+            {\n
+                Or (CDW1, 0x08, CDW1)\n
+            }\n
+            
+            If (LNotEqual (CDW3, CTRL))\n
+            {\n
+                Or (CDW1, 0x10, CDW1)\n
+            }\n
+            
+            Store (CTRL, CDW3)\n
+        }\n
+        Else\n
+        {\n
+            Or (CDW1, 0x02, CDW1)\n
+        }\n
+    }\n
+    Else\n
+    {\n
+        Or (CDW1, 0x04, CDW1)\n
+    }\n
+    Return (Arg3)\n
 }\n
 end;

@@ -4,8 +4,8 @@ begin
 OperationRegion (PMRS, SystemIO, 0x0430, One)\n
 Field (PMRS, ByteAcc, NoLock, Preserve)\n
 {\n
-,   4, \n
-SLPE,   1\n
+    ,   4, \n
+    SLPE,   1\n
 }
 end;
 
@@ -15,7 +15,7 @@ begin
 OperationRegion (LPC0, PCI_Config, 0xA4, 0x02)\n
 Field (LPC0, ByteAcc, NoLock, Preserve)\n
 {\n
-AG3E,   1\n
+    AG3E,   1\n
 }
 end;
 
@@ -24,12 +24,12 @@ into method label PSKM insert
 begin
 If (LEqual (Arg0, 0x05))\n
 {\n
-Store (One, \_SB.PCI0.LPCB.AG3E)\n
-Store (Zero, SLPE)\n
-Sleep (0x10)\n
+    Store (One, \_SB.PCI0.LPCB.AG3E)\n
+    Store (Zero, SLPE)\n
+    Sleep (0x10)\n
 }\n
 Else\n
 {\n
-Store (Zero, \_SB.PCI0.LPCB.AG3E)\n
+    Store (Zero, \_SB.PCI0.LPCB.AG3E)\n
 }\n
 end;

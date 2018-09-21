@@ -11,6 +11,6 @@ into device label PCI0 insert
 begin
 Device (PATA)\n
 {\n
-	Name (_ADR, 0x00030002)\n
+    Name (_ADR, 0x00030002)\n
 }\n
 end;

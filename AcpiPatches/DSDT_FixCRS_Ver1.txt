@@ -2,103 +2,103 @@ into all code_regex Name\s\(MEMP([\S\s]*)MEMP\) replace_matched
 begin
 Name (MEMP, ResourceTemplate ()\n
 {\n
-WordBusNumber (ResourceProducer, MinFixed, MaxFixed, PosDecode,\n
-0x0000,\n
-0x0000,\n
-0x00FF,\n
-0x0000,\n
-0x0100,\n
-,, )\n
-IO (Decode16,\n
-0x0CF8,\n
-0x0CF8,\n
-0x01,\n
-0x08,  
-)\n
-WordIO (ResourceProducer, MinFixed, MaxFixed, PosDecode, EntireRange,\n
-0x0000,\n
-0x0000,\n
-0x0CF7,\n
-0x0000,\n
-0x0CF8,\n
-,, , TypeStatic, DenseTranslation)\n
-WordIO (ResourceProducer, MinNotFixed, MaxNotFixed, PosDecode, EntireRange,\n
-0x0000,\n
-0x0D00,\n
-0xFFFF,\n
-0x0000,\n
-0xF300,\n
-,, , TypeStatic, DenseTranslation)\n
-DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,\n
-0x00000000,\n
-0x000A0000,\n
-0x000BFFFF,\n
-0x00000000,\n
-0x00020000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,\n
-0x00000000,\n
-0x000C0000,\n
-0x000EFFFF,\n
-0x00000000,\n
-0x00030000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,\n
-0x00000000,\n
-0x000F0000,\n
-0x000FFFFF,\n
-0x00000000,\n
-0x00010000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,\n
-0x00000000,\n
-0xF0000000,\n
-0xFEC00000,\n
-0x00000000,\n
-0x0EC00001,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxNotFixed, NonCacheable, ReadWrite,\n
-0x00000000,\n
-0xBFF00000,\n
-0xDFFFFFFF,\n
-0x00000000,\n
-0x20100000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxFixed, NonCacheable, ReadWrite,\n
-0x00000000,\n
-0x00000000,\n
-0xEFFFFFFF,\n
-0x00000000,\n
-0x00000000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxNotFixed, NonCacheable, ReadWrite,\n
-0x00000000,\n
-0xFF980000,\n
-0xFF980FFF,\n
-0x00000000,\n
-0x00001000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxFixed, NonCacheable, ReadWrite,\n
-0x00000000,\n
-0xFF97C000,\n
-0xFF97FFFF,\n
-0x00000000,\n
-0x00000000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,\n
-0x00000000,\n
-0xFED20000,\n
-0xFED9FFFF,\n
-0x00000000,\n
-0x00080000,\n
-,, , AddressRangeMemory, TypeStatic)\n
-DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,\n
-0x00000000,\n
-0xFEDA7000,\n
-0xFEDA7FFF,\n
-0x00000000,\n
-0x00001000,\n
-,, , AddressRangeMemory, TypeStatic)\n
+    WordBusNumber (ResourceProducer, MinFixed, MaxFixed, PosDecode,\n
+    0x0000,\n
+    0x0000,\n
+    0x00FF,\n
+    0x0000,\n
+    0x0100,\n
+    ,, )\n
+    IO (Decode16,\n
+    0x0CF8,\n
+    0x0CF8,\n
+    0x01,\n
+    0x08,  
+    )\n
+    WordIO (ResourceProducer, MinFixed, MaxFixed, PosDecode, EntireRange,\n
+    0x0000,\n
+    0x0000,\n
+    0x0CF7,\n
+    0x0000,\n
+    0x0CF8,\n
+    ,, , TypeStatic, DenseTranslation)\n
+    WordIO (ResourceProducer, MinNotFixed, MaxNotFixed, PosDecode, EntireRange,\n
+    0x0000,\n
+    0x0D00,\n
+    0xFFFF,\n
+    0x0000,\n
+    0xF300,\n
+    ,, , TypeStatic, DenseTranslation)\n
+    DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,\n
+    0x00000000,\n
+    0x000A0000,\n
+    0x000BFFFF,\n
+    0x00000000,\n
+    0x00020000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,\n
+    0x00000000,\n
+    0x000C0000,\n
+    0x000EFFFF,\n
+    0x00000000,\n
+    0x00030000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,\n
+    0x00000000,\n
+    0x000F0000,\n
+    0x000FFFFF,\n
+    0x00000000,\n
+    0x00010000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,\n
+    0x00000000,\n
+    0xF0000000,\n
+    0xFEC00000,\n
+    0x00000000,\n
+    0x0EC00001,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxNotFixed, NonCacheable, ReadWrite,\n
+    0x00000000,\n
+    0xBFF00000,\n
+    0xDFFFFFFF,\n
+    0x00000000,\n
+    0x20100000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxFixed, NonCacheable, ReadWrite,\n
+    0x00000000,\n
+    0x00000000,\n
+    0xEFFFFFFF,\n
+    0x00000000,\n
+    0x00000000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxNotFixed, NonCacheable, ReadWrite,\n
+    0x00000000,\n
+    0xFF980000,\n
+    0xFF980FFF,\n
+    0x00000000,\n
+    0x00001000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinNotFixed, MaxFixed, NonCacheable, ReadWrite,\n
+    0x00000000,\n
+    0xFF97C000,\n
+    0xFF97FFFF,\n
+    0x00000000,\n
+    0x00000000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,\n
+    0x00000000,\n
+    0xFED20000,\n
+    0xFED9FFFF,\n
+    0x00000000,\n
+    0x00080000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
+    DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,\n
+    0x00000000,\n
+    0xFEDA7000,\n
+    0xFEDA7FFF,\n
+    0x00000000,\n
+    0x00001000,\n
+    ,, , AddressRangeMemory, TypeStatic)\n
 })\n
 Return (MEMP)
 end;

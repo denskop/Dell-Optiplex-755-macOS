@@ -3,12 +3,12 @@ into device label PCI0 insert
 begin
 Method (^BN00, 0, NotSerialized)\n
 {\n
-	Return (0x00)\n
+    Return (0x00)\n
 }\n
 
 Method (_BBN, 0, NotSerialized)\n
 {\n
-	Return (BN00 ())\n
+    Return (BN00 ())\n
 }\n
 end;
 

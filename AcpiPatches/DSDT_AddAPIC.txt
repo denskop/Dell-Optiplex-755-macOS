@@ -3,12 +3,12 @@ into device label PCI0 insert
 begin
 Device (APIC)\n
 {\n
-	Name (_HID, EisaId ("PNP0003"))\n
-	Name (_CRS, ResourceTemplate ()\n
-	{\n
-		Memory32Fixed (ReadOnly,\n
-		0xFEC00000,\n
-		0x00100000,)\n
-	})\n
+    Name (_HID, EisaId ("PNP0003"))\n
+    Name (_CRS, ResourceTemplate ()\n
+    {\n
+        Memory32Fixed (ReadOnly,\n
+        0xFEC00000,\n
+        0x00100000,)\n
+    })\n
 }\n
 end;

@@ -3,7 +3,7 @@ into device label PCI0 insert
 begin
 Device (HECI)\n
 {\n
-	Name (_ADR, 0x00030000)\n
+    Name (_ADR, 0x00030000)\n
 }\n
 end;
 
@@ -12,10 +12,10 @@ into device label PCI0 insert
 begin
 Device (ESI)\n
 {\n
-	Name (_ADR, Zero)\n
-	Method (_STA, 0, NotSerialized)\n
-	{\n
-		Return (0x0B)\n
-	}\n
+    Name (_ADR, Zero)\n
+    Method (_STA, 0, NotSerialized)\n
+    {\n
+        Return (0x0B)\n
+    }\n
 }\n
 end;

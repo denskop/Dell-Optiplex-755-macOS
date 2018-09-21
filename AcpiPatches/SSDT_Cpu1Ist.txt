@@ -22,26 +22,26 @@ into scope label \_PR.CPU1 insert
 begin
 Method (_PCT, 0, NotSerialized)\n
 {\n
-	Return (Package (0x02)\n
-	{\n
-		ResourceTemplate ()\n
-		{\n
-			Register (FFixedHW,\n
-			0x00,\n
-			0x00,\n
-			0x0000000000000000,\n
-			,)\n
-		},\n
-		\n
-		ResourceTemplate ()\n
-		{\n
-			Register (FFixedHW,\n
-			0x00,\n
-			0x00,\n
-			0x0000000000000000,\n
-			,)\n
-		}\n
-	})\n
+    Return (Package (0x02)\n
+    {\n
+        ResourceTemplate ()\n
+        {\n
+            Register (FFixedHW,\n
+            0x00,\n
+            0x00,\n
+            0x0000000000000000,\n
+            ,)\n
+        },\n
+        \n
+        ResourceTemplate ()\n
+        {\n
+            Register (FFixedHW,\n
+            0x00,\n
+            0x00,\n
+            0x0000000000000000,\n
+            ,)\n
+        }\n
+    })\n
 }\n
 end;
 
@@ -50,8 +50,8 @@ into scope label \_PR.CPU1 insert
 begin
 Method (_PSS, 0, NotSerialized)\n
 {\n
-	External(\_PR.CPU0._PSS, MethodObj)\n
-	Return (\_PR.CPU0._PSS)\n
+    External(\_PR.CPU0._PSS, MethodObj)\n
+    Return (\_PR.CPU0._PSS)\n
 }\n
 end;
 
@@ -60,31 +60,31 @@ into scope label \_PR.CPU1 insert
 begin
 Method (_PSD, 0, NotSerialized)\n
 {\n
-	If (And (PDC1, 0x0800)\n)\n
-	{\n
-		Return (Package (0x01)\n
-		{\n
-			Package (0x05)\n
-			{\n
-				0x05,\n
-				0x00,\n 
-				0x00,\n 
-				0xFE,\n 
-				0x02\n
-			}\n
-		})\n
-	}\n
+    If (And (PDC1, 0x0800)\n)\n
+    {\n
+        Return (Package (0x01)\n
+        {\n
+            Package (0x05)\n
+            {\n
+                0x05,\n
+                0x00,\n 
+                0x00,\n 
+                0xFE,\n 
+                0x02\n
+            }\n
+        })\n
+    }\n
 
-	Return (Package (0x01)\n
-	{\n
-		Package (0x05)\n
-		{\n
-			0x05,\n 
-			0x00,\n 
-			0x00,\n 
-			0xFC,\n 
-			0x02\n
-		}\n
-	})\n
+    Return (Package (0x01)\n
+    {\n
+        Package (0x05)\n
+        {\n
+            0x05,\n 
+            0x00,\n 
+            0x00,\n 
+            0xFC,\n 
+            0x02\n
+        }\n
+    })\n
 }\n
 end;

@@ -13,54 +13,54 @@ into device name_adr 0x001F0000 insert
 begin
 Device (HPET)\n
 {\n
-	Name (_HID, EisaId ("PNP0103"))\n
-	Name (BUF0, ResourceTemplate ()\n
-	{\n
-		IRQNoFlags ()\n
-		{0}\n
-		IRQNoFlags ()\n
-		{8}\n
-		Memory32Fixed (ReadOnly,\n
-		0xFED00000,\n
-		0x00000400,\n
-		_Y09)\n
-	})\n
+    Name (_HID, EisaId ("PNP0103"))\n
+    Name (BUF0, ResourceTemplate ()\n
+    {\n
+        IRQNoFlags ()\n
+        {0}\n
+        IRQNoFlags ()\n
+        {8}\n
+        Memory32Fixed (ReadOnly,\n
+        0xFED00000,\n
+        0x00000400,\n
+        _Y09)\n
+    })\n
 
-	Method (_STA, 0, NotSerialized)\n
-	{\n
-		If (HPAE)\n
-		{\n
-			Return (0x0F)\n
-		}\n
-		Else\n
-		{\n
-			Return (0x00)\n
-		}\n
-	}\n
-	
-	Method (_CRS, 0, Serialized)\n
-	{\n
-		If (HPAE)\n
-		{\n
-			CreateDWordField (BUF0, ^_Y09._BAS, HPT0)\n
-			If (LEqual (HPAS, 0x01))\n
-			{\n
-				Store (0xFED01000, HPT0)\n
-			}\n
-			
-			If (LEqual (HPAS, 0x02))\n
-			{\n
-				Store (0xFED02000, HPT0)\n
-			}\n
-			
-			If (LEqual (HPAS, 0x03))\n
-			{\n
-				Store (0xFED03000, HPT0)\n
-			}\n
-		}\n
+    Method (_STA, 0, NotSerialized)\n
+    {\n
+        If (HPAE)\n
+        {\n
+            Return (0x0F)\n
+        }\n
+        Else\n
+        {\n
+            Return (0x00)\n
+        }\n
+    }\n
+    
+    Method (_CRS, 0, Serialized)\n
+    {\n
+        If (HPAE)\n
+        {\n
+            CreateDWordField (BUF0, ^_Y09._BAS, HPT0)\n
+            If (LEqual (HPAS, 0x01))\n
+            {\n
+                Store (0xFED01000, HPT0)\n
+            }\n
+            
+            If (LEqual (HPAS, 0x02))\n
+            {\n
+                Store (0xFED02000, HPT0)\n
+            }\n
+            
+            If (LEqual (HPAS, 0x03))\n
+            {\n
+                Store (0xFED03000, HPT0)\n
+            }\n
+        }\n
 
-		Return (BUF0)\n
-	}\n
+        Return (BUF0)\n
+    }\n
 }\n
 end;
 
@@ -70,41 +70,41 @@ begin
 OperationRegion(RCBA, PCI_Config, 0xF0, 4)\n
 Field(RCBA, DWordAcc, NoLock, Preserve)\n
 {\n
-	RCB1, 32,\n
+    RCB1, 32,\n
 }\n
 
 OperationRegion (RCRB, SystemMemory, And(RCB1,Not(Subtract(ShiftLeft(1,14),1))), 0x4000)\n
 Field (RCRB, DWordAcc, Lock, Preserve)\n
 {\n
-	Offset (0x1000),\n
-	Offset (0x3000),\n
-	Offset (0x3404),\n
-	HPAS,2,\n
-	,5,\n
-	HPAE,1,\n
-	Offset (0x3418),\n
-	,1,\n
-	,1,\n
-	SATD,1,\n
-	SMBD,1,\n
-	HDAD,1,\n
-	,2,\n
-	UH6D,1,\n
-	UH1D,1,\n
-	UH2D,1,\n
-	UH3D,1,\n\n
-	UH4D,1,\n
-	UH5D,1,\n
-	Offset (0x341A),\n
-	RP1D,1,\n
-	RP2D,1,\n
-	RP3D,1,\n
-	RP4D,1,\n
-	RP5D,1,\n
-	RP6D,1,\n
-	RP7D,1,\n
-	RP8D,1,\n
-	,4,\n
-	UH7D,1\n
+    Offset (0x1000),\n
+    Offset (0x3000),\n
+    Offset (0x3404),\n
+    HPAS,2,\n
+    ,5,\n
+    HPAE,1,\n
+    Offset (0x3418),\n
+    ,1,\n
+    ,1,\n
+    SATD,1,\n
+    SMBD,1,\n
+    HDAD,1,\n
+    ,2,\n
+    UH6D,1,\n
+    UH1D,1,\n
+    UH2D,1,\n
+    UH3D,1,\n\n
+    UH4D,1,\n
+    UH5D,1,\n
+    Offset (0x341A),\n
+    RP1D,1,\n
+    RP2D,1,\n
+    RP3D,1,\n
+    RP4D,1,\n
+    RP5D,1,\n
+    RP6D,1,\n
+    RP7D,1,\n
+    RP8D,1,\n
+    ,4,\n
+    UH7D,1\n
 }\n
 end;

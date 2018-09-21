@@ -11,6 +11,6 @@ into device label PCI0 insert
 begin
 Device (URT3)\n
 {\n
-	Name (_ADR, 0x00030003)\n
+    Name (_ADR, 0x00030003)\n
 }\n
 end;

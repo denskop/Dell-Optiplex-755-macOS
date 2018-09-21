@@ -1,7 +1,7 @@
 into device label PCI0 insert
 begin
-	Device (GIGE)\n
-	{\n
-		Name (_ADR, 0x00190000)\n
-	}\n
+Device (GIGE)\n
+{\n
+    Name (_ADR, 0x00190000)\n
+}\n
 end;
