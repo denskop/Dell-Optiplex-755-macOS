@@ -9,6 +9,9 @@ KEXTS_PATH="$SELF_PATH/Kexts"
 EFI_PATH="$SELF_PATH/EFI"
 CLOVER_PATH="$EFI_PATH/Clover"
 
+# Remove build folder
+rm -rf "$BUILD_PATH"
+
 ## Combine acpi tables
 mkdir -p "$BUILD_PATH/Clover/ACPI/patched"
 mv "$TEMP_PATH/Dsl/"*.aml "$BUILD_PATH/Clover/ACPI/patched"

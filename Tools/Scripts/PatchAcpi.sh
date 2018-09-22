@@ -14,6 +14,9 @@ IASL_FLAGS=""
 PATCH="$TOOLS_PATH/patchmatic"
 PATCH2="$TOOLS_PATH/patch.sh"
 
+# Remove dsl folder
+rm -rf "$TEMP_PATH/Dsl"
+
 ## Disassemble acpi tables
 
 # SSDT, DSDT

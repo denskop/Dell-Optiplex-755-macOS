@@ -6,7 +6,7 @@ SELF_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ADD_EC_DEVICE="No"
 
 # Additional paths
-ORIGIN_PATH="$SELF_PATH/OriginA22"
+ORIGIN_PATH="$SELF_PATH/Origin"
 
 TOOLS_PATH="$SELF_PATH/Tools"
 SCRIPTS_PATH="$TOOLS_PATH/Scripts"
