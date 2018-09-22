@@ -20,17 +20,17 @@ rm -rf "$TEMP_PATH/Dsl"
 ## Disassemble acpi tables
 
 # SSDT, DSDT
-$IASL -dl -da "$ORIGIN_PATH/AcpiDump/SSDT"* "$ORIGIN_PATH/AcpiDump/DSDT.aml"
+$IASL -dl -da "$ORIGIN_PATH/SSDT"* "$ORIGIN_PATH/DSDT.aml"
 
 # Other tables
-$IASL -dl "$ORIGIN_PATH/AcpiDump/APIC.aml"
-$IASL -dl "$ORIGIN_PATH/AcpiDump/ASF!.aml"
-$IASL -dl "$ORIGIN_PATH/AcpiDump/HPET.aml"
-$IASL -dl "$ORIGIN_PATH/AcpiDump/MCFG.aml"
+$IASL -dl "$ORIGIN_PATH/APIC.aml"
+$IASL -dl "$ORIGIN_PATH/ASF!.aml"
+$IASL -dl "$ORIGIN_PATH/HPET.aml"
+$IASL -dl "$ORIGIN_PATH/MCFG.aml"
 
 # Move dsl
 mkdir -p "$TEMP_PATH/Dsl"
-mv "$ORIGIN_PATH/AcpiDump/"*.dsl "$TEMP_PATH/Dsl"
+mv "$ORIGIN_PATH/"*.dsl "$TEMP_PATH/Dsl"
 
 ## Patch acpi tables
 
