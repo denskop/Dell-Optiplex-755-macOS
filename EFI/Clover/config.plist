@@ -100,8 +100,6 @@
 	</dict>
 	<key>Boot</key>
 	<dict>
-		<key>Arguments</key>
-		<string></string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>DisableCloverHotkeys</key>
@@ -129,8 +127,6 @@
 	</dict>
 	<key>CPU</key>
 	<dict>
-		<key>FrequencyMHz</key>
-		<integer>3000</integer>
 		<key>SavingMode</key>
 		<integer>0</integer>
 	</dict>
@@ -147,40 +143,31 @@
 						<key>Key</key>
 						<string>alc-layout-id</string>
 						<key>Value</key>
-						<data>
-						CwAAAA==
-						</data>
+						<data>CwAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>layout-id</string>
 						<key>Value</key>
-						<data>
-						TgAAAA==
-						</data>
+						<data>TgAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>platformFamily</string>
 						<key>Value</key>
-						<data>
-						AA==
-						</data>
+						<data>AA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>PinConfigurations</string>
 						<key>Value</key>
-						<data>
-						</data>
+						<data></data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>MaximumBootBeepVolume</string>
 						<key>Value</key>
-						<data>
-						TQ==
-						</data>
+						<data>TQ==</data>
 					</dict>
 				</array>
 				<key>PciAddr</key>
@@ -195,9 +182,7 @@
 						<key>Key</key>
 						<string>built-in</string>
 						<key>Value</key>
-						<data>
-						AA==
-						</data>
+						<data>AA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -224,17 +209,13 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 				</array>
 				<key>PciAddr</key>
@@ -249,33 +230,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						FikAAA==
-						</data>
+						<data>FikAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -308,33 +281,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						NigAAA==
-						</data>
+						<data>NigAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -367,33 +332,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						OigAAA==
-						</data>
+						<data>OigAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -426,33 +383,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						NDoAAA==
-						</data>
+						<data>NDoAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -485,33 +434,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						NToAAA==
-						</data>
+						<data>NToAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -544,33 +485,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						NjoAAA==
-						</data>
+						<data>NjoAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -603,33 +536,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						NzoAAA==
-						</data>
+						<data>NzoAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -662,33 +587,25 @@
 						<key>Key</key>
 						<string>subsystem-vendor-id</string>
 						<key>Value</key>
-						<data>
-						axAAAA==
-						</data>
+						<data>axAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>subsystem-id</string>
 						<key>Value</key>
-						<data>
-						oAAAAA==
-						</data>
+						<data>oAAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>vendor-id</string>
 						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
+						<data>hoAAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
 						<string>device-id</string>
 						<key>Value</key>
-						<data>
-						ODoAAA==
-						</data>
+						<data>ODoAAA==</data>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -718,8 +635,6 @@
 			<key>ResetHDA</key>
 			<false/>
 		</dict>
-		<key>NoDefaultProperties</key>
-		<true/>
 		<key>USB</key>
 		<dict>
 			<key>FixOwnership</key>
@@ -749,33 +664,28 @@
 			<string>BOOTX64.EFI</string>
 			<string>Preboot</string>
 		</array>
-		<key>Language</key>
-		<string>ru:0</string>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
 			<false/>
 		</dict>
-		<key>ScreenResolution</key>
-		<string>1920x1080</string>
-		<key>Theme</key>
-		<string>embedded</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
 		<key>Inject</key>
 		<dict>
-			<key>ATI</key>
-			<false/>
 			<key>Intel</key>
-			<false/>
-			<key>NVidia</key>
 			<false/>
 		</dict>
 		<key>LoadVBios</key>
-		<false/>
+		<true/>
 		<key>PatchVBios</key>
-		<false/>
+		<true/>
+		<key>EDID</key>
+		<dict>
+			<key>Inject</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -791,15 +701,11 @@
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
-				<data>
-				QVBQTEUgU1NEAA==
-				</data>
+				<data>QVBQTEUgU1NEAA==</data>
 				<key>Name</key>
 				<string>IOAHCIBlockStorage</string>
 				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAA==
-				</data>
+				<data>AAAAAAAAAAAAAA==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -807,31 +713,20 @@
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
-				<data>
-				QGACAA==
-				</data>
+				<data>QGACAA==</data>
 				<key>MatchOS</key>
 				<string>10.13.x</string>
 				<key>Name</key>
 				<string>AppleAHCIPort</string>
 				<key>Replace</key>
-				<data>
-				AAAAAA==
-				</data>
+				<data>AAAAAA==</data>
 			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>
-	<dict>
-		<key>BooterConfig</key>
-		<string>0x28</string>
-		<key>CsrActiveConfig</key>
-		<string>0x3E7</string>
-	</dict>
+	<dict/>
 	<key>SMBIOS</key>
 	<dict>
-		<key>ProductName</key>
-		<string>iMac10,1</string>
 		<key>Trust</key>
 		<true/>
 	</dict>
@@ -841,8 +736,6 @@
 		<string>YES</string>
 		<key>InjectSystemID</key>
 		<true/>
-		<key>NvidiaWeb</key>
-		<false/>
 	</dict>
 </dict>
 </plist>
