@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BoardInfo</key>
+	<dict>
+		<key>ProductName</key>
+		<string>iMac10,1</string>
+		<key>BoardSerialNumber</key>
+		<string></string>
+		<key>SerialNumber</key>
+		<string></string>
+		<key>MLB</key>
+		<string></string>
+		<key>ROM</key>
+		<data></data>
+	</dict>
+	<key>Boot</key>
+	<dict>
+		<key>Arguments</key>
+		<string>-v</string>
+	</dict>
+	<key>GUI</key>
+	<dict>
+		<key>DarkTheme</key>
+		<true/>
+		<key>Language</key>
+		<string>en:0</string>
+		<key>ScreenResolution</key>
+		<string>1920x1080</string>
+	</dict>
+	<key>SIP</key>
+	<dict>
+		<key>CsrActiveConfig</key>
+		<string>0x3E7</string>
+		<key>BooterConfig</key>
+		<string>0x28</string>
+	</dict>
+	<key>Videocard</key>
+	<dict>
+		<key>Nvidia</key>
+		<dict>
+			<key>Inject</key>
+			<false/>
+			<key>NvidiaWeb</key>
+			<false/>
+		</dict>
+		<key>AMD</key>
+		<dict>
+			<key>FakeID</key>
+			<string></string>
+		</dict>
+	</dict>
+</dict>
+</plist>
