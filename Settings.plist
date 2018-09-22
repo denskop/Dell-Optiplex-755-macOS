@@ -41,7 +41,7 @@
 		<key>Nvidia</key>
 		<dict>
 			<key>Inject</key>
-			<false/>
+			<true/>
 			<key>NvidiaWeb</key>
 			<false/>
 		</dict>

@@ -634,6 +634,8 @@
 		<dict>
 			<key>ResetHDA</key>
 			<false/>
+			<key>Inject</key>
+			<false/>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -680,6 +682,8 @@
 		<key>LoadVBios</key>
 		<true/>
 		<key>PatchVBios</key>
+		<true/>
+		<key>NvidiaGeneric</key>
 		<true/>
 		<key>EDID</key>
 		<dict>
