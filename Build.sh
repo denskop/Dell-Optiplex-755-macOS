@@ -12,7 +12,7 @@ TOOLS_PATH="$SELF_PATH/Tools"
 SCRIPTS_PATH="$TOOLS_PATH/Scripts"
 
 ## ACPI
-#source "$SCRIPTS_PATH/PatchAcpi.sh"
+source "$SCRIPTS_PATH/PatchAcpi.sh"
 
 ## Bootloader
 source "$SCRIPTS_PATH/ConstructClover.sh"
