@@ -13,7 +13,6 @@ Device (GFX0)\n
 Device (HDAU)\n
 {\n
     Name (_ADR, 0x1)\n
-    Name (HDAV, Zero)\n
 
     OperationRegion (HDAH, PCI_Config, 0x00, 0x40)\n
     Field (HDAH, ByteAcc, NoLock, Preserve)\n
@@ -26,34 +25,30 @@ Device (HDAU)\n
     {\n
         If (LNotEqual (And (VID0, 0xFFFF), 0xFFFF))\n
         {\n
-            Store (One, HDAV)\n
+            Return (0x0F)\n
         }\n
+        Return (Zero)\n
     }\n
 
-    Method (_DSM, 4, NotSerialized)\n
-    {\n
-        If (LEqual (Arg0, Buffer (0x10)\n
-        {\n
-            /* 0000 */   0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,\n
-            /* 0008 */   0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B\n
-        }))\n
-        {\n
-            If (HDAV)\n
-            {\n
-                Store (Package (0x02)\n
-                {\n
-                    "hda-gfx",\n
-                    Buffer (0x0A)\n
-                    {\n
-                        "onboard-1"\n
-                    }\n
-                }, Local0)\n
-                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))\n
-                Return (Local0)\n
-            }\n
-        }\n
-
-        Return (0x80000002)\n
-    }\n
+    Method (_DSM, 4, NotSerialized)
+    {
+        If (Arg0 == ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b"))
+        {
+            If ((VID0 & 0xFFFF) != 0xFFFF)
+            {
+                Local0 = Package (0x02)
+                {
+                    "hda-gfx", 
+                    Buffer (0x0A)
+                    {
+                        "onboard-1"
+                    }
+                }
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                Return (Local0)
+            }
+        }
+        Return (0x80000002)
+    }
 }\n
 end;
