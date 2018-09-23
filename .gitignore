@@ -6,4 +6,6 @@
 
 # repo
 Build/
+Origin/*.aml
+Origin/*.txt
 ToDo.txt
