@@ -12,6 +12,8 @@
 			<dict>
 				<key>FixRegions</key>
 				<true/>
+				<key>FixRTC</key>
+				<true/>
 			</dict>
 			<key>Name</key>
 			<string>DSDT.aml</string>
