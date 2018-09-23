@@ -1,3 +1,4 @@
+# Add DTGP method
 into method label DTGP remove_entry;
 into definitionblock code_regex . insert
 begin
@@ -31,4 +32,27 @@ Method (DTGP, 5, NotSerialized)\n
     }, Arg4)\n
     Return (Zero)\n
 }
-end
+end;
+
+# Add OSDW method
+into scope label \ code_regex Name\s\(MSOS,\sZero\) insert
+begin
+Method (OSDW, 0, NotSerialized)\n
+{\n
+    If (CondRefOf (_OSI, Local0))\n
+    {\n
+        If (_OSI ("Darwin"))\n
+        {\n
+            Return (One)\n
+        }\n
+        Else\n
+        {\n
+            Return (Zero)\n
+        }\n
+    }\n
+    Else\n
+    {\n
+        Return (Zero)\n
+    }\n
+}\n
+end;

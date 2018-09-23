@@ -19,17 +19,18 @@ Field (LPC0, ByteAcc, NoLock, Preserve)\n
 }
 end;
 
-# Fix
-into method label PSKM insert
+# Fix PTS
+into method label _PTS code_regex_not If\s*\(LEqual\s*\(Arg0,\s*0x05\)\) code_regex ^((?:.|\n)*)$ replace_matched
 begin
-If (LEqual (Arg0, 0x05))\n
-{\n
-    Store (One, \_SB.PCI0.LPCB.AG3E)\n
-    Store (Zero, SLPE)\n
-    Sleep (0x10)\n
-}\n
-Else\n
-{\n
-    Store (Zero, \_SB.PCI0.LPCB.AG3E)\n
-}\n
+    If (LEqual (Arg0, 0x05))\n
+    {\n
+        Store (One, \\_SB.PCI0.LPCB.AG3E)\n
+        Store (Zero, SLPE)\n
+        Sleep (0x10)\n
+    }\n
+    Else\n
+    {\n
+        Store (Zero, \\_SB.PCI0.LPCB.AG3E)\n
+%1
+    }
 end;

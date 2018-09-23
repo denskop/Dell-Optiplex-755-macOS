@@ -17,6 +17,8 @@ mkdir -p "$BUILD_PATH/Clover/ACPI/patched"
 mv "$TEMP_PATH/Dsl/"*.aml "$BUILD_PATH/Clover/ACPI/patched"
 mv "$ACPI_EXTRA_PATH/"*.aml "$BUILD_PATH/Clover/ACPI/patched"
 
+rm "$BUILD_PATH/Clover/ACPI/patched/SSDT_PciCrsOrig.aml"
+
 if [ $ADD_EC_DEVICE != "Yes" ]; then
     rm "$BUILD_PATH/Clover/ACPI/patched/"ECDT.aml
 fi
@@ -35,6 +37,11 @@ cp -v -R "$EFI_PATH/IntelDrivers/." "$BUILD_PATH/Clover/drivers64"
 
 # kexts
 mkdir -p "$BUILD_PATH/Clover/kexts"
+
+# Mountain Lion
+mkdir -p "$BUILD_PATH/Clover/kexts/10.8"
+cp -v -R "$KEXTS_PATH/macOS_10.8/." "$BUILD_PATH/Clover/kexts/10.8"
+cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.8"
 
 # High Sierra
 mkdir -p "$BUILD_PATH/Clover/kexts/10.13"

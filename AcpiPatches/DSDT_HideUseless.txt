@@ -1,26 +1,3 @@
-# Add OSDW method
-into scope label \ code_regex Name\s\(MSOS,\sZero\) insert
-begin
-Method (OSDW, 0, NotSerialized)\n
-{\n
-    If (CondRefOf (_OSI, Local0))\n
-    {\n
-        If (_OSI ("Darwin"))\n
-        {\n
-            Return (One)\n
-        }\n
-        Else\n
-        {\n
-            Return (Zero)\n
-        }\n
-    }\n
-    Else\n
-    {\n
-        Return (Zero)\n
-    }\n
-}\n
-end;
-
 # Add usefull registers to LPC
 into scope code_regex NSCA insert
 begin

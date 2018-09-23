@@ -1,3 +1,7 @@
+# Kernel log:
+# ACPI Warning: \_SB.PCI0.RP02._PRT: Return Package has no elements
+# ACPI Warning: \_SB.PCI0.RP05._PRT: Return Package has no elements
+
 # Disable RP02
 into device name_adr 0x001C0001 insert
 begin
@@ -10,8 +14,17 @@ begin
 Name (_STA, Zero)
 end;
 
+# Remove _PRW
+into device name_adr 0x001C0004 code_regex Name.*_PRW.*\n.*\n.*\n.*\n.*\}\) remove_matched;
+
 # Disable RP06
 into device name_adr 0x001C0005 insert
 begin
 Name (_STA, Zero)
 end;
+
+# Remove _PRW
+into device name_adr 0x001C0005 code_regex Name.*_PRW.*\n.*\n.*\n.*\n.*\}\) remove_matched;
+
+# Remove GPE _L1A
+into method label _GPE._L1A remove_entry;
