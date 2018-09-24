@@ -68,6 +68,23 @@
 			<key>Vendor Name</key>
 			<string>Intel</string>
 		</dict>
+		<key>ICH9RRAID</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleAHCIPort</string>
+			<key>Chipset Name</key>
+			<string>ICH9-R RAID</string>
+			<key>IOClass</key>
+			<string>AppleICH8AHCI</string>
+			<key>IOPCIPrimaryMatch</key>
+			<string>0x28228086</string>
+			<key>IOProbeScore</key>
+			<integer>2000</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>Vendor Name</key>
+			<string>Intel</string>
+		</dict>
 		<key>ICH9RIDE</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -77,7 +94,28 @@
 			<key>IOClass</key>
 			<string>AppleIntelPIIXATARoot</string>
 			<key>IOPCIPrimaryMatch</key>
-			<string>0x29278086</string>
+			<string>0x29208086</string>
+			<key>IOProbeScore</key>
+			<integer>2000</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>PCS Port Map</key>
+			<data>kgGTAZICkwKSBJMEkgiTCA==</data>
+			<key>Serial ATA</key>
+			<true/>
+			<key>Supported Transfer Modes</key>
+			<string>0x3f061d</string>
+		</dict>
+		<key>ICH9RIDE2</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleIntelPIIXATA</string>
+			<key>Controller Name</key>
+			<string>ICH9 SATA</string>
+			<key>IOClass</key>
+			<string>AppleIntelPIIXATARoot</string>
+			<key>IOPCIPrimaryMatch</key>
+			<string>0x29268086</string>
 			<key>IOProbeScore</key>
 			<integer>2000</integer>
 			<key>IOProviderClass</key>
