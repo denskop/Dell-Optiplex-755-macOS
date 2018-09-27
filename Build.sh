@@ -19,3 +19,6 @@ source "$SCRIPTS_PATH/ConstructClover.sh"
 
 ## Settings
 source "$SCRIPTS_PATH/ApplySettings.sh"
+
+## Mojave workaround
+source "$SCRIPTS_PATH/MojaveOnly.sh"
