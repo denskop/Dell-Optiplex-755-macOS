@@ -20,6 +20,10 @@
 		<array>
 			<dict>
 				<key>Signature</key>
+				<string>____</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
 				<string>APIC</string>
 			</dict>
 			<dict>
