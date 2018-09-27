@@ -43,10 +43,35 @@ mkdir -p "$BUILD_PATH/Clover/kexts/10.8"
 cp -v -R "$KEXTS_PATH/macOS_10.8/." "$BUILD_PATH/Clover/kexts/10.8"
 cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.8"
 
+# Maverics
+mkdir -p "$BUILD_PATH/Clover/kexts/10.9"
+cp -v -R "$KEXTS_PATH/macOS_10.9/." "$BUILD_PATH/Clover/kexts/10.9"
+cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.9"
+
+# Yosemite
+mkdir -p "$BUILD_PATH/Clover/kexts/10.10"
+cp -v -R "$KEXTS_PATH/macOS_10.10/." "$BUILD_PATH/Clover/kexts/10.10"
+cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.10"
+
+# El Capitan
+mkdir -p "$BUILD_PATH/Clover/kexts/10.11"
+cp -v -R "$KEXTS_PATH/macOS_10.11/." "$BUILD_PATH/Clover/kexts/10.11"
+cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.11"
+
+# High Sierra
+mkdir -p "$BUILD_PATH/Clover/kexts/10.12"
+cp -v -R "$KEXTS_PATH/macOS_10.12/." "$BUILD_PATH/Clover/kexts/10.12"
+cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.12"
+
 # High Sierra
 mkdir -p "$BUILD_PATH/Clover/kexts/10.13"
 cp -v -R "$KEXTS_PATH/macOS_10.13/." "$BUILD_PATH/Clover/kexts/10.13"
 cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.13"
+
+# Mojave
+mkdir -p "$BUILD_PATH/Clover/kexts/10.14"
+cp -v -R "$KEXTS_PATH/macOS_10.14/." "$BUILD_PATH/Clover/kexts/10.14"
+cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.14"
 
 # themes
 mkdir -p "$BUILD_PATH/Clover/themes"
