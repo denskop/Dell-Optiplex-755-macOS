@@ -1,0 +1,19 @@
+# EHCI sleep code
+into method label _GPE._L0D insert
+begin
+If (\_SB.PCI0.EHC1.PMES)\n
+{\n
+    \_SB.PCI0.EHC1.PMES = One\n
+    Notify (\_SB.PCI0.EHC1, 0x02)\n
+    Notify (\_SB.PWRB, 0x02)\n
+}\n
+\n
+If (\_SB.PCI0.EHC2.PMES)\n
+{\n
+    \_SB.PCI0.EHC2.PMES = One\n
+    Notify (\_SB.PCI0.EHC2, 0x02)\n
+    Notify (\_SB.PWRB, 0x02)\n
+}\n
+\n
+Notify (\_SB.PCI0.HDEF, 0x02)\n
+end;

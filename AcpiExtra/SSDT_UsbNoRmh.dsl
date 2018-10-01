@@ -263,10 +263,10 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
             
             
             Method (_DSM, 4, NotSerialized)
-{
-    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-    Return (Package()
-    {
+            {
+                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                Return (Package()
+                {
                         "AAPL,current-available", 
                         0x0834, 
                         "AAPL,current-extra", 
@@ -281,8 +281,8 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                         {
                              0x00
                         }
-                    })
-}
+                 })
+            }
 
             Method (_S3D, 0, NotSerialized)
             {
@@ -293,7 +293,13 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
             {
                 Return (0x03)
             }
-
+            
+            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
+            {
+                0x0D, 
+                0x03
+            })
+            
             Device (RHUB)
             {
                 Name (_ADR, 0x00)
@@ -655,6 +661,12 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                 Return (0x03)
             }
 
+            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
+            {
+                0x0D, 
+                0x03
+            })
+            
             Device (RHUB)
             {
                 Name (_ADR, 0x00)
