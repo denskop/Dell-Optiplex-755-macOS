@@ -1,6 +1,10 @@
 # EHCI sleep code
 into method label _GPE._L0D insert
 begin
+External (\_SB.PCI0.EHC1.PMES, IntObj)
+External (\_SB.PCI0.EHC2.PMES, IntObj)
+External (\_SB.PCI0.HDEF, DeviceObj)
+
 If (\_SB.PCI0.EHC1.PMES)\n
 {\n
     \_SB.PCI0.EHC1.PMES = One\n
