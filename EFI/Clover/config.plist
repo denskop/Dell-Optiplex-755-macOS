@@ -109,6 +109,8 @@
 			<key>Generate</key>
 			<false/>
 		</dict>
+		<key>DisableASPM</key>
+		<true/>
 		<key>smartUPS</key>
 		<false/>
 	</dict>
