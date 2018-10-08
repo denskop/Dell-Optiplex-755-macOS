@@ -1,0 +1,40 @@
+# CFGD for Core 2 Duo (Desktop)
+# Hex: 0x013B68F5
+# Bin: 0001 0011 1011 0110 1000 1111 0101
+# Comment: Apple uses this value for E7600 (iMac10,1)
+#
+# Bit definitions are the same as PPMFlags:
+# CFGD[0]   = GV3                           = Yes
+# CFGD[1]   = Turbo Mode                    = No
+# CFGD[2]   = N/2 Ratio                     = Yes
+# CFGD[3]   = Unknown                       = No
+# CFGD[4]   = C1 Capable, Enabled           = Yes
+# CFGD[5]   = C2 Capable, Enabled           = Yes
+# CFGD[6]   = C3 Capable, Enabled           = Yes
+# CFGD[7]   = C4 Capable, Enabled           = Yes
+# CFGD[8]   = C5/Deep C4 Capable, Enabled   = No
+# CFGD[9]   = C6 Capable, Enabled           = No
+# CFGD[10]  = C1E Enabled                   = No
+# CFGD[11]  = C2E Enabled                   = Yes
+# CFGD[12]  = C3E Enabled                   = No
+# CFGD[13]  = C4E Enabled                   = Yes
+# CFGD[14]  = Hard C4E Capable, Enabled     = Yes
+# CFGD[15]  = Unknown                       = No
+# CFGD[16]  = Thermal Monitor 1             = Yes
+# CFGD[17]  = Thermal Monitor 2             = Yes
+# CFGD[18]  = Unknown                       = No
+# CFGD[19]  = Bi-directional ProcHot        = Yes
+# CFGD[20]  = Unknown                       = Yes        
+# CFGD[21]  = MWAIT extensions supported    = Yes
+# CFGD[22]  = Unknown                       = No
+# CFGD[23]  = Unknown                       = No
+# CFGD[24]  = CMP supported, Enabled        = Yes
+# CFGD[25]  = Unknown                       = No
+# CFGD[26]  = Unknown                       = No
+# CFGD[27]  = Unknown                       = No
+# CFGD[28]  = CPU T states supported        = Yes
+#
+into scope label \ code_regex 0x00000002 replace_matched 
+begin
+0x013B68F5
+end;

@@ -1,5 +1,0 @@
-# CFGD
-into scope label \ code_regex 0x00000002 replace_matched 
-begin
-0x1D3B69F1
-end;

@@ -92,6 +92,7 @@ $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Sata.txt
 $PATCH "$TEMP_PATH/Dsl/"SSDT_Cpu0Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu0Ist.txt
 $PATCH "$TEMP_PATH/Dsl/"SSDT_Cpu1Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu1Ist.txt
 $PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm.txt
+$PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Duo.txt
 
 ## Patch2 acpi tables
 
