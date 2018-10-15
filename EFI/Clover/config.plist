@@ -738,6 +738,18 @@
 				<key>Replace</key>
 				<data>AAAAAA==</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Rename ICH8 to ICH9</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>QXBwbGVJQ0g4QUhDSQ==</data>
+				<key>Name</key>
+				<string>AppleAHCIPort</string>
+				<key>Replace</key>
+				<data>QXBwbGVJQ0g5QUhDSQ==</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>

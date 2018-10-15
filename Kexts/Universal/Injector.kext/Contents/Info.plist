@@ -68,6 +68,23 @@
 			<key>Vendor Name</key>
 			<string>Intel</string>
 		</dict>
+		<key>ICH9RAHCI_V2</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleAHCIPort</string>
+			<key>Chipset Name</key>
+			<string>ICH9-R AHCI</string>
+			<key>IOClass</key>
+			<string>AppleICH9AHCI</string>
+			<key>IOPCIPrimaryMatch</key>
+			<string>0x29228086</string>
+			<key>IOProbeScore</key>
+			<integer>2000</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>Vendor Name</key>
+			<string>Intel</string>
+		</dict>
 		<key>ICH9RRAID</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
