@@ -77,11 +77,12 @@ Field (RCRB, DWordAcc, Lock, Preserve)\n
     HPAE,1,\n
     Offset (0x3418),\n
     ,1,\n
-    ,1,\n
+    PATD,1,\n
     SATD,1,\n
     SMBD,1,\n
     HDAD,1,\n
-    ,2,\n
+    A97D,1,\n
+        ,1,\n
     UH6D,1,\n
     UH1D,1,\n
     UH2D,1,\n
