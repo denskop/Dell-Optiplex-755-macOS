@@ -1,0 +1,7 @@
+# Add Darwin to board logic (fix long wake up)
+into method label _INI parent_label _SB insert
+begin
+If (OSDW()) {\n
+    MSOS = 0x04\n
+}\n
+end;

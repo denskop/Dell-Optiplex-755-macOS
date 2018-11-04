@@ -1,2 +1,21 @@
+# Header
 Find: DefinitionBlock ("", "SSDT", 1, "DELL", "st_ex", 0x00001000)
 Replace: DefinitionBlock ("", "SSDT", 1, "APPLE", "SsdtExtn", 0x00001000)
+
+# Fix _Sx states
+into_all all code_regex Name.*_S((?:\d)).*\) replaceall_matched
+begin
+Name (\\_S%1, Package (0x03)
+end;
+
+into_all all code_regex \{\n\s*((?:.)*),\s\n\s*((?:.)*),[\S\s]*?\} replaceall_matched
+begin
+{\n
+    %1,\n
+    %2,\n 
+    Zero\n 
+}\n
+end;
+
+# Remove _S1 state
+into all code_regex Name.*_S1[\S\s]*?\) remove_matched;
