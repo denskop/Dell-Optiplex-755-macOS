@@ -1,0 +1,9 @@
+# Add SLPB (Sleep Button) device
+into scope label \ insert
+begin
+Device (_SB.SLPB)\n
+{\n
+    Name (_HID, EisaId ("PNP0C0E"))\n
+    Name (_STA, 0x0B)\n
+}\n
+end;
