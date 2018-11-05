@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:ASF!.txt">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "DSDT">
+      <FileRef
+         location = "group:DSDT_FixIPIC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddAPIC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddBBN.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddFakeEC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddGFX0.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddGLAN.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddOSC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddOther.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddPXSX.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddSLPB.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddSmbus.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddUART.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AppleSpecific.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_CpuSection.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixADR.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixCRS_Ver1.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixEHCI.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixErrors.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixFields.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixGPE.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixHPET.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixIRQ.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixMutex.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixOSInit.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixPTS.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixRTC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixUHCI.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixUID.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixWAK.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_GRFX.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_Header.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_HidePSKb.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_HideUseless.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_PCI.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_PSKbAsEC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_RemoveCRS.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_Rename.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_Sata.txt">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:HPET.txt">
+   </FileRef>
+   <FileRef
+      location = "group:MCFG.txt">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "SSDT">
+      <FileRef
+         location = "group:SSDT_Cpu0Ist.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SSDT_Cpu1Ist.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SSDT_CpuPm_Core2Duo.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SSDT_CpuPm.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SSDT_External.txt">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Table_Loki.txt">
+   </FileRef>
+   <FileRef
+      location = "group:Table_OemID.txt">
+   </FileRef>
+   <FileRef
+      location = "group:Table_OemTableID.txt">
+   </FileRef>
+   <FileRef
+      location = "group:xSDT_RenameLPC.txt">
+   </FileRef>
+</Workspace>
