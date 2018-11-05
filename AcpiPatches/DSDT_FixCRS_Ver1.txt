@@ -1,3 +1,6 @@
+# Obsolete patch
+# Bad code
+
 into all code_regex Name\s\(MEMP([\S\s]*)MEMP\) replace_matched
 begin
 Name (MEMP, ResourceTemplate ()\n

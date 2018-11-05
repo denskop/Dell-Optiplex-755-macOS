@@ -1,3 +1,5 @@
+# Obsolete
+# Useless
 # Rename PS/2 Keyboard to EC
 into method label _GPE._L08 code_regex KBD replaceall_matched begin EC end;
 into device label KBD set_label begin EC end;

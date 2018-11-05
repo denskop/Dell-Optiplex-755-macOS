@@ -1,10 +1,13 @@
+# Obsolete patch
+# Cause shutdown issue
+
 # Operation region
 into definitionblock code_regex . insert
 begin
 OperationRegion (PMRS, SystemIO, 0x0430, One)\n
 Field (PMRS, ByteAcc, NoLock, Preserve)\n
 {\n
-    ,   4, \n
+    ,       4,\n
     SLPE,   1\n
 }
 end;

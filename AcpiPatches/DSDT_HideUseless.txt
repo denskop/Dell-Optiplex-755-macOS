@@ -24,7 +24,7 @@ end;
 # Disable Floppy Drive
 into method label _STA parent_label FDC code_regex If\s\(GCFD\s\(\)\) replaceall_matched
 begin
-If (LAnd(GCFD (), LNot(OSDW())))
+If (GCFD () && !OSDW ())
 end;
 
 # Disable Speaker
@@ -46,11 +46,11 @@ end;
 # Disable PS/2 Mouse
 into method label _STA parent_label MOU code_regex If\s\(GCON\s\(\)\) replaceall_matched
 begin
-If (LAnd(GCON (), LNot(OSDW())))
+If (GCON () && !OSDW ())
 end;
 
 # Disable ECP Parallel Port
 into method label _STA parent_label PRT code_regex If\s\(GCPP\s\(\)\) replaceall_matched
 begin
-If (LAnd(GCPP (), LNot(OSDW())))
+If (GCPP () && !OSDW ())
 end;

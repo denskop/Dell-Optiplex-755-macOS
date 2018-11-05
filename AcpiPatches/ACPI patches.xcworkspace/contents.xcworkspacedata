@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Obsolete">
+      <FileRef
+         location = "group:DSDT_FixCRS_Ver1.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixGPE.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixIPIC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixPTS.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_PSKbAsEC.txt">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:ASF!.txt">
    </FileRef>
    <Group
       location = "container:"
       name = "DSDT">
-      <FileRef
-         location = "group:DSDT_FixIPIC.txt">
-      </FileRef>
       <FileRef
          location = "group:DSDT_AddAPIC.txt">
       </FileRef>
@@ -53,9 +69,6 @@
          location = "group:DSDT_FixADR.txt">
       </FileRef>
       <FileRef
-         location = "group:DSDT_FixCRS_Ver1.txt">
-      </FileRef>
-      <FileRef
          location = "group:DSDT_FixEHCI.txt">
       </FileRef>
       <FileRef
@@ -63,9 +76,6 @@
       </FileRef>
       <FileRef
          location = "group:DSDT_FixFields.txt">
-      </FileRef>
-      <FileRef
-         location = "group:DSDT_FixGPE.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_FixHPET.txt">
@@ -78,9 +88,6 @@
       </FileRef>
       <FileRef
          location = "group:DSDT_FixOSInit.txt">
-      </FileRef>
-      <FileRef
-         location = "group:DSDT_FixPTS.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_FixRTC.txt">
@@ -108,9 +115,6 @@
       </FileRef>
       <FileRef
          location = "group:DSDT_PCI.txt">
-      </FileRef>
-      <FileRef
-         location = "group:DSDT_PSKbAsEC.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_RemoveCRS.txt">

@@ -15,5 +15,258 @@ into scope label _SB.PCI0.RP05 remove_entry;
 into device label RP06 remove_entry;
 into scope label _SB.PCI0.RP06 remove_entry;
 
-# Remove GPE _L1A
-into method label _GPE._L1A remove_entry;
+# Remove RP05 notify in GPE _L1A
+into method label _GPE._L1A code_regex Notify.* remove_matched;
+
+# RSTS opregions
+into_all all code_regex OperationRegion.*RSTS.*[\S\s]*?\} remove_matched;
+
+# Add PM code to RP01
+into device label RP01 insert
+begin
+OperationRegion (ORP0, PCI_Config, Zero, 0xFF)\n
+Field (ORP0, AnyAcc, NoLock, Preserve)\n
+{\n
+    RPID,   32,\n
+    Offset (0x34),\n 
+    CPLT,   8,\n 
+    Offset (0x58),\n 
+    SSLC,   10,\n 
+    Offset (0x5A),\n 
+    ABPX,   1,\n 
+        ,   2,\n 
+    PDCX,   1,\n 
+        ,   2,\n 
+    PDSX,   1,\n 
+    Offset (0x5B),\n 
+    LSCX,   1,\n 
+    Offset (0x60),\n 
+    SQID,   16,\n 
+    SPME,   1,\n 
+    SPMP,   1,\n 
+    Offset (0x64),\n 
+    Offset (0xB8),\n 
+    NSLC,   10,\n 
+    Offset (0xBA),\n 
+    NSLS,   7,\n 
+    Offset (0xBC),\n 
+    Offset (0xC0),\n 
+    NQID,   16,\n 
+    NPME,   1,\n 
+    NPMP,   1,\n 
+    Offset (0xC4),\n 
+    Offset (0xDC),\n 
+        ,   30,\n 
+    HPSX,   1,\n 
+    RPSC,   1\n
+}\n
+
+Method (XPM1, 1, NotSerialized)\n
+{\n
+    Local0 = Zero\n
+    If ((RPID == Ones))\n
+    {\n
+        Return (Zero)\n
+    }\n
+
+    If ((Arg0 >= 0x08))\n
+    {\n
+        Local0 = NPME\n
+        While (NPME)\n
+        {\n
+            NPME = One\n
+        }\n
+    }\n
+    Else\n
+    {\n
+        Local0 = SPME\n
+        While (SPME)\n
+        {\n
+            SPME = One\n
+        }\n
+
+        While (RPSC)\n
+        {\n
+            RPSC = One\n
+        }\n
+    }\n
+
+    Return (Local0)\n
+}\n
+
+Method (XRPW, 1, NotSerialized)\n
+{\n
+    Local0 = Zero\n
+    If ((RPID == Ones))\n
+    {\n
+        Return (Zero)\n
+    }\n
+
+    If ((Arg0 >= 0x08))\n
+    {\n
+        Local0 = NPME\n
+    }\n
+    Else\n
+    {\n
+        Local0 = SPME\n
+    }\n
+
+    Return (Local0)\n
+}\n
+end;
+
+into all code_regex Notify\s\(\\_SB.PCI0.RP01,\s0x02\) replace_matched
+begin
+    If (\\_SB.PCI0.RP01.XPM1 (Zero))\n
+    {\n
+        Notify (\\_SB.PCI0.RP01, 0x02)\n
+    }\n
+
+    Notify (\\_SB.PWRB, 0x02)\n
+end;
+
+# Add PM code to PCI1
+into device label PCI1 insert
+begin
+OperationRegion (ORP0, PCI_Config, Zero, 0xFF)\n
+Field (ORP0, AnyAcc, NoLock, Preserve)\n
+{\n
+    RPID,   32,\n
+    Offset (0x34),\n 
+    CPLT,   8,\n 
+    Offset (0x58),\n 
+    SSLC,   10,\n 
+    Offset (0x5A),\n 
+    ABPX,   1,\n 
+        ,   2,\n 
+    PDCX,   1,\n 
+        ,   2,\n 
+    PDSX,   1,\n 
+    Offset (0x5B),\n 
+    LSCX,   1,\n 
+    Offset (0x60),\n 
+    SQID,   16,\n 
+    SPME,   1,\n 
+    SPMP,   1,\n 
+    Offset (0x64),\n 
+    Offset (0xB8),\n 
+    NSLC,   10,\n 
+    Offset (0xBA),\n 
+    NSLS,   7,\n 
+    Offset (0xBC),\n 
+    Offset (0xC0),\n 
+    NQID,   16,\n 
+    NPME,   1,\n 
+    NPMP,   1,\n 
+    Offset (0xC4),\n 
+    Offset (0xDC),\n 
+        ,   30,\n 
+    HPSX,   1,\n 
+    RPSC,   1\n
+}\n
+
+Method (XPM1, 1, NotSerialized)\n
+{\n
+    Local0 = Zero\n
+    If ((RPID == Ones))\n
+    {\n
+        Return (Zero)\n
+    }\n
+
+    If ((Arg0 >= 0x08))\n
+    {\n
+        Local0 = NPME\n
+        While (NPME)\n
+        {\n
+            NPME = One\n
+        }\n
+    }\n
+    Else\n
+    {\n
+        Local0 = SPME\n
+        While (SPME)\n
+        {\n
+            SPME = One\n
+        }\n
+
+        While (RPSC)\n
+        {\n
+            RPSC = One\n
+        }\n
+    }\n
+
+    Return (Local0)\n
+}\n
+
+Method (XRPW, 1, NotSerialized)\n
+{\n
+    Local0 = Zero\n
+    If ((RPID == Ones))\n
+    {\n
+        Return (Zero)\n
+    }\n
+
+    If ((Arg0 >= 0x08))\n
+    {\n
+        Local0 = NPME\n
+    }\n
+    Else\n
+    {\n
+        Local0 = SPME\n
+    }\n
+
+    Return (Local0)\n
+}\n
+end;
+
+# into all code_regex Notify\s\(\\_SB.PCI0.PCI1,\s0x02\) replace_matched
+# begin
+#    If (\\_SB.PCI0.PCI1.XPM1 (0x08))\n
+#    {\n
+#        Notify (\\_SB.PCI0.PCI1, 0x02)\n
+#    }\n
+#
+#    Notify (\\_SB.PWRB, 0x02)\n
+#end;
+
+# Add PM code to PCIB
+into all code_regex Notify\s\(\\_SB.PCI0.PCIB,\s0x02\) replace_matched
+begin
+    Notify (\\_SB.PCI0.PCIB, 0x02)\n
+    Notify (\\_SB.PWRB, 0x02)\n
+end;
+
+# Add PM code to GIGE
+into method label _GPE._L0D insert
+begin
+    Notify (\_SB.PCI0.GIGE, 0x02)\n
+end;
+
+# Safe code for PS/2 keyboard
+into all code_regex Notify\s\(\\_SB.PCI0.LPCB.KBD,\s0x02\) replace_matched
+begin
+    If (\\_SB.PCI0.LPCB.KBD._STA) {\n
+        Notify (\\_SB.PCI0.LPCB.KBD, 0x02)\n
+    }\n
+end;
+
+# Add code to _PTS method
+into method label _PTS replace_content
+begin
+    \_SB.PCI0.RP01.XPM1 (Zero)\n
+//   \_SB.PCI0.PCI1.XPM1 (0x08)\n
+    PSKM (Arg0)\n
+end;
+
+# Add code to _WAK method
+into method label _WAK code_regex Or\s\(Local0,\s0x02,\sMBEN\) replace_matched
+begin
+    Or (Local0, 0x02, MBEN)\n
+    Notify (\\_SB.PCI0.UHC1, Zero)\n
+    Notify (\\_SB.PCI0.UHC2, Zero)\n
+    Notify (\\_SB.PCI0.UHC3, Zero)\n
+    Notify (\\_SB.PCI0.UHC4, Zero)\n
+    Notify (\\_SB.PCI0.UHC5, Zero)\n
+    Notify (\\_SB.PCI0.EHC1, Zero)\n
+    Notify (\\_SB.PCI0.EHC2, Zero)\n
+end;

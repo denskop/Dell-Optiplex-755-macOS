@@ -1,0 +1,18 @@
+# Obsolete patch
+# Useless
+
+# Skip wake code
+into method label _GPE._L02 code_regex ([\s\S]*) replace_matched
+begin
+If (!OSDW()) {\n
+%1\n
+}\n
+end;
+
+# Skip wake code
+into method label _GPE._L08 code_regex ([\s\S]*) replace_matched
+begin
+If (!OSDW()) {\n
+%1\n
+}\n
+end;

@@ -13,9 +13,8 @@ into method label _PCT parent_label \_PR.CPU1 remove_entry;
 into method label _PSS parent_label \_PR.CPU1 remove_entry;
 
 # Remove SPSS, NPSS methods
-into_all all code_regex Package\s+\(0x06\)\n.*\{\n(.*0x.*\n){6}.*\},\s\n\n removeall_matched;
-into_all all code_regex Package\s+\(0x06\)\n.*\{\n(.*0x.*\n){6}.*\}\n removeall_matched;
-into_all all code_regex Name\s((?:.)*),\sPackage\s\(0x04\)\n\s*\{\n\s*\}\) removeall_matched;
+into all code_regex Name.*SPSS.*Package[\S\s]*?\}\) remove_matched;
+into all code_regex Name.*NPSS.*Package[\S\s]*?\}\) remove_matched;
 
 # Add _PCT method
 into scope label \_PR.CPU1 insert
@@ -60,7 +59,7 @@ into scope label \_PR.CPU1 insert
 begin
 Method (_PSD, 0, NotSerialized)\n
 {\n
-    If (And (PDC1, 0x0800)\n)\n
+    If (PDC1 & 0x0800)\n
     {\n
         Return (Package (0x01)\n
         {\n

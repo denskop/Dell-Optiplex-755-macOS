@@ -1,6 +1,1 @@
 into method label _CRS parent_label _SB.PCI0 remove_entry;
-
-#into device label _SB.PCI0 insert
-#begin
-#OperationRegion (ORMF, SystemMemory, 0x000FFF6C, 0x04)
-#end;

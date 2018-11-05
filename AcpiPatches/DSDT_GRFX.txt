@@ -3,21 +3,21 @@
 # Hide device
 into device name_adr 0x00020000 insert
 begin
-    OperationRegion (GFXH, PCI_Config, 0x00, 0x40)\n
-    Field (GFXH, ByteAcc, NoLock, Preserve)\n
-    {\n
-        VID0,   16,\n 
-        DID0,   16\n
-    }\n
+OperationRegion (GFXH, PCI_Config, 0x00, 0x40)\n
+Field (GFXH, ByteAcc, NoLock, Preserve)\n
+{\n
+    VID0,   16,\n
+    DID0,   16\n
+}\n
 
-    Method (_STA, 0, NotSerialized)\n
+Method (_STA, 0, NotSerialized)\n
+{\n
+    If ((VID0 & 0xFFFF) != 0xFFFF)\n
     {\n
-        If (LNotEqual (And (VID0, 0xFFFF), 0xFFFF))\n
-        {\n
-            Return (0x0F)\n
-        }\n
-        Return (Zero)\n
+        Return (0x0F)\n
     }\n
+    Return (Zero)\n
+}\n
 end;
 
 # Avoid wake code

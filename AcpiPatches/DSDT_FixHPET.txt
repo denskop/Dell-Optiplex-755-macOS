@@ -16,7 +16,7 @@ Device (HPET)\n
         Memory32Fixed (ReadOnly,\n
         0xFED00000,\n
         0x00000400,\n
-        _Y09)\n
+        _Y00)\n
     })\n
 
     Method (_STA, 0, NotSerialized)\n
@@ -35,18 +35,18 @@ Device (HPET)\n
     {\n
         If (HPAE)\n
         {\n
-            CreateDWordField (BUF0, ^_Y09._BAS, HPT0)\n
-            If (LEqual (HPAS, 0x01))\n
+            CreateDWordField (BUF0, ^_Y00._BAS, HPT0)\n
+            If (HPAS == One)\n
             {\n
                 Store (0xFED01000, HPT0)\n
             }\n
             
-            If (LEqual (HPAS, 0x02))\n
+            If (HPAS == 0x02)\n
             {\n
                 Store (0xFED02000, HPT0)\n
             }\n
             
-            If (LEqual (HPAS, 0x03))\n
+            If (HPAS == 0x03)\n
             {\n
                 Store (0xFED03000, HPT0)\n
             }\n
@@ -72,33 +72,33 @@ Field (RCRB, DWordAcc, Lock, Preserve)\n
     Offset (0x1000),\n
     Offset (0x3000),\n
     Offset (0x3404),\n
-    HPAS,2,\n
-    ,5,\n
-    HPAE,1,\n
+    HPAS, 2,\n
+    ,     5,\n
+    HPAE, 1,\n              // HPET Availability bit
     Offset (0x3418),\n
-    ,1,\n
-    PATD,1,\n
-    SATD,1,\n
-    SMBD,1,\n
-    HDAD,1,\n
-    A97D,1,\n
-        ,1,\n
-    UH6D,1,\n
-    UH1D,1,\n
-    UH2D,1,\n
-    UH3D,1,\n\n
-    UH4D,1,\n
-    UH5D,1,\n
+    ,     1,\n
+    PATD, 1,\n
+    SATD, 1,\n
+    SMBD, 1,\n
+    HDAD, 1,\n
+    A97D, 1,\n
+        , 1,\n
+    UH6D, 1,\n
+    UH1D, 1,\n
+    UH2D, 1,\n
+    UH3D, 1,\n
+    UH4D, 1,\n
+    UH5D, 1,\n
     Offset (0x341A),\n
-    RP1D,1,\n
-    RP2D,1,\n
-    RP3D,1,\n
-    RP4D,1,\n
-    RP5D,1,\n
-    RP6D,1,\n
-    RP7D,1,\n
-    RP8D,1,\n
-    ,4,\n
-    UH7D,1\n
+    RP1D, 1,\n
+    RP2D, 1,\n
+    RP3D, 1,\n
+    RP4D, 1,\n
+    RP5D, 1,\n
+    RP6D, 1,\n
+    RP7D, 1,\n
+    RP8D, 1,\n
+        , 4,\n
+    UH7D, 1\n
 }\n
 end;

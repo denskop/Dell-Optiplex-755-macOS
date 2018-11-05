@@ -1,7 +1,13 @@
-# Fix Or operation
-into_all all code_regex Or\s\(Zero,\sLocal0\) replaceall_matched
+# Fix Or operation (old style)
+into all code_regex Or\s\(Zero,\sLocal0\) replace_matched
 begin
 Or (Local0, Zero, Local0)
+end;
+
+# Fix Or operation (new style)
+into all code_regex \(Zero\s\|\sLocal0\) replace_matched
+begin
+Local0 |= Zero
 end;
 
 # Fix return type

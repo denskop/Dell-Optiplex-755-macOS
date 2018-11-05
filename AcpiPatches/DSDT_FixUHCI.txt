@@ -4,5 +4,10 @@ begin
 If (And(GCUC (), LNot(OSDW ())))
 end;
 
-# Remove GPE _L20
-into method label _GPE._L20 remove_entry;
+# Safe code in GPE _L20
+into method label _GPE._L20 code_regex Notify\s\(\\_SB.PCI0.UHC6,\s0x02\) replace_matched
+begin
+If (\\_SB.PCI0.UHC6._STA) {\n
+    Notify (\\_SB.PCI0.UHC6, 0x02)\n
+}\n
+end;

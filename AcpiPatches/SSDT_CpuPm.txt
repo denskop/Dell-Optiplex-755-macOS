@@ -24,19 +24,15 @@ Method (_PDC, 1, NotSerialized)\n
 {\n
     CreateDWordField (Arg0, 0x00, REVS)\n
     CreateDWordField (Arg0, 0x04, SIZE)\n
-    Store (SizeOf (Arg0), Local0)\n
-    Store (Subtract (Local0, 0x08), Local1)\n
+    Local0 = SizeOf (Arg0)\n
+    Local1 = (Local0 - 0x08)\n
     CreateField (Arg0, 0x40, Multiply (Local1, 0x08), TEMP)\n
     Name (STS0, Buffer (0x04)\n
     {\n
         0x00, 0x00, 0x00, 0x00\n
     })\n
     Concatenate (STS0, TEMP, Local2)\n
-    _OSC (Buffer (0x10)\n
-    {\n
-        0x16, 0xA6, 0x77, 0x40, 0x0C, 0x29, 0xBE, 0x47,\n
-        0x9E, 0xBD, 0xD8, 0x70, 0x58, 0x71, 0x39, 0x53\n
-    }, REVS, SIZE, Local2)\n
+    _OSC (ToUUID ("4077a616-290c-47be-9ebd-d87058713953"), REVS, SIZE, Local2)\n
 }\n
 end;
 
@@ -51,28 +47,24 @@ Method (_OSC, 4, NotSerialized)\n
     CreateDWordField (Arg0, 0x04, IID1)\n
     CreateDWordField (Arg0, 0x08, IID2)\n
     CreateDWordField (Arg0, 0x0C, IID3)\n
-    Name (UID0, Buffer (0x10)\n
-    {\n
-        0x16, 0xA6, 0x77, 0x40, 0x0C, 0x29, 0xBE, 0x47,\n
-        0x9E, 0xBD, 0xD8, 0x70, 0x58, 0x71, 0x39, 0x53\n
-    })\n
+    Name (UID0, ToUUID ("4077a616-290c-47be-9ebd-d87058713953"))\n
     CreateDWordField (UID0, 0x00, EID0)\n
     CreateDWordField (UID0, 0x04, EID1)\n
     CreateDWordField (UID0, 0x08, EID2)\n
     CreateDWordField (UID0, 0x0C, EID3)\n
-    If (LNot (LAnd (LAnd (LEqual (IID0, EID0), LEqual (IID1, EID1)),\n
-    LAnd (LEqual (IID2, EID2), LEqual (IID3, EID3)))))\n
+    If (!(((IID0 == EID0) && (IID1 == EID1))\n
+    && ((IID2 == EID2) && (IID3 == EID3))))\n
     {\n
-        Store (0x06, Index (STS0, 0x00))\n
+        STS0 [Zero] = 0x06\n
         Return (Arg3)\n
     }\n
-    If (LNotEqual (Arg1, 0x01))\n
+    If (Arg1 != One)\n
     {\n
-        Store (0x0A, Index (STS0, 0x00))\n
+        STS0 [Zero] = 0x0A\n
         Return (Arg3)\n
     }\n
 
-    Or (And (PDC0, 0x7FFFFFFF), CAP0, PDC0)\n
+    PDC0 = ((PDC0 & 0x7FFFFFFF) | CAP0)\n
     Return (Arg3)\n
 }\n
 end;
@@ -112,28 +104,24 @@ Method (_OSC, 4, NotSerialized)\n
     CreateDWordField (Arg0, 0x04, IID1)\n
     CreateDWordField (Arg0, 0x08, IID2)\n
     CreateDWordField (Arg0, 0x0C, IID3)\n
-    Name (UID1, Buffer (0x10)\n
-    {\n
-        0x16, 0xA6, 0x77, 0x40, 0x0C, 0x29, 0xBE, 0x47,\n
-        0x9E, 0xBD, 0xD8, 0x70, 0x58, 0x71, 0x39, 0x53\n
-    })\n
+    Name (UID1, ToUUID ("4077a616-290c-47be-9ebd-d87058713953"))\n
     CreateDWordField (UID1, 0x00, EID0)\n
     CreateDWordField (UID1, 0x04, EID1)\n
     CreateDWordField (UID1, 0x08, EID2)\n
     CreateDWordField (UID1, 0x0C, EID3)\n
-    If (LNot (LAnd (LAnd (LEqual (IID0, EID0), LEqual (IID1, EID1)),\n
-    LAnd (LEqual (IID2, EID2), LEqual (IID3, EID3)))))\n
+    If (!(((IID0 == EID0) && (IID1 == EID1))\n
+    && ((IID2 == EID2) && (IID3 == EID3))))\n
     {\n
-        Store (0x06, Index (STS1, 0x00))\n
+        STS1 [Zero] = 0x06\n
         Return (Arg3)\n
     }\n
     If (LNotEqual (Arg1, 0x01))\n
     {\n
-        Store (0x0A, Index (STS1, 0x00))\n
+        STS1 [Zero] = 0x0A\n
         Return (Arg3)\n
     }\n
 
-    Or (And (PDC1, 0x7FFFFFFF), CAP1, PDC1)\n
+    PDC1 = ((PDC1 & 0x7FFFFFFF) | CAP1)\n
     Return (Arg3)\n
 }\n
 end;
