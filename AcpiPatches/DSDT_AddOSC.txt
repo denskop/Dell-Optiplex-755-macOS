@@ -12,8 +12,8 @@ Method (_OSC, 4, NotSerialized)\n
             Local0 = 0x03\n
             CreateDWordField (Arg3, 0x04, CDW2)\n
             CreateDWordField (Arg3, 0x08, CDW3)\n
-            CDW2 = SUPP\n
-            CDW3 = CTRL\n
+            SUPP = CDW2\n
+            CTRL = CDW3\n
             CTRL &= 0x1D\n
             If ((SUPP & 0x16) != 0x16)\n
             {\n

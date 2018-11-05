@@ -74,7 +74,7 @@ Field (RCRB, DWordAcc, Lock, Preserve)\n
     Offset (0x3404),\n
     HPAS, 2,\n
     ,     5,\n
-    HPAE, 1,\n              // HPET Availability bit
+    HPAE, 1,\n
     Offset (0x3418),\n
     ,     1,\n
     PATD, 1,\n
