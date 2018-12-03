@@ -23,7 +23,7 @@ rm -rf "$TEMP_PATH/Dsl"
 $IASL -dl -da "$ORIGIN_PATH/SSDT"* "$ORIGIN_PATH/DSDT.aml"
 
 # Other tables
-$IASL -dl "$ORIGIN_PATH/APIC.aml"
+# $IASL -dl "$ORIGIN_PATH/APIC.aml"
 $IASL -dl "$ORIGIN_PATH/ASF!.aml"
 $IASL -dl "$ORIGIN_PATH/HPET.aml"
 $IASL -dl "$ORIGIN_PATH/MCFG.aml"
@@ -32,11 +32,31 @@ $IASL -dl "$ORIGIN_PATH/MCFG.aml"
 mkdir -p "$TEMP_PATH/Dsl"
 mv "$ORIGIN_PATH/"*.dsl "$TEMP_PATH/Dsl"
 
-## Rename acpi tables
-mv "$TEMP_PATH/Dsl/SSDT-0-st_ex.dsl" "$TEMP_PATH/Dsl/SSDT_st_ex.dsl" 
-mv "$TEMP_PATH/Dsl/SSDT-1-Cpu0Ist.dsl" "$TEMP_PATH/Dsl/SSDT_Cpu0Ist.dsl"
-mv "$TEMP_PATH/Dsl/SSDT-2-Cpu1Ist.dsl" "$TEMP_PATH/Dsl/SSDT_Cpu1Ist.dsl"
-mv "$TEMP_PATH/Dsl/SSDT-3-CpuPm.dsl" "$TEMP_PATH/Dsl/SSDT_CpuPm.dsl"
+# Rename ssdt tables
+pushd "$TEMP_PATH/Dsl" > /dev/null
+
+for ssdt in *; do
+    mv "$ssdt" $(echo "$ssdt" | sed -e 's/-[0-9]*-/_/g')
+done
+
+# Count speedstep tables
+SSDT_IST_COUNT=$(ls -1 SSDT*Cpu*Ist.dsl 2>/dev/null | wc -l | grep -o "[0-9]")
+
+mkdir -p "$TEMP_PATH/Dsl/Build"
+case "$SSDT_IST_COUNT" in
+	"2")
+	echo "#define CPU_CORES_NUM 2" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+	;;
+	"4")
+	echo "#define CPU_CORES_NUM 4" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+	;;
+	*)
+	echo "Bad count of speedstep tables"
+	exit 1
+	;;
+esac
+
+popd > /dev/null
 
 ## Patch acpi tables
 
@@ -97,8 +117,10 @@ $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddSLPB.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_HidePSKb.txt
 
 # SSDT
-$PATCH "$TEMP_PATH/Dsl/"SSDT_Cpu0Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu0Ist.txt
-$PATCH "$TEMP_PATH/Dsl/"SSDT_Cpu1Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu1Ist.txt
+for i in `seq 0 $((SSDT_IST_COUNT - 1))`; do
+	$PATCH "$TEMP_PATH/Dsl/"SSDT_Cpu"$i"Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu"$i"Ist.txt
+done
+
 $PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm.txt
 $PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Duo.txt
 
@@ -118,9 +140,9 @@ $PATCH2 "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm.txt
 
 # More
 #$PATCH2 "$TEMP_PATH/Dsl/"APIC.dsl "$ACPI_PATCHES_PATH/"APIC.txt
-$PATCH2 "$TEMP_PATH/Dsl/"APIC.dsl "$ACPI_PATCHES_PATH/"Table_Loki.txt
-$PATCH2 "$TEMP_PATH/Dsl/"APIC.dsl "$ACPI_PATCHES_PATH/"Table_OemID.txt
-$PATCH2 "$TEMP_PATH/Dsl/"APIC.dsl "$ACPI_PATCHES_PATH/"Table_OemTableID.txt
+#$PATCH2 "$TEMP_PATH/Dsl/"APIC.dsl "$ACPI_PATCHES_PATH/"Table_Loki.txt
+#$PATCH2 "$TEMP_PATH/Dsl/"APIC.dsl "$ACPI_PATCHES_PATH/"Table_OemID.txt
+#$PATCH2 "$TEMP_PATH/Dsl/"APIC.dsl "$ACPI_PATCHES_PATH/"Table_OemTableID.txt
 
 $PATCH2 "$TEMP_PATH/Dsl/"ASF!.dsl "$ACPI_PATCHES_PATH/"ASF!.txt
 $PATCH2 "$TEMP_PATH/Dsl/"ASF!.dsl "$ACPI_PATCHES_PATH/"Table_Loki.txt
@@ -139,5 +161,18 @@ $PATCH2 "$TEMP_PATH/Dsl/"MCFG.dsl "$ACPI_PATCHES_PATH/"Table_OemTableID.txt
 
 ## Compile acpi tables
 
-$IASL -ve "$TEMP_PATH/Dsl/"*.dsl
-$IASL -ve "$ACPI_EXTRA_PATH/"*.dsl
+$IASL -I "$TEMP_PATH/Dsl/Build" -ve "$TEMP_PATH/Dsl/"*.dsl
+
+pushd "$ACPI_EXTRA_PATH" > /dev/null
+
+for file in *; do
+	if [[ "$file" =~ ^SSDT_Cpu.*\.dsl ]] && [ "$(echo $file | grep -o "[0-9]")" -ge "$SSDT_IST_COUNT" ]; then
+		echo "Skip $file"
+		continue
+	fi
+	
+	echo "Compile $file"
+	$IASL -I "$TEMP_PATH/Dsl/Build" -ve "$file"
+done
+
+popd > /dev/null

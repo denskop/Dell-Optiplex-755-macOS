@@ -126,12 +126,127 @@ Method (_OSC, 4, NotSerialized)\n
 }\n
 end;
 
+into definitionblock code_regex . insert
+begin
+    #include <Config.dsl>\n
+end;
+
 # CPU2
-#into method label _PDC parent_label \_PR.CPU2 remove_entry;
-#into method label _OSC parent_label \_PR.CPU2 remove_entry;
 into scope label \_PR.CPU2 remove_entry;
+into definitionblock code_regex . insert
+begin
+#if CPU_CORES_NUM > 2\n
+Scope (\_PR.CPU2)\n
+{\n
+    Method (_PDC, 1, NotSerialized)\n
+    {\n
+        CreateDWordField (Arg0, 0x00, REVS)\n
+        CreateDWordField (Arg0, 0x04, SIZE)\n
+        Store (SizeOf (Arg0), Local0)\n
+        Store (Subtract (Local0, 0x08), Local1)\n
+        CreateField (Arg0, 0x40, Multiply (Local1, 0x08), TEMP)\n
+        Name (STS2, Buffer (0x04)\n
+        {\n
+            0x00, 0x00, 0x00, 0x00\n
+        })\n
+        Concatenate (STS2, TEMP, Local2)\n
+        _OSC (Buffer (0x10)\n
+        {\n
+            0x16, 0xA6, 0x77, 0x40, 0x0C, 0x29, 0xBE, 0x47,\n
+            0x9E, 0xBD, 0xD8, 0x70, 0x58, 0x71, 0x39, 0x53\n
+        }, REVS, SIZE, Local2)\n
+    }\n
+
+    Method (_OSC, 4, NotSerialized)\n
+    {\n
+        CreateDWordField (Arg3, 0x00, STS2)\n
+        CreateDWordField (Arg3, 0x04, CAP2)\n
+        CreateDWordField (Arg0, 0x00, IID0)\n
+        CreateDWordField (Arg0, 0x04, IID1)\n
+        CreateDWordField (Arg0, 0x08, IID2)\n
+        CreateDWordField (Arg0, 0x0C, IID3)\n
+        Name (UID2, ToUUID ("4077a616-290c-47be-9ebd-d87058713953"))\n
+        CreateDWordField (UID2, 0x00, EID0)\n
+        CreateDWordField (UID2, 0x04, EID1)\n
+        CreateDWordField (UID2, 0x08, EID2)\n
+        CreateDWordField (UID2, 0x0C, EID3)\n
+
+        If (!(((IID0 == EID0) && (IID1 == EID1))\n
+        && ((IID2 == EID2) && (IID3 == EID3))))\n
+        {\n
+            STS2 [Zero] = 0x06\n
+            Return (Arg3)\n
+        }\n
+
+        If (LNotEqual (Arg1, 0x01))\n
+        {\n
+            STS2 [Zero] = 0x0A\n
+            Return (Arg3)\n
+        }\n
+
+        PDC2 = ((PDC2 & 0x7FFFFFFF) | CAP2)\n
+        Return (Arg3)\n
+    }\n
+}\n
+#endif\n
+end;
 
 # CPU3
-#into method label _PDC parent_label \_PR.CPU3 remove_entry;
-#into method label _OSC parent_label \_PR.CPU3 remove_entry;
 into scope label \_PR.CPU3 remove_entry;
+into definitionblock code_regex . insert
+begin
+#if CPU_CORES_NUM > 2\n
+Scope (\_PR.CPU3)\n
+{\n
+    Method (_PDC, 1, NotSerialized)\n
+    {\n
+        CreateDWordField (Arg0, 0x00, REVS)\n
+        CreateDWordField (Arg0, 0x04, SIZE)\n
+        Store (SizeOf (Arg0), Local0)\n
+        Store (Subtract (Local0, 0x08), Local1)\n
+        CreateField (Arg0, 0x40, Multiply (Local1, 0x08), TEMP)\n
+        Name (STS3, Buffer (0x04)\n
+        {\n
+            0x00, 0x00, 0x00, 0x00\n
+        })\n
+        Concatenate (STS3, TEMP, Local2)\n
+        _OSC (Buffer (0x10)\n
+        {\n
+            0x16, 0xA6, 0x77, 0x40, 0x0C, 0x29, 0xBE, 0x47,\n
+            0x9E, 0xBD, 0xD8, 0x70, 0x58, 0x71, 0x39, 0x53\n
+        }, REVS, SIZE, Local2)\n
+    }\n
+
+    Method (_OSC, 4, NotSerialized)\n
+    {\n
+        CreateDWordField (Arg3, 0x00, STS3)\n
+        CreateDWordField (Arg3, 0x04, CAP3)\n
+        CreateDWordField (Arg0, 0x00, IID0)\n
+        CreateDWordField (Arg0, 0x04, IID1)\n
+        CreateDWordField (Arg0, 0x08, IID2)\n
+        CreateDWordField (Arg0, 0x0C, IID3)\n
+        Name (UID3, ToUUID ("4077a616-290c-47be-9ebd-d87058713953"))\n
+        CreateDWordField (UID3, 0x00, EID0)\n
+        CreateDWordField (UID3, 0x04, EID1)\n
+        CreateDWordField (UID3, 0x08, EID2)\n
+        CreateDWordField (UID3, 0x0C, EID3)\n
+
+        If (!(((IID0 == EID0) && (IID1 == EID1))\n
+        && ((IID2 == EID2) && (IID3 == EID3))))\n
+        {\n
+            STS3 [Zero] = 0x06\n
+            Return (Arg3)\n
+        }\n
+
+        If (LNotEqual (Arg1, 0x01))\n
+        {\n
+            STS3 [Zero] = 0x0A\n
+            Return (Arg3)\n
+        }\n
+
+        PDC3 = ((PDC3 & 0x7FFFFFFF) | CAP3)\n
+        Return (Arg3)\n
+    }\n
+}\n
+#endif\n
+end;

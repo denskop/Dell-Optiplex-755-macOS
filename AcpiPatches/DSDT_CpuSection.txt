@@ -7,11 +7,14 @@ into_all scope label _PR remove_entry;
 # PblockLength = 6 (if PBlockAddress is set for processor)
 into definitionblock code_regex . insert
 begin
+#include <Config.dsl>\n
 Scope (\_PR)\n
 {\n
     Processor (CPU0, 0x01, 0x00000810, 0x06){}\n
     Processor (CPU1, 0x02, 0x00000810, 0x06){}\n
+#if CPU_CORES_NUM > 2\n
     Processor (CPU2, 0x03, 0x00000810, 0x06){}\n
     Processor (CPU3, 0x04, 0x00000810, 0x06){}\n
+#endif\n
 }\n
 end;
