@@ -774,6 +774,30 @@
 				<key>Replace</key>
 				<data>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Override USB port count</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>cG9ydC1jb3VudA==</data>
+				<key>Name</key>
+				<string>IOUSBHostFamily</string>
+				<key>Replace</key>
+				<data>cG9ydF9jb3VudA==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Override USB ports</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>cG9ydHM=</data>
+				<key>Name</key>
+				<string>AppleUSBEHCIPCI</string>
+				<key>Replace</key>
+				<data>aHViAAA=</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>
