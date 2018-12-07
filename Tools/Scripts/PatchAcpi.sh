@@ -46,9 +46,11 @@ mkdir -p "$TEMP_PATH/Dsl/Build"
 case "$SSDT_IST_COUNT" in
 	"2")
 	echo "#define CPU_CORES_NUM 2" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+	echo "#define IMAC_10_1_PM" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
 	;;
 	"4")
 	echo "#define CPU_CORES_NUM 4" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+	echo "#define MAC_PRO_5_1_PM" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
 	;;
 	*)
 	echo "Bad count of speedstep tables"
@@ -122,7 +124,19 @@ for i in `seq 0 $((SSDT_IST_COUNT - 1))`; do
 done
 
 $PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm.txt
-$PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Duo.txt
+
+case "$SSDT_IST_COUNT" in
+	"2")
+	$PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Duo.txt
+	;;
+	"4")
+	$PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Quad.txt
+	;;
+	*)
+	echo "Bad count of speedstep tables"
+	exit 1
+	;;
+esac
 
 ## Patch2 acpi tables
 

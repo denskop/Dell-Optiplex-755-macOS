@@ -142,10 +142,19 @@
          location = "group:SSDT_Cpu1Ist.txt">
       </FileRef>
       <FileRef
-         location = "group:SSDT_CpuPm_Core2Duo.txt">
+         location = "group:SSDT_Cpu2Ist.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SSDT_Cpu3Ist.txt">
       </FileRef>
       <FileRef
          location = "group:SSDT_CpuPm.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SSDT_CpuPm_Core2Duo.txt">
+      </FileRef>
+      <FileRef
+         location = "group:SSDT_CpuPm_Core2Quad.txt">
       </FileRef>
       <FileRef
          location = "group:SSDT_External.txt">
