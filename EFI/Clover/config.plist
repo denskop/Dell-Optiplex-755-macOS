@@ -764,6 +764,18 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>HDA MacPro PM</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>TWFjUHJv</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>AAAAAAAA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Fix AGPM</string>
 				<key>Disabled</key>
 				<false/>
