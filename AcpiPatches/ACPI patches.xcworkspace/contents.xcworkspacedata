@@ -90,6 +90,9 @@
          location = "group:DSDT_FixOSInit.txt">
       </FileRef>
       <FileRef
+         location = "group:DSDT_FixPWRB.txt">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_FixRTC.txt">
       </FileRef>
       <FileRef
@@ -105,7 +108,10 @@
          location = "group:DSDT_GRFX.txt">
       </FileRef>
       <FileRef
-         location = "group:DSDT_Header.txt">
+         location = "group:DSDT_Header_iMac.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_Header_MacPro.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_HidePSKb.txt">

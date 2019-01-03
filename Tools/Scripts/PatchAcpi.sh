@@ -14,6 +14,12 @@ IASL_FLAGS=""
 PATCH="$TOOLS_PATH/patchmatic"
 PATCH2="$TOOLS_PATH/patch.sh"
 
+# Clover
+CLOVER_CONFIG_PLIST="$SELF_PATH/EFI/Clover/config.plist"
+
+# Clover settings
+SMBIOS=$(/usr/libexec/PlistBuddy -c "Print :SMBIOS:ProductName" "$CLOVER_CONFIG_PLIST")
+
 # Remove dsl folder
 rm -rf "$TEMP_PATH/Dsl"
 
@@ -92,6 +98,12 @@ $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddFakeEC.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_FixOSInit.txt
 $PATCH "$TEMP_PATH/Dsl/"SSDT_st_ex.dsl "$ACPI_PATCHES_PATH/"SSDT_External.txt
 
+if [[ "$SMBIOS" == iMac* ]]; then
+    $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddSLPB.txt
+elif [[ "$SMBIOS" == MacPro* ]]; then
+    $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_FixPWRB.txt
+fi
+
 # Fix ACPI warnings (from kernel log)
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_PCI.txt
 
@@ -115,7 +127,6 @@ $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddPXSX.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddUART.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_GRFX.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Sata.txt
-$PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddSLPB.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_HidePSKb.txt
 
 # SSDT
@@ -144,7 +155,11 @@ esac
 $PATCH "$TEMP_PATH/Dsl/"SSDT_st_ex.dsl "$ACPI_PATCHES_PATH/"xSDT_RenameLPC.txt
 
 # DSDT
-$PATCH2 "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Header.txt
+if [[ "$SMBIOS" == iMac* ]]; then
+    $PATCH2 "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Header_iMac.txt
+elif [[ "$SMBIOS" == MacPro* ]]; then
+    $PATCH2 "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Header_MacPro.txt
+fi
 
 # SSDT
 $PATCH2 "$TEMP_PATH/Dsl/"SSDT_st_ex.dsl "$ACPI_PATCHES_PATH/"SSDT_External.txt

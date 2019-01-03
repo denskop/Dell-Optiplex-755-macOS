@@ -1,4 +1,5 @@
 # Add SLPB (Sleep Button) device
+# For iMac smbios
 into scope label \ insert
 begin
 Device (_SB.SLPB)\n
