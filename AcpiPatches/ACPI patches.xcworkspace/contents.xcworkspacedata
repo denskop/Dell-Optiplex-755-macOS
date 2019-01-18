@@ -90,6 +90,9 @@
          location = "group:DSDT_FixOSInit.txt">
       </FileRef>
       <FileRef
+         location = "group:DSDT_FixPowerDialog.txt">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_FixPWRB.txt">
       </FileRef>
       <FileRef

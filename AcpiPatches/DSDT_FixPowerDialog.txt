@@ -1,0 +1,16 @@
+# Power Button enabler
+into scope label \ insert
+begin
+OperationRegion (PWBS, SystemIO, 0x0803, One)\n
+Field (PWBS, ByteAcc, NoLock, Preserve)\n
+{\n
+	PWEN,   1\n
+}\n
+end;
+
+# Fix Power Dialog
+into method label _WAK code_regex Return\s replace_matched
+begin
+Store (One, PWEN)\n
+Return 
+end;

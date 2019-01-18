@@ -1,7 +1,6 @@
 # Fix PWRB (Power Button) device
 # For Mac Pro smbios
-into device name_hid PNP0C0C replace_content
+into device name_hid PNP0C0C insert
 begin
-Name (_HID, EisaId ("PNP0C0C"))\n
 Name (_STA, 0x0B)\n
 end;
