@@ -1,0 +1,63 @@
+Index: rEFIt_UEFI/Platform/Platform.h
+===================================================================
+--- rEFIt_UEFI/Platform/Platform.h	(revision 4849)
++++ rEFIt_UEFI/Platform/Platform.h	(working copy)
+@@ -1816,6 +1816,9 @@
+ GetCPUProperties (VOID);
+ 
+ VOID
++CorrectCPUProperties (VOID);
++
++VOID
+ GetDevices(VOID);
+ 
+ MACHINE_TYPES
+Index: rEFIt_UEFI/Platform/cpu.c
+===================================================================
+--- rEFIt_UEFI/Platform/cpu.c	(revision 4849)
++++ rEFIt_UEFI/Platform/cpu.c	(working copy)
+@@ -1143,6 +1143,29 @@
+   //  return;
+ }
+ 
++VOID CorrectCPUProperties (VOID)
++{
++  UINT16  FsbMhzArray[8] = { 266, 133, 200, 166, 333, 100, 400, 233 };
++  UINT64  Msr = 0;
++  BOOLEAN Corrected = TRUE;
++  
++  switch (gCPUStructure.Model)
++  {
++    case CPU_MODEL_PENRYN: // CPUID: 1067x
++      Msr = AsmReadMsr64(MSR_FSB_FREQ);
++      gCPUStructure.ExternalClock = MultU64x32(FsbMhzArray[Msr & 7], kilo);
++      break;
++    default:
++      Corrected = FALSE;
++      break;
++  }
++  
++  if (Corrected)
++  {
++    DBG("Corrected ExternalClock: %d MHz\n", (INT32)(DivU64x32(gCPUStructure.ExternalClock, kilo)));
++  }
++}
++
+ VOID SetCPUProperties (VOID)
+ {
+   UINT64    msr = 0;
+Index: rEFIt_UEFI/refit/main.c
+===================================================================
+--- rEFIt_UEFI/refit/main.c	(revision 4849)
++++ rEFIt_UEFI/refit/main.c	(working copy)
+@@ -2303,7 +2303,9 @@
+       //DBG(" Corrected TSC ExternalClock: %d MHz\n", (INT32)(DivU64x32(gCPUStructure.ExternalClock, kilo)));
+       break;
+   }
+-
++  
++  CorrectCPUProperties();
++  
+   if (!GlobalConfig.NoEarlyProgress && !GlobalConfig.FastBoot && GlobalConfig.Timeout>0) {
+     FirstMessage = PoolPrint(L"... user settings ...");
+  //   i = (UGAWidth - StrLen(FirstMessage) * GlobalConfig.CharWidth) >> 1;

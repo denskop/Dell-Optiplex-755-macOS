@@ -1,0 +1,43 @@
+Index: rEFIt_UEFI/Platform/AcpiPatcher.c
+===================================================================
+--- rEFIt_UEFI/Platform/AcpiPatcher.c	(revision 4849)
++++ rEFIt_UEFI/Platform/AcpiPatcher.c	(working copy)
+@@ -1918,7 +1918,8 @@
+   OPER_REGION       *tmpRegion;
+   INTN              ApicCPUBase = 0;
+   CHAR16*           AcpiOemPath = PoolPrint(L"%s\\ACPI\\patched", OEMPath);
+-
++  MACHINE_TYPES     MacModel = GetModelFromString(gSettings.ProductName);
++  
+   DbgHeader("PatchACPI");
+ 
+   PathDsdt = PoolPrint(L"\\%s", gSettings.DsdtName);
+@@ -2074,6 +2075,11 @@
+     } else {
+       newFadt->PreferredPmProfile = gMobile?2:1; //as calculated before
+     }
++    
++    if ((MacModel == iMac81) || (MacModel == iMac91) || (MacModel == iMac101)) {
++      newFadt->PstateCnt = 0x80;
++    }
++    
+     if (gSettings.EnableC6 || gSettings.EnableISS) {
+       newFadt->CstCnt = 0x85; //as in Mac
+     }
+@@ -2089,11 +2095,13 @@
+  /*   if ((newFadt->IaPcBootArch & 0x10) != 0) {
+       newFadt->IaPcBootArch = 0x13;
+     } else { */
+-      newFadt->IaPcBootArch = 0x3;
++      newFadt->IaPcBootArch = 0x0;
+ //    }
+-    newFadt->Flags |= 0x400; //Reset Register Supported
++    newFadt->Flags |= 0x400;      //Reset Register Supported
++    newFadt->Flags &= ~(1 << 4);  // Enable PWRB Control
++    newFadt->Flags |= (1 << 5);   // Disable SLPB Control
+     if (gSettings.NoASPM) {
+-      newFadt->Flags |= 0x10;
++      newFadt->IaPcBootArch |= (1 << 4);
+     }
+     XDsdt = newFadt->XDsdt; //save values if present
+     XFirmwareCtrl = newFadt->XFirmwareCtrl;
