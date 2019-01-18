@@ -9,7 +9,7 @@ Index: rEFIt_UEFI/Platform/smbios.c
 -
 -		newSmbiosTable.Type4->MaxSpeed = (UINT16)gCPUStructure.MaxSpeed;	
 +    
-+    newSmbiosTable.Type4->MaxSpeed = (UINT16)(DivU64x32(gCPUStructure.ExternalClock * MaxRatio, kilo) / 10);
++    newSmbiosTable.Type4->MaxSpeed = (UINT16)(DivU64x32(gCPUStructure.ExternalClock * gCPUStructure.MaxRatio, kilo) / 10);
 +    newSmbiosTable.Type4->CurrentSpeed = newSmbiosTable.Type4->MaxSpeed;
  		//old version has no such fields. Fill now
  		if (Size <= 0x20){
