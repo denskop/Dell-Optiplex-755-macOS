@@ -1,3 +1,3 @@
 # Fix RTC resources
-#into method label _CRS parent_hid PNP0B00 code_regex 0x01, replace_matched begin 0x00, end;
-into method label _CRS parent_hid PNP0B00 code_regex 0x10, replace_matched begin 0x08, end;
+into method label _CRS parent_hid PNP0B00 code_regex 0x01, replace_matched begin 0x00, end;
+into method label _CRS parent_hid PNP0B00 code_regex 0x10, replace_matched begin 0x02, end;
