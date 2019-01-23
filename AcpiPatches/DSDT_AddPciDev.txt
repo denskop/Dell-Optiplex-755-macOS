@@ -1,15 +1,22 @@
 # Add PCI / PCI-E devices
+
+into scope label \ insert
+begin
+    #define DEVICE_ATHEROS  (1 << 0)\n
+    #define DEVICE_BROADCOM (1 << 1)\n
+end;
+
 into definitionblock code_regex . insert
 begin
 Method (ISAR, 1, NotSerialized)\n
 {\n
     If ((Arg0 & 0xFFFF) == 0x14E4)
     {\n
-        Return (One)\n
+        Return (DEVICE_BROADCOM)\n
     }\n
     ElseIf ((Arg0 & 0xFFFF) == 0x168C)
     {\n
-        Return (One)\n
+        Return (DEVICE_ATHEROS)\n
     }\n
     Return (Zero)\n
 }\n
@@ -81,9 +88,12 @@ Device (ARPT)\n
     {\n
         If (LEqual (Arg0, ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b")))\n
         {\n
-            Store (\ATH9, Local0)\n
-            DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))\n
-            Return (Local0)\n
+            If (\ISAR(VID0) == DEVICE_ATHEROS)\n
+            {\n
+                Store (\ATH9, Local0)\n
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))\n
+                Return (Local0)\n
+            }\n
         }\n
 
         Return (0x80000002)\n
@@ -132,9 +142,12 @@ Device (ARPT)\n
     {\n
         If (LEqual (Arg0, ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b")))\n
         {\n
-            Store (\ATH9, Local0)\n
-            DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))\n
-            Return (Local0)\n
+            If (\ISAR(VID0) == DEVICE_ATHEROS)\n
+            {\n
+                Store (\ATH9, Local0)\n
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))\n
+                Return (Local0)\n
+            }\n
         }\n
 
         Return (0x80000002)\n
