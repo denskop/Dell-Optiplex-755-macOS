@@ -1,7 +1,0 @@
-into device label RP01 insert
-begin
-Device (PXSX)\n
-{\n
-    Name (_ADR, Zero)\n
-}\n
-end;

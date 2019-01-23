@@ -1,0 +1,157 @@
+# Add PCI / PCI-E devices
+into definitionblock code_regex . insert
+begin
+Method (ISAR, 1, NotSerialized)\n
+{\n
+    If ((Arg0 & 0xFFFF) == 0x14E4)
+    {\n
+        Return (One)\n
+    }\n
+    ElseIf ((Arg0 & 0xFFFF) == 0x168C)
+    {\n
+        Return (One)\n
+    }\n
+    Return (Zero)\n
+}\n
+
+Name (ATH9, Package()\n
+{\n
+    "vendor-id",\n
+    Buffer ()\n
+    {\n
+        0xC8, 0x16, 0x00, 0x00\n
+    },\n
+    "device-id",\n
+    Buffer ()\n
+    {\n
+        0x2a, 0x00, 0x00, 0x00\n
+    },\n
+   "subsystem-id",\n
+    Buffer ()\n
+    {\n
+        0x6b, 0x10, 0x00, 0x00\n
+    },\n
+    "subsystem-vendor-id",\n
+    Buffer ()\n
+    {\n
+        0x8f, 0x00, 0x00, 0x00\n
+    },\n
+    "name",\n
+    Buffer ()\n
+    {\n
+        "pci168c,2a"\n
+    },\n
+    "IOName",\n
+    Buffer ()\n
+    {\n
+        "pci168c,2a"\n
+    },\n
+    "compatible",\n
+    Buffer ()\n
+    {\n
+        "pci168c,2a"\n
+    }\n
+})\n
+end;
+
+into device name_adr 0x001C0000 insert
+begin
+Device (ARPT)\n
+{\n
+    Name (_ADR, Zero)\n
+
+    OperationRegion (RP1H, PCI_Config, Zero, 0x04)\n
+    Field (RP1H, ByteAcc, NoLock, Preserve)\n
+    {\n
+        VID0,   16,\n
+        DID0,   16\n
+    }\n
+
+    Method (_STA, 0, NotSerialized)\n
+    {\n
+        If (\ISAR(VID0))\n
+        {\n
+            Return (0x0F)\n
+        }\n
+
+        Return (Zero)\n
+    }\n
+
+    Method (_DSM, 4, NotSerialized)\n
+    {\n
+        If (LEqual (Arg0, ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b")))\n
+        {\n
+            Store (\ATH9, Local0)\n
+            DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))\n
+            Return (Local0)\n
+        }\n
+
+        Return (0x80000002)\n
+    }\n
+}\n
+
+Device (PXSX)\n
+{\n
+    Name (_ADR, Zero)\n
+    Method (_STA, 0, NotSerialized)\n
+    {\n
+        If (LNot (^^ARPT._STA ()))\n
+        {\n
+            Return (0x0F)\n
+        }\n
+
+        Return (Zero)\n
+    }\n
+}\n
+end;
+
+into device name_adr 0x001E0000 insert
+begin
+Device (ARPT)\n
+{\n
+    Name (_ADR, 0x00020000)\n
+
+    OperationRegion (PCIH, PCI_Config, Zero, 0x04)\n
+    Field (PCIH, ByteAcc, NoLock, Preserve)\n
+    {\n
+        VID0,   16,\n
+        DID0,   16\n
+    }\n
+
+    Method (_STA, 0, NotSerialized)\n
+    {\n
+        If (\ISAR(VID0))\n
+        {\n
+            Return (0x0F)\n
+        }\n
+
+        Return (Zero)\n
+    }\n
+
+    Method (_DSM, 4, NotSerialized)\n
+    {\n
+        If (LEqual (Arg0, ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b")))\n
+        {\n
+            Store (\ATH9, Local0)\n
+            DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))\n
+            Return (Local0)\n
+        }\n
+
+        Return (0x80000002)\n
+    }\n
+}\n
+
+Device (PXSX)\n
+{\n
+    Name (_ADR, 0x00020000)\n
+    Method (_STA, 0, NotSerialized)\n
+    {\n
+        If (LNot (^^ARPT._STA ()))\n
+        {\n
+            Return (0x0F)\n
+        }\n
+
+        Return (Zero)\n
+    }\n
+}\n
+end;

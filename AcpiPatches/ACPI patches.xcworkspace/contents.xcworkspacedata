@@ -48,7 +48,7 @@
          location = "group:DSDT_AddOther.txt">
       </FileRef>
       <FileRef
-         location = "group:DSDT_AddPXSX.txt">
+         location = "group:DSDT_AddPciDev.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_AddSLPB.txt">
