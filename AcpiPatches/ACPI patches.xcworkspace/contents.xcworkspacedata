@@ -57,6 +57,9 @@
          location = "group:DSDT_AddSmbus.txt">
       </FileRef>
       <FileRef
+         location = "group:DSDT_AddTempSensors.txt">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_AddUART.txt">
       </FileRef>
       <FileRef
