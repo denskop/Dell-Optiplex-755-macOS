@@ -52,7 +52,7 @@ begin
 
         Method (MWAK, 0, NotSerialized)\n
         {\n
-            TE1  = 0x01\n
+            _INI()\n
         }\n
 
         Method (TSYS, 0, Serialized)\n
