@@ -1,0 +1,13 @@
+diff --git a/CPUSensors/CPUSensors.cpp b/CPUSensors/CPUSensors.cpp
+index eedcfa09..5755dfe8 100755
+--- a/CPUSensors/CPUSensors.cpp
++++ b/CPUSensors/CPUSensors.cpp
+@@ -294,7 +294,7 @@ void CPUSensors::calculateTimedCounters()
+                     break;
+                 case CPUID_MODEL_PENRYN:
+                 case CPUID_MODEL_ATOM:
+-                    voltage[index] = (float)(1500 - (((~vid & 0x3F) * 25) >> 1)) / 1000.0f;
++                    voltage[index] = (float)(8250 + (vid & 0x3F) * 125) / 10000.0f;
+                     break;
+                     
+                 default: break;
