@@ -696,6 +696,8 @@
 			<key>Enabled</key>
 			<false/>
 		</dict>
+		<key>PlayAsync</key>
+		<true/>
 	</dict>
 	<key>Graphics</key>
 	<dict>
