@@ -28,9 +28,9 @@
 | Memory Size / Type  / Width | 1024 Mb / DDR3 / 128-Bit |  |
 | Min Fan Speed | 60% | |
 | Display Connectors | DVI-D / HDMI / VGA | |
-| Firmware Version | 80.07.26.00.5B | `80.07.55.00.06` |
+| Firmware Version | 80.07.26.00.5B |  |
 | Info Strings | 1. ASUS GT640 VB Ver 80.07.26.00.AS07<br>2. GK107 Board - 20110000 | 1. NVIDIA GeForce GT 640<br>2. NVIDIA GeForce GT 640 |
 | UEFI GOP Driver / Version | - / -  | + / `0x10038` |
-| Voltage Table | ? | P00: `975.0mV` - `1112.5mV`<br>P08: `950.0mV` - `950.0mV`<br>P16: `1112.5mV` - `1137.5mV` |
+| Voltage Table | P00: 975.0mV - 1112.5mV<br>P08: 950.0mV |  |
 | Benchmark | ? | ? |
 | Filename | 10DE_0FC1_Stock.rom | 10DE_0FC1_Mod.rom |
