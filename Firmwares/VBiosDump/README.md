@@ -17,3 +17,20 @@
 | Voltage Table | P00: 937.5mV - 1050.0mV<br>P08: 900.0mV - 900.0mV<br>P16: 1050.0mV - 1075.0mV | P00: `975.0mV` - `1112.5mV`<br>P08: `950.0mV` - `950.0mV`<br>P16: `1112.5mV` - `1137.5mV` |
 | Benchmark | 1. Geekbench 4 (Metal): 17200<br>2. GFXBench Metal (Aztec Ruins High Tier): 1780 Frames | 1. 19600 (`+14%`)<br>2. GFXBench Metal (Aztec Ruins High Tier): 1975 Frames (`+11%`)|
 | Filename | 10DE_0FC0_Stock.rom | 10DE_0FC0_Mod.rom |
+
+# 2. ASUS GeForce GT 640
+| Videocard | Stock Firmware | Modded Firmware |
+| - | - | - |
+| Vendor Id / Device Id | 10DE / 0FC1 | |
+| SubVendor Id / SubDevice Id | 1043 / 840E | |
+| Chip / Rev | GK107 (Kepler) / A2 | |
+| Core Freq / Memory Freq | 902 Mhz / 891 Mhz | `+39 Mhz` / `+24 Mhz` |
+| Memory Size / Type  / Width | 1024 Mb / DDR3 / 128-Bit |  |
+| Min Fan Speed | 60% | |
+| Display Connectors | DVI-D / HDMI / VGA | |
+| Firmware Version | 80.07.26.00.5B | `80.07.55.00.06` |
+| Info Strings | 1. ASUS GT640 VB Ver 80.07.26.00.AS07<br>2. GK107 Board - 20110000 | 1. NVIDIA GeForce GT 640<br>2. NVIDIA GeForce GT 640 |
+| UEFI GOP Driver / Version | - / -  | + / `0x10038` |
+| Voltage Table | ? | P00: `975.0mV` - `1112.5mV`<br>P08: `950.0mV` - `950.0mV`<br>P16: `1112.5mV` - `1137.5mV` |
+| Benchmark | ? | ? |
+| Filename | 10DE_0FC1_Stock.rom | 10DE_0FC1_Mod.rom |
