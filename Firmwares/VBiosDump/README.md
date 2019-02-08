@@ -32,5 +32,5 @@
 | Info Strings | 1. ASUS GT640 VB Ver 80.07.26.00.AS07<br>2. GK107 Board - 20110000 | 1. NVIDIA GeForce GT 640<br>2. NVIDIA GeForce GT 640 |
 | UEFI GOP Driver / Version | - / -  | + / `0x10038` |
 | Voltage Table | P00: 975.0mV - 1112.5mV<br>P08: 950.0mV |  |
-| Benchmark Scores | 1. Geekbench 4 (Metal): 18850<br>2. GFXBench Metal (Aztec Ruins High Tier): 1650 Frames | 1. 19600 (`+4%`)<br>2. GFXBench Metal (Aztec Ruins High Tier): 1710 Frames (`+4%`) |
+| Benchmark Scores | 1. Geekbench 4 (Metal): 18850<br>2. GFXBench Metal (Aztec Ruins High Tier): 1650 Frames | 1. Geekbench 4 (Metal): 19600 (`+4%`)<br>2. GFXBench Metal (Aztec Ruins High Tier): 1710 Frames (`+4%`) |
 | Filename | 10DE_0FC1_Stock.rom | 10DE_0FC1_Mod.rom |
