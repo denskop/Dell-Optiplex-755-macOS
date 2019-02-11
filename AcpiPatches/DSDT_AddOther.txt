@@ -1,5 +1,5 @@
 # Add Intel ME device
-into device label PCI0 insert
+into device name_hid PNP0A03 insert
 begin
 Device (HECI)\n
 {\n
@@ -8,7 +8,7 @@ Device (HECI)\n
 end;
 
 # Add DRAM device
-into device label PCI0 insert
+into device name_hid PNP0A03 insert
 begin
 Device (ESI)\n
 {\n

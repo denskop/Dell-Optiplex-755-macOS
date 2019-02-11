@@ -1,5 +1,5 @@
 # Add Host Bus registers
-into device name_adr Zero parent_label PCI0 insert
+into device name_adr Zero parent_hid PNP0A03 insert
 begin
     OperationRegion (MCHB, PCI_Config, 0x48, 0x4)\n
     Field (MCHB, DWordAcc, NoLock, Preserve)\n
@@ -15,7 +15,7 @@ begin
 end;
 
 # Add MCH Temp Sensor
-into device name_adr Zero parent_label PCI0 insert
+into device name_adr Zero parent_hid PNP0A03 insert
 begin
     Device (MCHS)\n
     {\n

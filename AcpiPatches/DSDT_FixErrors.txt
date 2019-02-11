@@ -17,4 +17,4 @@ Return (Buffer(){Zero})
 end;
 
 # Fix PCI Root _UID
-into device label PCI0 code_regex Name\s\(_UID,\s0x04\) replace_matched begin Name (_UID, Zero) end;
+into device name_hid PNP0A03 code_regex Name\s\(_UID,\s0x04\) replace_matched begin Name (_UID, Zero) end;

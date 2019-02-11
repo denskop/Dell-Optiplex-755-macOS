@@ -1,4 +1,4 @@
-into scope label _SB.PCI0 insert
+into device name_hid PNP0A03 insert
 begin
 Device (SBUS)\n
 {\n
