@@ -51,6 +51,9 @@
          location = "group:DSDT_AddPciDev.txt">
       </FileRef>
       <FileRef
+         location = "group:DSDT_AddPNOT.txt">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_AddSLPB.txt">
       </FileRef>
       <FileRef
