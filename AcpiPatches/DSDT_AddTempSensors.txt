@@ -50,11 +50,6 @@ begin
             HTPS = 0x00\n
         }\n
 
-        Method (MWAK, 0, NotSerialized)\n
-        {\n
-            _INI()\n
-        }\n
-
         Method (TSYS, 0, Serialized)\n
         {\n
             Local0 = TMP1\n
@@ -65,8 +60,7 @@ begin
 end;
 
 # Reactivate MCH Temp Sensor after sleep
-into method label _WAK code_regex Return\s replace_matched
+into method label XWAK insert
 begin
-    \\_SB.PCI0.ESI.MCHS.MWAK()\n
-    Return
+    \_SB.PCI0.ESI.MCHS._INI()\n
 end;

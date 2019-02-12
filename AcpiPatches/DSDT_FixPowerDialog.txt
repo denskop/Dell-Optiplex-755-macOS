@@ -9,8 +9,7 @@ Field (PWBS, ByteAcc, NoLock, Preserve)\n
 end;
 
 # Fix Power Dialog
-into method label _WAK code_regex Return\s replace_matched
+into method label XWAK insert
 begin
-Store (One, PWEN)\n
-Return 
+PWEN = 0x01\n
 end;

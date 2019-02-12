@@ -258,15 +258,14 @@ begin
     PSKM (Arg0)\n
 end;
 
-# Add code to _WAK method
-into method label _WAK code_regex Or\s\(Local0,\s0x02,\sMBEN\) replace_matched
+# Add code to XWAK method
+into method label XWAK insert
 begin
-    Or (Local0, 0x02, MBEN)\n
-    Notify (\\_SB.PCI0.UHC1, Zero)\n
-    Notify (\\_SB.PCI0.UHC2, Zero)\n
-    Notify (\\_SB.PCI0.UHC3, Zero)\n
-    Notify (\\_SB.PCI0.UHC4, Zero)\n
-    Notify (\\_SB.PCI0.UHC5, Zero)\n
-    Notify (\\_SB.PCI0.EHC1, Zero)\n
-    Notify (\\_SB.PCI0.EHC2, Zero)\n
+    Notify (\_SB.PCI0.UHC1, Zero)\n
+    Notify (\_SB.PCI0.UHC2, Zero)\n
+    Notify (\_SB.PCI0.UHC3, Zero)\n
+    Notify (\_SB.PCI0.UHC4, Zero)\n
+    Notify (\_SB.PCI0.UHC5, Zero)\n
+    Notify (\_SB.PCI0.EHC1, Zero)\n
+    Notify (\_SB.PCI0.EHC2, Zero)\n
 end;
