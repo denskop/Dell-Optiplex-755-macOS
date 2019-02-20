@@ -50,25 +50,10 @@
 			<dict>
 				<key>Clover</key>
 				<dict>
-					<key>BEMB</key>
-					<array>
-						<string>BEMB</string>
-						<string>flag</string>
-					</array>
 					<key>EPCI</key>
 					<array>
 						<string>EPCI</string>
 						<string>ui32</string>
-					</array>
-					<key>RBr</key>
-					<array>
-						<string>RBr</string>
-						<string>ch8*</string>
-					</array>
-					<key>REV</key>
-					<array>
-						<string>REV</string>
-						<string>{rev</string>
 					</array>
 					<key>RPlt</key>
 					<array>
@@ -90,8 +75,6 @@
 					<integer>1</integer>
 					<key>NTOK</key>
 					<integer>1</integer>
-					<key>WKTP</key>
-					<integer>0</integer>
 				</dict>
 				<key>Keys</key>
 				<dict>
@@ -99,42 +82,49 @@
 					<array>
 						<string>ui32</string>
 						<data>
-						AAADAA==
+						AAADIA==
 						</data>
 					</array>
 					<key>$Num</key>
 					<array>
 						<string>ui8</string>
 						<data>
-						AQ==
-						</data>
-					</array>
-					<key>ACID</key>
-					<array>
-						<string>ch8*</string>
-						<data>
-						hfwETdgSevQ=
-						</data>
-					</array>
-					<key>ALI0</key>
-					<array>
-						<string>{ali</string>
-						<data>
-						BwECAA==
+						Ag==
 						</data>
 					</array>
 					<key>ALRV</key>
 					<array>
 						<string>ui16</string>
 						<data>
-						AAE=
+						AAA=
 						</data>
 					</array>
-					<key>ALV0</key>
+					<key>CLKH</key>
 					<array>
-						<string>{alv</string>
+						<string>{clh</string>
 						<data>
-						ARAGdQEgALYO4A==
+						AABwgAABGUA=
+						</data>
+					</array>
+					<key>CLKT</key>
+					<array>
+						<string>ui32</string>
+						<data>
+						AAAKrw==
+						</data>
+					</array>
+					<key>DPLM</key>
+					<array>
+						<string>{lim</string>
+						<data>
+						AAAA
+						</data>
+					</array>
+					<key>F0ID</key>
+					<array>
+						<string>{fds</string>
+						<data>
+						AQIBAElOVEFLRSAAAAAAAA==
 						</data>
 					</array>
 					<key>FNum</key>
@@ -144,23 +134,16 @@
 						AA==
 						</data>
 					</array>
-					<key>LsNM</key>
+					<key>MSDW</key>
 					<array>
-						<string>ui8</string>
+						<string>flag</string>
 						<data>
-						AQ==
-						</data>
-					</array>
-					<key>LsbV</key>
-					<array>
-						<string>{rev</string>
-						<data>
-						AQQKAAY=
+						AA==
 						</data>
 					</array>
 					<key>MSLD</key>
 					<array>
-						<string>ui8 </string>
+						<string>ui8</string>
 						<data>
 						AA==
 						</data>
@@ -186,6 +169,20 @@
 						AA==
 						</data>
 					</array>
+					<key>NATi</key>
+					<array>
+						<string>ui16</string>
+						<data>
+						AAA=
+						</data>
+					</array>
+					<key>NTOK</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>OSK0</key>
 					<array>
 						<string>ch8*</string>
@@ -202,11 +199,18 @@
 						Q29tcHV0ZXJJbmM=
 						</data>
 					</array>
+					<key>RBr</key>
+					<array>
+						<string>ch8*</string>
+						<data>
+						azUAAAAAAAA=
+						</data>
+					</array>
 					<key>REV </key>
 					<array>
 						<string>{rev</string>
 						<data>
-						ATAPAAAD
+						ATkPAAAR
 						</data>
 					</array>
 					<key>RMde</key>
@@ -220,21 +224,19 @@
 					<array>
 						<string>{rev</string>
 						<data>
-						ATAPAAAD
+						ATkPAAAR
 						</data>
 					</array>
 					<key>RVUF</key>
 					<array>
 						<string>{rev</string>
 						<data>
-						ATAPAAAD
+						ATkPAAAR
 						</data>
 					</array>
 				</dict>
 				<key>Types</key>
 				<dict>
-					<key>BEMB</key>
-					<string>flag</string>
 					<key>CLKC</key>
 					<string>{clc</string>
 					<key>CLKH</key>
@@ -243,6 +245,8 @@
 					<string>ui32</string>
 					<key>CLWK</key>
 					<string>ui32</string>
+					<key>DPLM</key>
+					<string>{lim</string>
 					<key>EPCI</key>
 					<string>flag</string>
 					<key>LSSS</key>
@@ -259,7 +263,7 @@
 				<key>debug</key>
 				<false/>
 				<key>smc-compatible</key>
-				<string>smc-napa</string>
+				<string>smc-thurley</string>
 				<key>trace</key>
 				<false/>
 			</dict>
