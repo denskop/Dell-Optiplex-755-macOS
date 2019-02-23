@@ -55,11 +55,6 @@
 						<string>EPCI</string>
 						<string>ui32</string>
 					</array>
-					<key>RPlt</key>
-					<array>
-						<string>RPlt</string>
-						<string>ch8*</string>
-					</array>
 				</dict>
 				<key>ExceptionKeys</key>
 				<dict>
@@ -97,6 +92,13 @@
 						<string>ui16</string>
 						<data>
 						AAA=
+						</data>
+					</array>
+					<key>BEMB</key>
+					<array>
+						<string>flag</string>
+						<data>
+						AA==
 						</data>
 					</array>
 					<key>CLK!</key>
@@ -323,6 +325,13 @@
 						BQ==
 						</data>
 					</array>
+					<key>MSSW</key>
+					<array>
+						<string>flag</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>NATJ</key>
 					<array>
 						<string>ui8</string>
@@ -360,6 +369,13 @@
 						Q29tcHV0ZXJJbmM=
 						</data>
 					</array>
+					<key>OSWD</key>
+					<array>
+						<string>ui16</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>RAID</key>
 					<array>
 						<string>ui8</string>
@@ -381,11 +397,25 @@
 						ATkPAAAR
 						</data>
 					</array>
+					<key>RGEN</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						Ag==
+						</data>
+					</array>
 					<key>RMde</key>
 					<array>
 						<string>char</string>
 						<data>
 						QQ==
+						</data>
+					</array>
+					<key>RPlt</key>
+					<array>
+						<string>ch8*</string>
+						<data>
+						azUAAAAAAAA=
 						</data>
 					</array>
 					<key>RVBF</key>
@@ -400,6 +430,13 @@
 						<string>{rev</string>
 						<data>
 						ATkPAAAR
+						</data>
+					</array>
+					<key>WKTP</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
 						</data>
 					</array>
 				</dict>
