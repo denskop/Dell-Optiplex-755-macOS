@@ -77,14 +77,14 @@
 					<array>
 						<string>ui32</string>
 						<data>
-						AAADIA==
+						AAADAA==
 						</data>
 					</array>
 					<key>$Num</key>
 					<array>
 						<string>ui8</string>
 						<data>
-						Ag==
+						AQ==
 						</data>
 					</array>
 					<key>ALRV</key>
@@ -94,11 +94,32 @@
 						AAA=
 						</data>
 					</array>
+					<key>BATP</key>
+					<array>
+						<string>flag</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>BEMB</key>
 					<array>
 						<string>flag</string>
 						<data>
 						AA==
+						</data>
+					</array>
+					<key>BNum</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>BSIn</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						Qg==
 						</data>
 					</array>
 					<key>CLK!</key>
@@ -297,7 +318,21 @@
 						AA==
 						</data>
 					</array>
+					<key>MSAc</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>MSDW</key>
+					<array>
+						<string>flag</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>MSFW</key>
 					<array>
 						<string>flag</string>
 						<data>
@@ -307,6 +342,13 @@
 					<key>MSLD</key>
 					<array>
 						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>MSPS</key>
+					<array>
+						<string>{msp</string>
 						<data>
 						AA==
 						</data>
@@ -328,6 +370,34 @@
 					<key>MSSW</key>
 					<array>
 						<string>flag</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>MSTc</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>MSTg</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>MSTm</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>MSWR</key>
+					<array>
+						<string>ui8</string>
 						<data>
 						AA==
 						</data>
