@@ -178,6 +178,13 @@
 						AAAA
 						</data>
 					</array>
+					<key>DUSR</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>F0ID</key>
 					<array>
 						<string>{fds</string>
@@ -188,6 +195,28 @@
 					<key>FNum</key>
 					<array>
 						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
+					<key>HBKP</key>
+					<array>
+						<string>ch8*</string>
+						<data>
+						AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+						AAAAAAAAAAAAAAA=
+						</data>
+					</array>
+					<key>LDKN</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AQ==
+						</data>
+					</array>
+					<key>LDSP</key>
+					<array>
+						<string>flag</string>
 						<data>
 						AA==
 						</data>
@@ -318,6 +347,13 @@
 						AA==
 						</data>
 					</array>
+					<key>LsNM</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>MSAc</key>
 					<array>
 						<string>ui8</string>
@@ -346,9 +382,30 @@
 						AA==
 						</data>
 					</array>
+					<key>MSPC</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						Aw==
+						</data>
+					</array>
+					<key>MSPP</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>MSPS</key>
 					<array>
-						<string>{msp</string>
+						<string>hex_</string>
+						<data>
+						AAQ=
+						</data>
+					</array>
+					<key>MSQC</key>
+					<array>
+						<string>ui8</string>
 						<data>
 						AA==
 						</data>
@@ -402,6 +459,13 @@
 						AA==
 						</data>
 					</array>
+					<key>MSWr</key>
+					<array>
+						<string>ui8</string>
+						<data>
+						AA==
+						</data>
+					</array>
 					<key>NATJ</key>
 					<array>
 						<string>ui8</string>
@@ -443,7 +507,7 @@
 					<array>
 						<string>ui16</string>
 						<data>
-						AA==
+						AAA=
 						</data>
 					</array>
 					<key>RAID</key>
