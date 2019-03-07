@@ -39,5 +39,5 @@
 #
 into scope label \ code_regex 0x00000002 replace_matched 
 begin
-0x81200411
+0x80200411
 end;
