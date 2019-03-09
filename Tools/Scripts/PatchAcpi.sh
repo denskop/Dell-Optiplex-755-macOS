@@ -64,6 +64,10 @@ case "$SSDT_IST_COUNT" in
 	;;
 esac
 
+if [ "$DEBUG" == "1" ]; then
+	echo "#define DEBUG" >> "$TEMP_PATH/Dsl/Build/Config.dsl"  
+fi
+
 popd > /dev/null
 
 ## Patch acpi tables

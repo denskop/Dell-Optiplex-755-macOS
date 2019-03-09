@@ -5,6 +5,12 @@ SELF_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # EC
 ADD_EC_DEVICE="No"
 
+if [ "$1" == "--debug" ]; then
+	DEBUG="1"
+else
+	DEBUG="0"
+fi
+
 # Additional paths
 ORIGIN_PATH="$SELF_PATH/Origin"
 
