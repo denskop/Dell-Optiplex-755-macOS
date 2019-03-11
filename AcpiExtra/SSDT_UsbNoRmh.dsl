@@ -355,7 +355,7 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                         Name (_ADR, 0x01)
                         Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                     {
-                        Zero, 
+                        0xFF, 
                         0xFF, 
                         Zero, 
                         Zero
@@ -399,7 +399,7 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "UsbNoRmh", 0x00001000)
                         Name (_ADR, 0x02)
                         Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                     {
-                        Zero, 
+                        0xFF, 
                         0xFF, 
                         Zero, 
                         Zero
