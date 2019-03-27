@@ -38,4 +38,7 @@ mkdir -p "$BUILD_PATH/Clover/kexts/10.14"
 cp -v -R "$MOJAVE_ONLY_PATH/Kexts/." "$BUILD_PATH/Clover/kexts/10.14"
 
 # Copy mojave2core tool
-cp -v "$MOJAVE_ONLY_PATH/Tools/mojave2core" "$BUILD_PATH/"
+#cp -v "$MOJAVE_ONLY_PATH/Tools/mojave2core" "$BUILD_PATH/"
+
+# Copy removeMojaveTelemetry tool
+cp -v "$MOJAVE_ONLY_PATH/Tools/removeMojaveTelemetry" "$BUILD_PATH/"

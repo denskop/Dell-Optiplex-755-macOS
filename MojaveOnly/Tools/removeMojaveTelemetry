@@ -1,0 +1,91 @@
+#!/bin/bash
+
+# Copyright © 2019 denskop. All rights reserved.
+
+# detectCpu
+# args: none
+function detectCpu() {
+	cpuBrandString=`sysctl -a | grep cpu.brand_string | sed 's/machdep.cpu.brand_string: //' | sed 's/  */ /g'` || exit 1
+	cpuFeatures=`sysctl -a | grep cpu.features | sed 's/machdep.cpu.features: //'` || exit 1
+	cpuSse41=$([[ $cpuFeatures =~ .*SSE4.1.* ]] && echo 1 || echo 0) || exit 1
+	cpuSse42=$([[ $cpuFeatures =~ .*SSE4.2.* ]] && echo 1 || echo 0) || exit 1
+
+	echo "CPU: $cpuBrandString"
+	echo "Support SSE 4.1: $cpuSse41"
+	echo "Support SSE 4.2: $cpuSse42"
+
+	if [[ $cpuSse42 == 0 ]]; then
+		echo "Mojave telemetry should be removed! Continue..."
+	else
+		echo "Mojave telemetry should works out of box! Aborting..."
+		exit 1
+	fi
+}
+
+# find Mojave telemetry
+# args: none
+function findMojaveTelemetry() {
+	echo ""
+	echo "Target volumes with Mojave:"
+	
+	echo
+	pushd "/Volumes" >/dev/null || exit 1
+	allVolumes=(*)
+	i=0
+
+	for volume in "${allVolumes[@]}"
+	do
+		targetForVolume="/Volumes/$volume" || exit 1
+
+		if [ -f "$targetForVolume/System/Library/CoreServices/SystemVersion.plist" ]; then
+			productBuildVersion=`cat "$targetForVolume/System/Library/CoreServices/SystemVersion.plist" | grep -A 1 "ProductBuildVersion" | grep string | sed 's/<string>//' | sed 's/<\/string>//' | awk '{print $1;}' ` || exit 1
+			productVersion=`cat "$targetForVolume/System/Library/CoreServices/SystemVersion.plist" | grep -A 1 "ProductVersion" | grep string | sed 's/<string>//' | sed 's/<\/string>//' | awk '{print $1;}' ` || exit 1
+			selectVersion=`echo $productVersion | sed 's/.\{5\}/& /g' | awk '{print $1;}' ` || exit 1
+
+			if [[ "$selectVersion" > "10.13" ]]; then
+				#if [ -f "$targetForVolume/System/Library/UserEventPlugins/com.apple.telemetry.plugin/Contents/MacOS/com.apple.telemetry" ]; then
+					atListVolume[$i]="$targetForVolume" || exit 1
+					osVersion[$i]="$productVersion" || exit 1
+					osBuildVersion[$i]="$productBuildVersion" || exit 1				
+					echo "[ $i ] $volume; macOS $productVersion ($productBuildVersion)" || exit 1
+					let i++
+				#fi
+			fi
+		fi
+	done
+
+	echo 
+	read -p "Select volume to remove telemetry: " volumeNumber || exit 1
+	if [ ! "${atListVolume[$volumeNumber]}" ]; then
+		echo "ERROR! Wrong volume!"
+		exit 0
+	fi
+
+	targetVolume="${atListVolume[$volumeNumber]}" || exit 1
+
+	echo "Removing telemetry from: $targetVolume"
+
+	telemetryBackupDir="${targetVolume}/Telemetry" || exit 1
+	mkdir -p "$telemetryBackupDir" || exit 1
+	mv "${targetVolume}/System/Library/UserEventPlugins/com.apple.telemetry.plugin" "$telemetryBackupDir/" || exit 1
+	mv "${targetVolume}/System/Library/Extensions/pmtelemetry.kext" "$telemetryBackupDir/" || exit 1
+	mv "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist" "$telemetryBackupDir/" || exit 1
+	mv "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.daily.plist" "$telemetryBackupDir/" || exit 1
+
+	echo "Telemetry backed up to: $telemetryBackupDir"
+}
+
+# rebuildKernelCache
+# args: none
+function rebuildKernelCache() {
+	echo "Rebuilding kernel cache"
+
+	touch "$targetVolume/System/Library/Extensions" || exit 1
+	kextcache -u "$targetVolume" || exit 1
+}
+
+detectCpu
+findMojaveTelemetry
+rebuildKernelCache
+
+echo "Done!"
