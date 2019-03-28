@@ -805,18 +805,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fix AGPM</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>QUNQSV9TTUNfR1BVX0N0cmxMb29w</data>
-				<key>Name</key>
-				<string>ACPI_SMC_PlatformPlugin</string>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Override USB port count</string>
 				<key>Disabled</key>
 				<false/>
