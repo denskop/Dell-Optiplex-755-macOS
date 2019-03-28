@@ -57,8 +57,8 @@ function findMojaveTelemetry() {
 	echo 
 	read -p "Select volume to remove telemetry: " volumeNumber || exit 1
 	if [ ! "${atListVolume[$volumeNumber]}" ]; then
-		echo "ERROR! Wrong volume!"
-		exit 0
+		echo "ERROR! Wrong volume selected!"
+		exit 1
 	fi
 
 	targetVolume="${atListVolume[$volumeNumber]}" || exit 1
@@ -67,12 +67,18 @@ function findMojaveTelemetry() {
 
 	telemetryBackupDir="${targetVolume}/Telemetry" || exit 1
 	mkdir -p "$telemetryBackupDir" || exit 1
-	mv "${targetVolume}/System/Library/UserEventPlugins/com.apple.telemetry.plugin" "$telemetryBackupDir/" || exit 1
-	mv "${targetVolume}/System/Library/Extensions/pmtelemetry.kext" "$telemetryBackupDir/" || exit 1
-	mv "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist" "$telemetryBackupDir/" || exit 1
-	mv "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.daily.plist" "$telemetryBackupDir/" || exit 1
+	cp -R "${targetVolume}/System/Library/UserEventPlugins/com.apple.telemetry.plugin" "$telemetryBackupDir/" || exit 1
+	cp -R "${targetVolume}/System/Library/Extensions/pmtelemetry.kext" "$telemetryBackupDir/" || exit 1
+	cp "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist" "$telemetryBackupDir/" || exit 1
+	cp "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.daily.plist" "$telemetryBackupDir/" || exit 1
 
 	echo "Telemetry backed up to: $telemetryBackupDir"
+
+	# now remove it from system
+	rm -R "${targetVolume}/System/Library/UserEventPlugins/com.apple.telemetry.plugin" || exit 1
+	rm -R "${targetVolume}/System/Library/Extensions/pmtelemetry.kext" || exit 1
+	rm "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist" || exit 1
+	rm "${targetVolume}/System/Library/LaunchDaemons/com.apple.systemstats.daily.plist" || exit 1
 }
 
 # rebuildKernelCache
