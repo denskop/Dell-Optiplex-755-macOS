@@ -17,12 +17,12 @@ Repo to install macOS on Dell Optiplex 755
 | | AMD Radeon X1300 | ❌ | |
 | | AMD Radeon HD 2xxx / 3xxx | ❌ | |
 | | AMD Radeon HD 4xxx / 5xxx / 6xxx  | ⚠️ | Unsupported by macOS 10.14 |
-| | AMD Radeon HD 7xxx and newer | ⚠️ | Unsupported by macOS 10.14 due to LGA 775 boards problems! |
+| | AMD Radeon HD 7xxx and newer | ⚠️ | Unsupported by macOS 10.14 due to LGA 775 board problems! |
 | | Nvidia GeForce 8xxx / 9xxx GT / GTS | ⚠️ | Unsupported by macOS 10.14 |
 | | Nvidia GeForce GT / GTX 1xx / 2xx / 3xx | ⚠️ | Unsupported by macOS 10.14 |
 | | Nvidia GeForce GT / GTX 4xx / 5xx / 6xx (Fermi) | ⚠️ | Unstable in macOS 10.14 |
 | | Nvidia GeForce GT / GTX 6xx / 7xx (Kepler) | ✅ | GK1xx Chips |
-| | Nvidia GeForce GT 6xx / 7xx (Kepler) | ⚠️ | GK2xx Chips<br>Unsupported by macOS 10.14<br>Require Nvidia Web Driver |
+| | Nvidia GeForce GT 6xx / 7xx (Kepler 2.0) | ✅ | GK2xx Chips |
 | | Nvidia GeForce GTX 750 / 9xx (Maxwell) | ⚠️ | Unsupported by macOS 10.14<br>Require Nvidia Web Driver |
 | | Nvidia GeForce GTX 10xx (Pascal) | ⚠️ | Unsupported by macOS 10.14<br>Require Nvidia Web Driver |
 | | Nvidia GeForce RTX 20xx (Turing) | ❌ | Unsupported by macOS 10.14+<br>Require Nvidia Web Driver |
