@@ -730,7 +730,7 @@
 				<key>Comment</key>
 				<string>Disable panic kext logging</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>igKEwHRC</data>
 				<key>MatchOS</key>
@@ -742,7 +742,7 @@
 				<key>Comment</key>
 				<string>Disable panic kext logging</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>igKEwHRE</data>
 				<key>MatchOS</key>
@@ -771,9 +771,11 @@
 				<key>Comment</key>
 				<string>TRIM function for non-Apple SSDs</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>QVBQTEUgU1NEAA==</data>
+				<key>MatchOS</key>
+				<string>10.6.x, 10.7.x, 10.8.x, 10.9.x, 10.10.0, 10.10.1, 10.10.2, 10.10.3</string>
 				<key>Name</key>
 				<string>IOAHCIBlockStorage</string>
 				<key>Replace</key>
@@ -795,7 +797,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Rename ICH8 to ICH9</string>
+				<string>Rename ICH8 to ICH9 (Cosmetic)</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
@@ -819,27 +821,31 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Override USB port count</string>
+				<string>Override USB: port-count -&gt; port_count</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>cG9ydC1jb3VudA==</data>
+				<data>cG9ydC1jb3VudAA=</data>
+				<key>MatchOS</key>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x</string>
 				<key>Name</key>
 				<string>IOUSBHostFamily</string>
 				<key>Replace</key>
-				<data>cG9ydF9jb3VudA==</data>
+				<data>cG9ydF9jb3VudAA=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Override USB ports</string>
+				<string>Override EHCI: ports -&gt; hub</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>cG9ydHM=</data>
+				<data>cG9ydHMA</data>
+				<key>MatchOS</key>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x</string>
 				<key>Name</key>
 				<string>AppleUSBEHCIPCI</string>
 				<key>Replace</key>
-				<data>aHViAAA=</data>
+				<data>aHViAAAA</data>
 			</dict>
 		</array>
 	</dict>
