@@ -33,7 +33,7 @@ cp -v "$CLOVER_PATH/config.plist" "$BUILD_PATH/Clover"
 # drivers64
 mkdir -p "$BUILD_PATH/Clover/drivers64"
 cp -v -R "$CLOVER_PATH/Drivers/." "$BUILD_PATH/Clover/drivers64"
-cp -v -R "$EFI_PATH/IntelDrivers/." "$BUILD_PATH/Clover/drivers64"
+#cp -v -R "$EFI_PATH/IntelDrivers/." "$BUILD_PATH/Clover/drivers64"
 
 # kexts
 mkdir -p "$BUILD_PATH/Clover/kexts"
