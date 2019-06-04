@@ -732,9 +732,21 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
+				<data>AIoChMB0</data>
+				<key>MatchOS</key>
+				<string>10.14.4, 10.14.5, 10.14.6</string>
+				<key>Replace</key>
+				<data>AIoChMDr</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable panic kext logging</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
 				<data>igKEwHRC</data>
 				<key>MatchOS</key>
-				<string>10.14.x</string>
+				<string>10.14, 10.14.1, 10.14.2, 10.14.3</string>
 				<key>Replace</key>
 				<data>igKEwOtC</data>
 			</dict>
