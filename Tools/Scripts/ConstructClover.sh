@@ -73,6 +73,11 @@ mkdir -p "$BUILD_PATH/Clover/kexts/10.14"
 cp -v -R "$KEXTS_PATH/macOS_10.14/." "$BUILD_PATH/Clover/kexts/10.14"
 cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.14"
 
+# Catalina
+mkdir -p "$BUILD_PATH/Clover/kexts/10.15"
+cp -v -R "$KEXTS_PATH/macOS_10.15/." "$BUILD_PATH/Clover/kexts/10.15"
+cp -v -R "$KEXTS_PATH/Universal/." "$BUILD_PATH/Clover/kexts/10.15"
+
 # themes
 mkdir -p "$BUILD_PATH/Clover/themes"
 cp -v -R "$CLOVER_PATH/Themes/." "$BUILD_PATH/Clover/themes"

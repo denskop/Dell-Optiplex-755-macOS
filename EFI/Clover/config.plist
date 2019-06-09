@@ -129,7 +129,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-no_compat_check -nehalem_error_disable agdpmod=vit9696 nv_numNdrv=2 -fakesmc-use-nvram watchdog=0 gfxrst=1</string>
+		<string>-no_compat_check -nehalem_error_disable agdpmod=vit9696 nv_numNdrv=2 -fakesmc-use-nvram watchdog=0 gfxrst=1 -lilubetaall</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>DisableCloverHotkeys</key>
@@ -787,7 +787,7 @@
 				<key>Find</key>
 				<data>QVBQTEUgU1NEAA==</data>
 				<key>MatchOS</key>
-				<string>10.6.x, 10.7.x, 10.8.x, 10.9.x, 10.10.0, 10.10.1, 10.10.2, 10.10.3</string>
+				<string>10.6.x, 10.7.x, 10.8.x, 10.9.x, 10.10, 10.10.1, 10.10.2, 10.10.3</string>
 				<key>Name</key>
 				<string>IOAHCIBlockStorage</string>
 				<key>Replace</key>
@@ -801,7 +801,7 @@
 				<key>Find</key>
 				<data>QGACAA==</data>
 				<key>MatchOS</key>
-				<string>10.13.x, 10.14.x</string>
+				<string>10.13.x, 10.14.x, 10.15.x</string>
 				<key>Name</key>
 				<string>AppleAHCIPort</string>
 				<key>Replace</key>
@@ -839,7 +839,7 @@
 				<key>Find</key>
 				<data>cG9ydC1jb3VudAA=</data>
 				<key>MatchOS</key>
-				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x</string>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x, 10.15.x</string>
 				<key>Name</key>
 				<string>IOUSBHostFamily</string>
 				<key>Replace</key>
@@ -853,12 +853,17 @@
 				<key>Find</key>
 				<data>cG9ydHMA</data>
 				<key>MatchOS</key>
-				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x</string>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x, 10.15.x</string>
 				<key>Name</key>
 				<string>AppleUSBEHCIPCI</string>
 				<key>Replace</key>
 				<data>aHViAAAA</data>
 			</dict>
+		</array>
+		<key>ForceKextsToLoad</key>
+		<array>
+			<string>\System\Library\Extensions\IOUSBHostFamily.kext</string>
+			<string>\System\Library\Extensions\IOHIDFamily.kext</string>
 		</array>
 	</dict>
 	<key>RtVariables</key>

@@ -185,6 +185,20 @@
 				<data>BgAAAA==</data>
 				<key>hub</key>
 				<dict>
+					<key>PRT1</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>255</integer>
+						<key>port</key>
+						<data>AQAAAA==</data>
+					</dict>
+					<key>PRT2</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>255</integer>
+						<key>port</key>
+						<data>AgAAAA==</data>
+					</dict>
 					<key>PRT3</key>
 					<dict>
 						<key>UsbConnector</key>

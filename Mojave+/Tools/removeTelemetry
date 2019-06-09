@@ -22,7 +22,7 @@ function detectCpu() {
 	fi
 }
 
-# find Mojave telemetry
+# find Mojave+ telemetry
 # args: none
 function findMojaveTelemetry() {
 	echo ""
