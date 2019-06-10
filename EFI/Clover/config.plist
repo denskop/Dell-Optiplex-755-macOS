@@ -859,11 +859,20 @@
 				<key>Replace</key>
 				<data>aHViAAAA</data>
 			</dict>
-		</array>
-		<key>ForceKextsToLoad</key>
-		<array>
-			<string>\System\Library\Extensions\IOUSBHostFamily.kext</string>
-			<string>\System\Library\Extensions\IOHIDFamily.kext</string>
+			<dict>
+				<key>Comment</key>
+				<string>Fix USB HID freeze in 10.15 DP1</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>SIsFMnkCAEiLAEiJRfg=</data>
+				<key>MatchOS</key>
+				<string>10.15</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOHIDFamily</string>
+				<key>Replace</key>
+				<data>SMfAAQAAAOlPAAAAkJA=</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>
