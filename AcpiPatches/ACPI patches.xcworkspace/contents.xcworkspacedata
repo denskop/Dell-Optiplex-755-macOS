@@ -123,7 +123,7 @@
          location = "group:DSDT_Header_MacPro.txt">
       </FileRef>
       <FileRef
-         location = "group:DSDT_HidePSKb.txt">
+         location = "group:/Volumes/Maverics/Users/denskop/Dell-Optiplex-755-macOS/AcpiPatches/DSDT_ConfigPSKb.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_HideUseless.txt">

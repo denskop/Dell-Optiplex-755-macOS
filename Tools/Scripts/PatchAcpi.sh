@@ -25,14 +25,18 @@ rm -rf "$TEMP_PATH/Dsl"
 
 ## Disassemble acpi tables
 
+pushd "$ORIGIN_PATH" > /dev/null
+
 # SSDT, DSDT
-$IASL -dl -da "$ORIGIN_PATH/SSDT"* "$ORIGIN_PATH/DSDT.aml"
+$IASL -dl -in -da SSDT*.aml DSDT.aml
 
 # Other tables
 # $IASL -dl "$ORIGIN_PATH/APIC.aml"
-$IASL -dl "$ORIGIN_PATH/ASF!.aml"
-$IASL -dl "$ORIGIN_PATH/HPET.aml"
-$IASL -dl "$ORIGIN_PATH/MCFG.aml"
+$IASL -dl ASF!.aml
+$IASL -dl HPET.aml
+$IASL -dl MCFG.aml
+
+popd > /dev/null
 
 # Move dsl
 mkdir -p "$TEMP_PATH/Dsl"
@@ -66,6 +70,10 @@ esac
 
 if [ "$DEBUG" == "1" ]; then
 	echo "#define DEBUG" >> "$TEMP_PATH/Dsl/Build/Config.dsl"  
+fi
+
+if [ "$PSKB_EN" == "1" ]; then
+	echo "#define PSKB_ENABLED" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
 fi
 
 popd > /dev/null
@@ -134,7 +142,7 @@ $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddTempSensors.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_AddUART.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_GRFX.txt
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Sata.txt
-$PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_HidePSKb.txt
+$PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_ConfigPSKb.txt
 
 # SSDT
 for i in `seq 0 $((SSDT_IST_COUNT - 1))`; do

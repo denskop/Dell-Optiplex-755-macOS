@@ -1,5 +1,0 @@
-# Disable PS/2 Keyboard
-into method label _STA parent_label KBD code_regex If\s\(GCKB\s\(\)\) replaceall_matched
-begin
-If (GCKB () && !OSDW ())
-end;
