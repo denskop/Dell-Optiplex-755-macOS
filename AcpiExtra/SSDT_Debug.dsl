@@ -3,4 +3,5 @@ DefinitionBlock ("", "SSDT", 1, "APPLE ", "Debug ", 0x00001000)
     #include <Config.dsl>
     #include "Debug/Device.dsl"
     #include "Debug/Methods.dsl"
+    #include "PS2Kb/PS2Kb.dsl"
 }
