@@ -23,6 +23,34 @@ SMBIOS=$(/usr/libexec/PlistBuddy -c "Print :SMBIOS:ProductName" "$CLOVER_CONFIG_
 # Remove dsl folder
 rm -rf "$TEMP_PATH/Dsl"
 
+# Check origin folder
+cpu_cores_array=(2 2 4)
+dump_bios_array=(A12 A22 A22)
+cpu_cores_array_len=${#cpu_cores_array[@]}
+dump_bios_array_len=${#dump_bios_array[@]}
+
+if ((cpu_cores_array_len != dump_bios_array_len)); then
+	echo "ERROR: cpu_cores_array != dump_bios_array"
+	exit 1
+fi
+
+if (( "$(find *.aml -type f | wc -l)" == 0)); then
+	echo "No ACPI tables found. Origin folder is empty!"
+	echo "Available dumps:"
+
+	for ((i=0; i<$cpu_cores_array_len; i++)); do
+		echo "[ $i ] CPU ${cpu_cores_array[$i]} Cores; BIOS ${dump_bios_array[$i]};"
+	done
+	echo "[ q ] quit;"
+    read -p "Select choose: " dumpIndex || exit 1
+
+    # Quit
+    if (( dumpIndex == q )); then exit 1 ; fi
+
+    # Set origin path
+	ORIGIN_PATH="$SELF_PATH/Origin${dump_bios_array[$dumpIndex]}/Dump_${cpu_cores_array[$dumpIndex]}Cores"
+fi
+
 ## Disassemble acpi tables
 
 pushd "$ORIGIN_PATH" > /dev/null
