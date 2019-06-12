@@ -8,12 +8,14 @@ ADD_EC_DEVICE="No"
 # Default behavior
 DEBUG="0"
 PSKB_EN="0"
+ATH9_KEXT_RESTORE="0"
 
 for arg in "$@"; do
   shift
   case "$arg" in
     "--debug") DEBUG="1" ;;
     "--ps2kb") PSKB_EN="1" ;;
+	"--ath9") ATH9_KEXT_RESTORE="1" ;;
     *)
   esac
 done
