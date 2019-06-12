@@ -54,26 +54,26 @@ SSDT_IST_COUNT=$(ls -1 SSDT*Cpu*Ist.dsl 2>/dev/null | wc -l | grep -o "[0-9]")
 
 mkdir -p "$TEMP_PATH/Dsl/Build"
 case "$SSDT_IST_COUNT" in
-	"2")
-	echo "#define CPU_CORES_NUM 2" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
-	echo "#define IMAC_10_1_PM" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
-	;;
-	"4")
-	echo "#define CPU_CORES_NUM 4" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
-	echo "#define MAC_PRO_5_1_PM" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
-	;;
-	*)
-	echo "Bad count of speedstep tables"
-	exit 1
-	;;
+    "2")
+    echo "#define CPU_CORES_NUM 2" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+    echo "#define IMAC_10_1_PM" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+    ;;
+    "4")
+    echo "#define CPU_CORES_NUM 4" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+    echo "#define MAC_PRO_5_1_PM" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+    ;;
+    *)
+    echo "Bad count of speedstep tables"
+    exit 1
+    ;;
 esac
 
 if [ "$DEBUG" == "1" ]; then
-	echo "#define DEBUG" >> "$TEMP_PATH/Dsl/Build/Config.dsl"  
+    echo "#define DEBUG" >> "$TEMP_PATH/Dsl/Build/Config.dsl"  
 fi
 
 if [ "$PSKB_EN" == "1" ]; then
-	echo "#define PSKB_ENABLED" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
+    echo "#define PSKB_ENABLED" >> "$TEMP_PATH/Dsl/Build/Config.dsl"
 fi
 
 popd > /dev/null
@@ -146,22 +146,22 @@ $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_ConfigPSKb.txt
 
 # SSDT
 for i in `seq 0 $((SSDT_IST_COUNT - 1))`; do
-	$PATCH "$TEMP_PATH/Dsl/"SSDT_Cpu"$i"Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu"$i"Ist.txt
+    $PATCH "$TEMP_PATH/Dsl/"SSDT_Cpu"$i"Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu"$i"Ist.txt
 done
 
 $PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm.txt
 
 case "$SSDT_IST_COUNT" in
-	"2")
-	$PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Duo.txt
-	;;
-	"4")
-	$PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Quad.txt
-	;;
-	*)
-	echo "Bad count of speedstep tables"
-	exit 1
-	;;
+    "2")
+    $PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Duo.txt
+    ;;
+    "4")
+    $PATCH "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm_Core2Quad.txt
+    ;;
+    *)
+    echo "Bad count of speedstep tables"
+    exit 1
+    ;;
 esac
 
 ## Patch2 acpi tables
@@ -210,13 +210,13 @@ $IASL -I "$TEMP_PATH/Dsl/Build" -ve "$TEMP_PATH/Dsl/"*.dsl
 pushd "$ACPI_EXTRA_PATH" > /dev/null
 
 for file in *; do
-	if [[ "$file" =~ ^SSDT_Cpu.*\.dsl ]] && [ "$(echo $file | grep -o "[0-9]")" -ge "$SSDT_IST_COUNT" ]; then
-		echo "Skip $file"
-		continue
-	fi
-	
-	echo "Compile $file"
-	$IASL -I "$TEMP_PATH/Dsl/Build" -ve "$file"
+    if [[ "$file" =~ ^SSDT_Cpu.*\.dsl ]] && [ "$(echo $file | grep -o "[0-9]")" -ge "$SSDT_IST_COUNT" ]; then
+        echo "Skip $file"
+        continue
+    fi
+    
+    echo "Compile $file"
+    $IASL -I "$TEMP_PATH/Dsl/Build" -ve "$file"
 done
 
 popd > /dev/null

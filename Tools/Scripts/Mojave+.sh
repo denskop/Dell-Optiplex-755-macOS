@@ -43,7 +43,7 @@ cp -v -R "$MOJAVE_PLUS_PATH/Kexts/." "$BUILD_PATH/Clover/kexts/10.15"
 
 # Restore Atheros WiFi kext
 if [ $ATH9_KEXT_RESTORE == "1" ]; then
-	cp -v -R "$MOJAVE_PLUS_PATH/CatalinaRollback/." "$BUILD_PATH/Clover/kexts/10.15"
+    cp -v -R "$MOJAVE_PLUS_PATH/CatalinaRollback/." "$BUILD_PATH/Clover/kexts/10.15"
 fi
 
 # Copy mojave2core tool

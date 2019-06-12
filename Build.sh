@@ -15,7 +15,7 @@ for arg in "$@"; do
   case "$arg" in
     "--debug") DEBUG="1" ;;
     "--ps2kb") PSKB_EN="1" ;;
-	"--ath9") ATH9_KEXT_RESTORE="1" ;;
+    "--ath9") ATH9_KEXT_RESTORE="1" ;;
     *)
   esac
 done
