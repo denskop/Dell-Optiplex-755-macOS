@@ -34,7 +34,7 @@ if ((cpu_cores_array_len != dump_bios_array_len)); then
     exit 1
 fi
 
-if (( "$(find *.aml -type f | wc -l)" == 0)); then
+if (( "$(find "$ORIGIN_PATH/"*.aml -type f | wc -l)" == 0)); then
     echo "No ACPI tables found. Origin folder is empty!"
     echo "Available dumps:"
 
