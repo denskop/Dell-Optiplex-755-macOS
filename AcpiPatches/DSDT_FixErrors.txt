@@ -16,5 +16,9 @@ begin
 Return (Buffer(){Zero})
 end;
 
+# Fix PCI Root _HID
+into all code_regex PNP0A03 replace_matched begin PNP0A08 end;
+into device name_hid PNP0A08 insert begin Name (_CID, EisaId ("PNP0A03"))\n end;
+
 # Fix PCI Root _UID
-into device name_hid PNP0A03 code_regex Name\s\(_UID,\s0x04\) replace_matched begin Name (_UID, Zero) end;
+into device name_hid PNP0A08 code_regex Name\s\(_UID,\s0x04\) replace_matched begin Name (_UID, Zero) end;

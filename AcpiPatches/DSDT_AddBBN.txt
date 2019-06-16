@@ -1,5 +1,5 @@
 # Add _BBN method to PCI0 device
-into device name_hid PNP0A03 insert
+into device name_hid PNP0A08 insert
 begin
 Method (^BN00, 0, NotSerialized)\n
 {\n

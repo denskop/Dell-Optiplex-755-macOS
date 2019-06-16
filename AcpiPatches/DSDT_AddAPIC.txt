@@ -1,5 +1,5 @@
 # Add APIC device
-into device name_hid PNP0A03 insert
+into device name_hid PNP0A08 insert
 begin
 Device (APIC)\n
 {\n
