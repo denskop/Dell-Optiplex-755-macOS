@@ -20,7 +20,7 @@
 	<string>1.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>MacPro6,1-UsbPower</key>
+		<key>iMac14,2-UsbPower</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBHostMergeProperties</string>
@@ -40,9 +40,9 @@
 				<integer>3700</integer>
 			</dict>
 			<key>model</key>
-			<string>MacPro6,1</string>
+			<string>iMac14,2</string>
 		</dict>
-		<key>MacPro6,1-EHC1</key>
+		<key>iMac14,2-EHC1</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -103,9 +103,9 @@
 				</dict>
 			</dict>
 			<key>model</key>
-			<string>MacPro6,1</string>
+			<string>iMac14,2</string>
 		</dict>
-		<key>MacPro6,1-EHC2</key>
+		<key>iMac14,2-EHC2</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -152,7 +152,7 @@
 				</dict>
 			</dict>
 			<key>model</key>
-			<string>MacPro6,1</string>
+			<string>iMac14,2</string>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
