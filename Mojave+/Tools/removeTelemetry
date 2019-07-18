@@ -65,7 +65,13 @@ function findMojaveTelemetry() {
 
 	echo "Removing telemetry from: $targetVolume"
 
-	telemetryBackupDir="${targetVolume}/Telemetry" || exit 1
+	telemetryBackupDir="${targetVolume}/Telemetry"
+
+    # Catalina read-only filesystem workaround
+    if [[ "$selectVersion" > "10.14" ]]; then
+        telemetryBackupDir="${targetVolume}/Users/Telemetry"
+    fi
+
 	mkdir -p "$telemetryBackupDir" || exit 1
 	cp -R "${targetVolume}/System/Library/UserEventPlugins/com.apple.telemetry.plugin" "$telemetryBackupDir/" || exit 1
 	cp -R "${targetVolume}/System/Library/Extensions/pmtelemetry.kext" "$telemetryBackupDir/" || exit 1
