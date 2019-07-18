@@ -1,0 +1,11 @@
+# Add Dell specific code from laptop
+
+into method label XPTS insert
+begin
+    SMI (0x8A, Arg0)
+end;
+
+into method label XWAK insert
+begin
+    SMI (0x9A, Arg0)
+end;

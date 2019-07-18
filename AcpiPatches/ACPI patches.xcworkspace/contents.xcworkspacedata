@@ -69,7 +69,13 @@
          location = "group:DSDT_AppleSpecific.txt">
       </FileRef>
       <FileRef
+         location = "group:DSDT_DellSpecific.txt">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_CpuSection.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixPTS2.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_FixADR.txt">
@@ -123,7 +129,7 @@
          location = "group:DSDT_Header_MacPro.txt">
       </FileRef>
       <FileRef
-         location = "group:/Volumes/Maverics/Users/denskop/Dell-Optiplex-755-macOS/AcpiPatches/DSDT_ConfigPSKb.txt">
+         location = "group:DSDT_ConfigPSKb.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_HideUseless.txt">

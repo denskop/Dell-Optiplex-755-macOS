@@ -250,12 +250,11 @@ begin
     }\n
 end;
 
-# Add code to _PTS method
-into method label _PTS replace_content
+# Add code to XPTS method
+into method label XPTS insert
 begin
     \_SB.PCI0.RP01.XPM1 (Zero)\n
-//   \_SB.PCI0.PCI1.XPM1 (0x08)\n
-    PSKM (Arg0)\n
+//  \_SB.PCI0.PCI1.XPM1 (0x08)\n
 end;
 
 # Add code to XWAK method

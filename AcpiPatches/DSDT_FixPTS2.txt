@@ -1,0 +1,12 @@
+# Add stub XPTS
+into definitionblock code_regex . insert
+begin
+Method (XPTS, 1, NotSerialized) {}\n
+end;
+
+# Add code to _PTS method
+into method label _PTS replace_content
+begin
+    XPTS (Arg0)\n
+    PSKM (Arg0)\n
+end;

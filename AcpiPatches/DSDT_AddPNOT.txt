@@ -66,5 +66,5 @@ end;
 # Call PNOT in XWAK method
 into method label XWAK insert
 begin
-PNOT ()
+    PNOT ()
 end;

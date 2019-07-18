@@ -4,7 +4,7 @@ begin
 OperationRegion (PWBS, SystemIO, 0x0803, One)\n
 Field (PWBS, ByteAcc, NoLock, Preserve)\n
 {\n
-	PWEN,   1\n
+	  PWEN,   1\n
 }\n
 end;
 

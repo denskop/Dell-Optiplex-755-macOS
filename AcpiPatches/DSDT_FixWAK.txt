@@ -1,13 +1,13 @@
 # Add stub XWAK
 into definitionblock code_regex . insert
 begin
-    Method (XWAK, 0, NotSerialized) {}\n
+    Method (XWAK, 1, NotSerialized) {}\n
 end;
 
 # Fix _WAK and call XWAK
 into method label _WAK code_regex Return\s\(Zero\) replace_matched
 begin
-XWAK ()\n
+XWAK (Arg0)\n
 Return (Package (0x02)\n
 {\n
     Zero,\n
