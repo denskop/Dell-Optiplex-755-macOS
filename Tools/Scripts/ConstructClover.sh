@@ -30,10 +30,10 @@ mkdir -p "$BUILD_PATH/Clover"
 cp -v "$CLOVER_PATH/CLOVERX64.efi" "$BUILD_PATH/Clover"
 cp -v "$CLOVER_PATH/config.plist" "$BUILD_PATH/Clover"
 
-# drivers64
-mkdir -p "$BUILD_PATH/Clover/drivers64"
-cp -v -R "$CLOVER_PATH/Drivers/." "$BUILD_PATH/Clover/drivers64"
-#cp -v -R "$EFI_PATH/IntelDrivers/." "$BUILD_PATH/Clover/drivers64"
+# drivers
+mkdir -p "$BUILD_PATH/Clover/drivers/BIOS"
+cp -v -R "$CLOVER_PATH/Drivers/." "$BUILD_PATH/Clover/drivers/BIOS"
+#cp -v -R "$EFI_PATH/IntelDrivers/." "$BUILD_PATH/Clover/drivers/BIOS"
 
 # kexts
 mkdir -p "$BUILD_PATH/Clover/kexts"
