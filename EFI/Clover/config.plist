@@ -698,6 +698,11 @@
 		</dict>
 		<key>PlayAsync</key>
 		<true/>
+		<key>Scan</key>
+		<dict>
+			<key>Legacy</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>Graphics</key>
 	<dict>
