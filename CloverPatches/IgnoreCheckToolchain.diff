@@ -1,0 +1,13 @@
+diff --git a/ebuild.sh b/ebuild.sh
+index 60870621..6b4c3410 100755
+--- a/ebuild.sh
++++ b/ebuild.sh
+@@ -451,7 +451,7 @@ checkToolchain() {
+ # Main build script
+ MainBuildScript() {
+     checkCmdlineArguments $@
+-    checkToolchain
++#    checkToolchain
+ 
+     local repoRev=$(git describe --tags $(git rev-list --tags --max-count=1﻿))
+ 

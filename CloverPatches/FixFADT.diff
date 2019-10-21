@@ -1,30 +1,30 @@
-Index: rEFIt_UEFI/Platform/AcpiPatcher.c
-===================================================================
---- rEFIt_UEFI/Platform/AcpiPatcher.c	(revision 4908)
-+++ rEFIt_UEFI/Platform/AcpiPatcher.c	(working copy)
-@@ -1715,7 +1715,8 @@
+diff --git a/rEFIt_UEFI/Platform/AcpiPatcher.c b/rEFIt_UEFI/Platform/AcpiPatcher.c
+index c4545145..02f6050a 100644
+--- a/rEFIt_UEFI/Platform/AcpiPatcher.c
++++ b/rEFIt_UEFI/Platform/AcpiPatcher.c
+@@ -1719,7 +1719,8 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, CHAR8 *OSVersion)
+   BOOLEAN           NeedUpdate = FALSE;
    OPER_REGION       *tmpRegion;
-   INTN              ApicCPUBase = 0;
    CHAR16*           AcpiOemPath = PoolPrint(L"%s\\ACPI\\patched", OEMPath);
 -
 +  MACHINE_TYPES     MacModel = GetModelFromString(gSettings.ProductName);
-+    
++
    DbgHeader("PatchACPI");
  
    PathDsdt = PoolPrint(L"\\%s", gSettings.DsdtName);
-@@ -1869,6 +1870,11 @@
+@@ -1873,6 +1874,11 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, CHAR8 *OSVersion)
      } else {
        newFadt->PreferredPmProfile = gMobile?2:1; //as calculated before
      }
-+      
++
 +    if ((MacModel == iMac81) || (MacModel == iMac91) || (MacModel == iMac101)) {
 +        newFadt->PstateCnt = 0x80;
 +    }
-+      
++
      if (gSettings.EnableC6 || gSettings.EnableISS) {
        newFadt->CstCnt = 0x85; //as in Mac
      }
-@@ -1882,12 +1888,16 @@
+@@ -1886,12 +1892,16 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, CHAR8 *OSVersion)
        gSettings.C3Latency = newFadt->PLvl3Lat;
      }
      
@@ -34,14 +34,14 @@ Index: rEFIt_UEFI/Platform/AcpiPatcher.c
 +    newFadt->Flags &= ~(1 << 4);  // Enable PWRB Control
 +    newFadt->Flags |= (1 << 5);   // Disable SLPB Control
 +    newFadt->Flags &= ~(1 << 16); // RTC_STS not valid
-+      
++
      if (gSettings.NoASPM) {
 -      newFadt->IaPcBootArch |= 0x10;  // disable ASPM
 +      newFadt->IaPcBootArch |= (1 << 4);  // Disable ASPM
      }
 -    newFadt->Flags |= 0x420; //Reset Register Supported and SleepButton active
 -    newFadt->Flags &= ~0x10010; //RTC_STS not valid and PowerButton disable
-+    
++
      XDsdt = newFadt->XDsdt; //save values if present
      XFirmwareCtrl = newFadt->XFirmwareCtrl;
      CopyMem(&newFadt->ResetReg, pmBlock, 0x80);

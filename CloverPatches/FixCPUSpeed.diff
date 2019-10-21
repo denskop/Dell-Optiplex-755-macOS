@@ -1,16 +1,14 @@
-Index: rEFIt_UEFI/Platform/smbios.c
-===================================================================
---- rEFIt_UEFI/Platform/smbios.c	(revision 4849)
-+++ rEFIt_UEFI/Platform/smbios.c	(working copy)
-@@ -764,8 +764,9 @@
- 		CopyMem((VOID*)newSmbiosTable.Type4, (VOID*)SmbiosTable.Type4, Size); //copy main table
- 		CopyMem((CHAR8*)newSmbiosTable.Type4+NewSize, (CHAR8*)SmbiosTable.Type4+Size, TableSize - Size); //copy strings
- 		newSmbiosTable.Type4->Hdr.Length = (UINT8)NewSize;
--
--		newSmbiosTable.Type4->MaxSpeed = (UINT16)gCPUStructure.MaxSpeed;	
-+    
+diff --git a/rEFIt_UEFI/Platform/smbios.c b/rEFIt_UEFI/Platform/smbios.c
+index 0511ed5b..1e4293d1 100644
+--- a/rEFIt_UEFI/Platform/smbios.c
++++ b/rEFIt_UEFI/Platform/smbios.c
+@@ -762,7 +762,8 @@ VOID PatchTableType4()
+     CopyMem((CHAR8*)newSmbiosTable.Type4+NewSize, (CHAR8*)SmbiosTable.Type4+Size, TableSize - Size); //copy strings
+     newSmbiosTable.Type4->Hdr.Length = (UINT8)NewSize;
+ 
+-    newSmbiosTable.Type4->MaxSpeed = (UINT16)gCPUStructure.MaxSpeed;
 +    newSmbiosTable.Type4->MaxSpeed = (UINT16)(DivU64x32(gCPUStructure.ExternalClock * gCPUStructure.MaxRatio, kilo) / 10);
 +    newSmbiosTable.Type4->CurrentSpeed = newSmbiosTable.Type4->MaxSpeed;
- 		//old version has no such fields. Fill now
- 		if (Size <= 0x20){
- 			//sanity check and clear
+     //old version has no such fields. Fill now
+     if (Size <= 0x20){
+       //sanity check and clear

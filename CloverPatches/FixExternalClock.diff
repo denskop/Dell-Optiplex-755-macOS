@@ -1,22 +1,22 @@
-Index: rEFIt_UEFI/Platform/Platform.h
-===================================================================
---- rEFIt_UEFI/Platform/Platform.h	(revision 4849)
-+++ rEFIt_UEFI/Platform/Platform.h	(working copy)
-@@ -1816,6 +1816,9 @@
+diff --git a/rEFIt_UEFI/Platform/Platform.h b/rEFIt_UEFI/Platform/Platform.h
+index f0c2d962..2cb83add 100644
+--- a/rEFIt_UEFI/Platform/Platform.h
++++ b/rEFIt_UEFI/Platform/Platform.h
+@@ -1841,6 +1841,9 @@ GetCrc32 (
+ VOID
  GetCPUProperties (VOID);
  
- VOID
++VOID
 +CorrectCPUProperties (VOID);
 +
-+VOID
+ VOID
  GetDevices(VOID);
  
- MACHINE_TYPES
-Index: rEFIt_UEFI/Platform/cpu.c
-===================================================================
---- rEFIt_UEFI/Platform/cpu.c	(revision 4849)
-+++ rEFIt_UEFI/Platform/cpu.c	(working copy)
-@@ -1143,6 +1143,29 @@
+diff --git a/rEFIt_UEFI/Platform/cpu.c b/rEFIt_UEFI/Platform/cpu.c
+index 73e006b5..941bff2a 100644
+--- a/rEFIt_UEFI/Platform/cpu.c
++++ b/rEFIt_UEFI/Platform/cpu.c
+@@ -1146,6 +1146,29 @@ VOID GetCPUProperties (VOID)
    //  return;
  }
  
@@ -25,7 +25,7 @@ Index: rEFIt_UEFI/Platform/cpu.c
 +  UINT16  FsbMhzArray[8] = { 266, 133, 200, 166, 333, 100, 400, 233 };
 +  UINT64  Msr = 0;
 +  BOOLEAN Corrected = TRUE;
-+  
++
 +  switch (gCPUStructure.Model)
 +  {
 +    case CPU_MODEL_PENRYN: // CPUID: 1067x
@@ -36,7 +36,7 @@ Index: rEFIt_UEFI/Platform/cpu.c
 +      Corrected = FALSE;
 +      break;
 +  }
-+  
++
 +  if (Corrected)
 +  {
 +    DBG("Corrected ExternalClock: %d MHz\n", (INT32)(DivU64x32(gCPUStructure.ExternalClock, kilo)));
@@ -46,18 +46,18 @@ Index: rEFIt_UEFI/Platform/cpu.c
  VOID SetCPUProperties (VOID)
  {
    UINT64    msr = 0;
-Index: rEFIt_UEFI/refit/main.c
-===================================================================
---- rEFIt_UEFI/refit/main.c	(revision 4849)
-+++ rEFIt_UEFI/refit/main.c	(working copy)
-@@ -2303,7 +2303,9 @@
+diff --git a/rEFIt_UEFI/refit/main.c b/rEFIt_UEFI/refit/main.c
+index 6fffb00a..a947bb7c 100644
+--- a/rEFIt_UEFI/refit/main.c
++++ b/rEFIt_UEFI/refit/main.c
+@@ -2335,7 +2335,9 @@ RefitMain (IN EFI_HANDLE           ImageHandle,
        //DBG(" Corrected TSC ExternalClock: %d MHz\n", (INT32)(DivU64x32(gCPUStructure.ExternalClock, kilo)));
        break;
    }
 -
-+  
++
 +  CorrectCPUProperties();
-+  
++
    if (!GlobalConfig.NoEarlyProgress && !GlobalConfig.FastBoot && GlobalConfig.Timeout>0) {
      FirstMessage = PoolPrint(L"... user settings ...");
   //   i = (UGAWidth - StrLen(FirstMessage) * GlobalConfig.CharWidth) >> 1;
