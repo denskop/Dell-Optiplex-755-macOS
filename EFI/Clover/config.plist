@@ -184,12 +184,6 @@
 					</dict>
 					<dict>
 						<key>Key</key>
-						<string>PinConfigurations</string>
-						<key>Value</key>
-						<data></data>
-					</dict>
-					<dict>
-						<key>Key</key>
 						<string>MaximumBootBeepVolume</string>
 						<key>Value</key>
 						<data>TQ==</data>
