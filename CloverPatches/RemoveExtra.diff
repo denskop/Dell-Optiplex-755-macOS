@@ -1,8 +1,8 @@
-diff --git a/rEFIt_UEFI/Platform/DataHubCpu.c b/rEFIt_UEFI/Platform/DataHubCpu.c
-index cb0acae7..a91d2f9a 100644
---- a/rEFIt_UEFI/Platform/DataHubCpu.c
-+++ b/rEFIt_UEFI/Platform/DataHubCpu.c
-@@ -478,8 +478,6 @@ SetupDataForOSX(BOOLEAN Hibernate)
+diff --git a/rEFIt_UEFI/Platform/DataHubCpu.cpp b/rEFIt_UEFI/Platform/DataHubCpu.cpp
+index 3b11cb794..217ddb1cc 100644
+--- a/rEFIt_UEFI/Platform/DataHubCpu.cpp
++++ b/rEFIt_UEFI/Platform/DataHubCpu.cpp
+@@ -495,8 +495,6 @@ SetupDataForOSX(BOOLEAN Hibernate)
      }
  
      TscFrequency        = 0; //gCPUStructure.TSCFrequency;
@@ -10,4 +10,4 @@ index cb0acae7..a91d2f9a 100644
 -    LogDataHub(&gEfiProcessorSubClassGuid, L"CPUFrequency",     &CpuSpeed,            sizeof(UINT64));
  
      //gSettings.BoardNumber
-     LogDataHub(&gEfiMiscSubClassGuid,      L"board-id",         &gSettings.BoardNumber,   (UINT32)iStrLen(gSettings.BoardNumber, 64) + 1);
+     LogDataHubXString8(&gEfiMiscSubClassGuid,      L"board-id",         gSettings.BoardNumber);

@@ -1,7 +1,7 @@
-diff --git a/rEFIt_UEFI/Platform/smbios.c b/rEFIt_UEFI/Platform/smbios.c
+diff --git a/rEFIt_UEFI/Platform/smbios.cpp b/rEFIt_UEFI/Platform/smbios.cpp
 index 0511ed5b..1e4293d1 100644
---- a/rEFIt_UEFI/Platform/smbios.c
-+++ b/rEFIt_UEFI/Platform/smbios.c
+--- a/rEFIt_UEFI/Platform/smbios.cpp
++++ b/rEFIt_UEFI/Platform/smbios.cpp
 @@ -762,7 +762,8 @@ VOID PatchTableType4()
      CopyMem((CHAR8*)newSmbiosTable.Type4+NewSize, (CHAR8*)SmbiosTable.Type4+Size, TableSize - Size); //copy strings
      newSmbiosTable.Type4->Hdr.Length = (UINT8)NewSize;

@@ -1,10 +1,10 @@
-diff --git a/rEFIt_UEFI/Platform/Platform.h b/rEFIt_UEFI/Platform/Platform.h
-index f0c2d962..2cb83add 100644
---- a/rEFIt_UEFI/Platform/Platform.h
-+++ b/rEFIt_UEFI/Platform/Platform.h
-@@ -1841,6 +1841,9 @@ GetCrc32 (
- VOID
- GetCPUProperties (VOID);
+diff --git a/rEFIt_UEFI/Platform/Settings.h b/rEFIt_UEFI/Platform/Settings.h
+index 98c89623c..4f9513a78 100644
+--- a/rEFIt_UEFI/Platform/Settings.h
++++ b/rEFIt_UEFI/Platform/Settings.h
+@@ -873,6 +873,9 @@ GetCrc32 (
+   UINTN Size
+   );
  
 +VOID
 +CorrectCPUProperties (VOID);
@@ -12,11 +12,11 @@ index f0c2d962..2cb83add 100644
  VOID
  GetDevices(VOID);
  
-diff --git a/rEFIt_UEFI/Platform/cpu.c b/rEFIt_UEFI/Platform/cpu.c
-index 73e006b5..941bff2a 100644
---- a/rEFIt_UEFI/Platform/cpu.c
-+++ b/rEFIt_UEFI/Platform/cpu.c
-@@ -1146,6 +1146,29 @@ VOID GetCPUProperties (VOID)
+diff --git a/rEFIt_UEFI/Platform/cpu.cpp b/rEFIt_UEFI/Platform/cpu.cpp
+index bb30c4d7d..59b57f896 100644
+--- a/rEFIt_UEFI/Platform/cpu.cpp
++++ b/rEFIt_UEFI/Platform/cpu.cpp
+@@ -1162,6 +1162,29 @@ VOID GetCPUProperties (VOID)
    //  return;
  }
  
@@ -46,18 +46,16 @@ index 73e006b5..941bff2a 100644
  VOID SetCPUProperties (VOID)
  {
    UINT64    msr = 0;
-diff --git a/rEFIt_UEFI/refit/main.c b/rEFIt_UEFI/refit/main.c
-index 6fffb00a..a947bb7c 100644
---- a/rEFIt_UEFI/refit/main.c
-+++ b/rEFIt_UEFI/refit/main.c
-@@ -2335,7 +2335,9 @@ RefitMain (IN EFI_HANDLE           ImageHandle,
-       //DBG(" Corrected TSC ExternalClock: %d MHz\n", (INT32)(DivU64x32(gCPUStructure.ExternalClock, kilo)));
+diff --git a/rEFIt_UEFI/refit/main.cpp b/rEFIt_UEFI/refit/main.cpp
+index ca237b81d..7f10498bc 100644
+--- a/rEFIt_UEFI/refit/main.cpp
++++ b/rEFIt_UEFI/refit/main.cpp
+@@ -2174,6 +2174,8 @@ RefitMain (IN EFI_HANDLE           ImageHandle,
        break;
    }
--
-+
+ 
 +  CorrectCPUProperties();
-+
++    
    if (!GlobalConfig.NoEarlyProgress && !GlobalConfig.FastBoot && GlobalConfig.Timeout>0) {
-     FirstMessage = PoolPrint(L"... user settings ...");
-  //   i = (UGAWidth - StrLen(FirstMessage) * GlobalConfig.CharWidth) >> 1;
+     XStringW Message = SWPrintf("... user settings ...");
+     BootScreen.EraseTextXY();

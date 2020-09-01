@@ -1,30 +1,30 @@
-diff --git a/rEFIt_UEFI/Platform/AcpiPatcher.c b/rEFIt_UEFI/Platform/AcpiPatcher.c
-index c4545145..02f6050a 100644
---- a/rEFIt_UEFI/Platform/AcpiPatcher.c
-+++ b/rEFIt_UEFI/Platform/AcpiPatcher.c
-@@ -1719,7 +1719,8 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, CHAR8 *OSVersion)
-   BOOLEAN           NeedUpdate = FALSE;
+diff --git a/rEFIt_UEFI/Platform/AcpiPatcher.cpp b/rEFIt_UEFI/Platform/AcpiPatcher.cpp
+index 5751b5a6d..a77125d98 100644
+--- a/rEFIt_UEFI/Platform/AcpiPatcher.cpp
++++ b/rEFIt_UEFI/Platform/AcpiPatcher.cpp
+@@ -1710,7 +1710,8 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, const XString8& OSVersion)
+   BOOLEAN            NeedUpdate = FALSE;
    OPER_REGION       *tmpRegion;
-   CHAR16*           AcpiOemPath = PoolPrint(L"%s\\ACPI\\patched", OEMPath);
+   XStringW           AcpiOemPath = SWPrintf("%ls\\ACPI\\patched", OEMPath.wc_str());
 -
-+  MACHINE_TYPES     MacModel = GetModelFromString(gSettings.ProductName);
-+
++  MACHINE_TYPES      MacModel = GetModelFromString(gSettings.ProductName);
++    
    DbgHeader("PatchACPI");
  
-   PathDsdt = PoolPrint(L"\\%s", gSettings.DsdtName);
-@@ -1873,6 +1874,11 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, CHAR8 *OSVersion)
+   PathDsdt = SWPrintf("\\%ls", gSettings.DsdtName.wc_str());
+@@ -1864,6 +1865,11 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, const XString8& OSVersion)
      } else {
        newFadt->PreferredPmProfile = gMobile?2:1; //as calculated before
      }
-+
++      
 +    if ((MacModel == iMac81) || (MacModel == iMac91) || (MacModel == iMac101)) {
 +        newFadt->PstateCnt = 0x80;
 +    }
-+
++      
      if (gSettings.EnableC6 || gSettings.EnableISS) {
        newFadt->CstCnt = 0x85; //as in Mac
      }
-@@ -1886,12 +1892,16 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, CHAR8 *OSVersion)
+@@ -1877,12 +1883,16 @@ EFI_STATUS PatchACPI(IN REFIT_VOLUME *Volume, const XString8& OSVersion)
        gSettings.C3Latency = newFadt->PLvl3Lat;
      }
      
@@ -34,7 +34,7 @@ index c4545145..02f6050a 100644
 +    newFadt->Flags &= ~(1 << 4);  // Enable PWRB Control
 +    newFadt->Flags |= (1 << 5);   // Disable SLPB Control
 +    newFadt->Flags &= ~(1 << 16); // RTC_STS not valid
-+
++      
      if (gSettings.NoASPM) {
 -      newFadt->IaPcBootArch |= 0x10;  // disable ASPM
 +      newFadt->IaPcBootArch |= (1 << 4);  // Disable ASPM
