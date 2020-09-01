@@ -33,6 +33,11 @@ cp -v "$CLOVER_PATH/config.plist" "$BUILD_PATH/Clover"
 # drivers
 mkdir -p "$BUILD_PATH/Clover/drivers/BIOS"
 cp -v -R "$CLOVER_PATH/Drivers/." "$BUILD_PATH/Clover/drivers/BIOS"
+
+# Move OcQuirks.plist file to valid location
+mkdir -p "$BUILD_PATH/Clover/drivers/UEFI"
+mv -v "$BUILD_PATH/Clover/drivers/BIOS/OcQuirks.plist" "$BUILD_PATH/Clover/drivers/UEFI"
+
 #cp -v -R "$EFI_PATH/IntelDrivers/." "$BUILD_PATH/Clover/drivers/BIOS"
 
 # kexts
