@@ -7,7 +7,7 @@ Repo to install macOS on Dell Optiplex 755
 | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🌀 | 🌀 |
 
 ## Bootloader
-| Clover | r5097 |
+| Clover | r5121 |
 |:-|:-|
 | OpenCore | 🌀 |
 
