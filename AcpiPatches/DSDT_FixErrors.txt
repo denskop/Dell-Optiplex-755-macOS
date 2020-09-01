@@ -22,3 +22,193 @@ into device name_hid PNP0A08 insert begin Name (_CID, EisaId ("PNP0A03"))\n end;
 
 # Fix PCI Root _UID
 into device name_hid PNP0A08 code_regex Name\s\(_UID,\s0x04\) replace_matched begin Name (_UID, Zero) end;
+
+# Fix iASL 6.x compiler errors (avoid nested methods)
+into method label GBDA parent_label GSCI remove_entry;
+into method label SBCB parent_label GSCI remove_entry;
+into all code_regex OperationRegion\s\(IGDM[\S\s]*?\} remove_matched;
+into device name_adr 0x00020000 insert begin
+OperationRegion (IGDM, SystemMemory, ASLS, 0x2000)\n
+Field (IGDM, AnyAcc, NoLock, Preserve)\n
+{\n
+    SIGN,   128,\n
+    SIZE,   32,\n
+    OVER,   32,\n
+    SVER,   256,\n
+    VVER,   128,\n
+    GVER,   128,\n
+    MBOX,   32,\n
+    Offset (0x200),\n
+    SCIE,   1,\n
+    GEFC,   4,\n
+    GXFC,   3,\n
+    GESF,   8,\n
+    Offset (0x204),\n
+    PARM,   32\n
+}\n
+\n
+Method (GBDA, 0, NotSerialized)\n
+{\n
+    If ((GESF == Zero))\n
+    {\n
+        PARM = 0x41\n
+        GXFC = One\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == One))\n
+    {\n
+        PARM = Zero\n
+        GXFC = One\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x04))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x05))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x06))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x07))\n
+    {\n
+        PARM |= GIVD\n
+        PARM ^= One\n
+        PARM |= (GMFN << One)\n
+        PARM |= 0x1000\n
+        If ((TASM < 0x08))\n
+        {\n
+            PARM |= 0x00020000\n
+        }\n
+        ElseIf ((TASM < 0x10))\n
+        {\n
+            PARM |= 0x00040000\n
+        }\n
+        Else\n
+        {\n
+            PARM |= 0x00060000\n
+        }\n
+
+        PARM |= 0x3E800000\n
+        GXFC = One\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x0A))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    GXFC = 0x04\n
+    Return (Zero)\n
+}\n
+
+Method (SBCB, 0, NotSerialized)\n
+{\n
+    If ((GESF == Zero))\n
+    {\n
+        PARM = Zero\n
+        GXFC = One\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == One))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x03))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x04))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x05))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x06))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x07))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x08))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x09))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x0A))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x0B))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x10))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x11))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x12))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    If ((GESF == 0x13))\n
+    {\n
+        GXFC = 0x04\n
+        Return (Zero)\n
+    }\n
+
+    GXFC = 0x04\n
+    Return (Zero)\n
+}\n
+end;
