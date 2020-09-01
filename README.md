@@ -1,6 +1,14 @@
 # Dell-Optiplex-755-macOS
 Repo to install macOS on Dell Optiplex 755
 
+## macOS Compability
+| 10.6 | 10.7 | 10.8 | 10.9 | 10.10 | 10.11 | 10.12 | 10.13 | 10.14 | 10.15 | 10.16 |
+| ❓ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🌀 | 🌀 |
+
+## Bootloader
+| Clover | r5097 |
+| OpenCore | 🌀 |
+
 ## Hardware Specification:
 
 | Hardware | Models | macOS Compability | Description |
@@ -32,7 +40,7 @@ Repo to install macOS on Dell Optiplex 755
 | USB | Ver 1.1 (UHCI) / 2.0 (EHCI) | ✅ | 8 Ports + 2 Internal |
 | Sound | Built-In Chip ADI 1984 | ✅ | Headphones / Mic / Line In |
 |  |  | ⚠️ | Line Out - Bad sound quality (Disabled) |
-|  |  | ❌ | Built-In speaker (Disabled) |
+|  |  | 🌀 | Built-In speaker (Some progress) |
 | LAN | Built-In Intel 82566DM | ✅ |
 | PCI Devices | WiFi Atheros AR9220 / AR9223 / AR9227 | ✅ | 2.4 Ghz, 300 Mbit (Real 150 Mbit)<br>Require MiniPCI to PCI Adapter<br> |
 | | Other devices | ✅ | With 3rd-party drivers (Kexts) |
