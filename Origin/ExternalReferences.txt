@@ -1,0 +1,16 @@
+// SSDT-0-st_ex
+External(_SB_.PCI0.ISA_.KBD_, DeviceObj)
+
+// SSDT-X-CpuYIst, X = 1, 2, 3, 4; Y = X - 1;
+External(_PR_.CPU0, DeviceObj)
+External(CFGD, IntObj)
+External(PDC0, IntObj)
+External(PDC1, IntObj)
+External(PDC2, IntObj)
+External(PDC3, IntObj)
+
+// SSDT-5-CpuPm
+External(_PR_.CPU0, DeviceObj)
+External(_PR_.CPU1, DeviceObj)
+External(_PR_.CPU2, DeviceObj)
+External(_PR_.CPU3, DeviceObj)

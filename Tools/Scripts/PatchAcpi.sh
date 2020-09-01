@@ -56,7 +56,7 @@ fi
 pushd "$ORIGIN_PATH" > /dev/null
 
 # SSDT, DSDT
-$IASL -dl -in -da SSDT*.aml DSDT.aml
+$IASL -dl -in -fe "$SELF_PATH/Origin/ExternalReferences.txt" -d SSDT*.aml DSDT.aml
 
 # Other tables
 # $IASL -dl "$ORIGIN_PATH/APIC.aml"

@@ -7,7 +7,7 @@
 # repo
 Build/
 Origin/*.aml
-Origin/*.txt
+Origin/DumpLog.txt
 ToDo.txt
 
 # Xcode
