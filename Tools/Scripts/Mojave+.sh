@@ -51,3 +51,6 @@ fi
 
 # Copy removeTelemetry tool
 cp -v "$MOJAVE_PLUS_PATH/Tools/removeTelemetry" "$BUILD_PATH/"
+
+# Copy HWMonitorSMC2 application for sensor monitoring
+cp -v -R "$MOJAVE_PLUS_PATH/Tools/HWMonitorSMC2.app" "$BUILD_PATH/"
