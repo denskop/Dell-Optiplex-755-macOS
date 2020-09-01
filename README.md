@@ -3,10 +3,12 @@ Repo to install macOS on Dell Optiplex 755
 
 ## macOS Compability
 | 10.6 | 10.7 | 10.8 | 10.9 | 10.10 | 10.11 | 10.12 | 10.13 | 10.14 | 10.15 | 10.16 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🌀 | 🌀 |
 
 ## Bootloader
 | Clover | r5097 |
+|:-|:-|
 | OpenCore | 🌀 |
 
 ## Hardware Specification:
