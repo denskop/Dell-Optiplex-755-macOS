@@ -210,7 +210,9 @@ fi
 
 # SSDT
 $PATCH2 "$TEMP_PATH/Dsl/"SSDT_st_ex.dsl "$ACPI_PATCHES_PATH/"SSDT_External.txt
-$PATCH2 "$TEMP_PATH/Dsl/"SSDT_Cpu0Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu0Ist.txt
+for i in `seq 0 $((SSDT_IST_COUNT - 1))`; do
+    $PATCH2 "$TEMP_PATH/Dsl/"SSDT_Cpu"$i"Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu"$i"Ist.txt
+done
 $PATCH2 "$TEMP_PATH/Dsl/"SSDT_Cpu1Ist.dsl "$ACPI_PATCHES_PATH/"SSDT_Cpu1Ist.txt
 $PATCH2 "$TEMP_PATH/Dsl/"SSDT_CpuPm.dsl "$ACPI_PATCHES_PATH/"SSDT_CpuPm.txt
 
@@ -237,7 +239,13 @@ $PATCH2 "$TEMP_PATH/Dsl/"MCFG.dsl "$ACPI_PATCHES_PATH/"Table_OemTableID.txt
 
 ## Compile acpi tables
 
-$IASL -I "$TEMP_PATH/Dsl/Build" -ve "$TEMP_PATH/Dsl/"*.dsl
+pushd "$TEMP_PATH/Dsl" > /dev/null
+
+for table in *.dsl; do
+    $IASL -I "Build" -ve "$table"
+done
+
+popd > /dev/null
 
 pushd "$ACPI_EXTRA_PATH" > /dev/null
 

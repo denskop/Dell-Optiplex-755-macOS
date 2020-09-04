@@ -29,8 +29,8 @@ end;
 # Patch _PSS method to get correct power states
 into_all all code_regex If.*CFGD.*0x4000.*PDC0.*0x09[\S\s]*NPSS[\S\s]*\} replaceall_matched
 begin
-External (OSDW, MethodObj)\n
-If ((PDC0 & 0x01) || OSDW())\n
+External (\\OSDW, MethodObj)\n
+If ((PDC0 & 0x01) || \\OSDW())\n
 {\n
     Return (NPSS)\n
 }\n

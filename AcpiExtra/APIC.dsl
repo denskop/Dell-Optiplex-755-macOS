@@ -20,6 +20,7 @@
 [02Fh 0047   1]                Local Apic ID : 00
 [030h 0048   4]        Flags (decoded below) : 00000001
                            Processor Enabled : 1
+                      Runtime Online Capable : 0
 
 [034h 0052   1]                Subtable Type : 00 [Processor Local APIC]
 [035h 0053   1]                       Length : 08
@@ -27,6 +28,7 @@
 [037h 0055   1]                Local Apic ID : 01
 [038h 0056   4]        Flags (decoded below) : 00000001
                            Processor Enabled : 1
+                      Runtime Online Capable : 0
 
 #if CPU_CORES_NUM > 2
 
@@ -36,6 +38,7 @@
 [03Fh 0063   1]                Local Apic ID : 02
 [040h 0064   4]        Flags (decoded below) : 00000001
                            Processor Enabled : 1
+                      Runtime Online Capable : 0
 
 [044h 0068   1]                Subtable Type : 00 [Processor Local APIC]
 [045h 0069   1]                       Length : 08
@@ -43,6 +46,7 @@
 [047h 0071   1]                Local Apic ID : 03
 [048h 0072   4]        Flags (decoded below) : 00000001
                            Processor Enabled : 1
+                      Runtime Online Capable : 0
 
 #endif
 

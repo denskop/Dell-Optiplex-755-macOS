@@ -17,8 +17,6 @@ mkdir -p "$BUILD_PATH/Clover/ACPI/patched"
 mv "$TEMP_PATH/Dsl/"*.aml "$BUILD_PATH/Clover/ACPI/patched"
 mv "$ACPI_EXTRA_PATH/"*.aml "$BUILD_PATH/Clover/ACPI/patched"
 
-rm "$BUILD_PATH/Clover/ACPI/patched/SSDT_PciCrsOrig.aml"
-
 if [ $ADD_EC_DEVICE != "Yes" ]; then
     rm "$BUILD_PATH/Clover/ACPI/patched/"ECDT.aml
 fi
